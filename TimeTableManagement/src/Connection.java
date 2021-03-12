@@ -20,11 +20,14 @@ public class Connection {
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/login","root", "");
             if(conn!=null)
             {
+                //Ifconnection works fine 
                 System.out.println("Connected!");
             }
         } catch (Exception e)
         {
+            //If connection get faild
             System.out.println("Failed");
+            
             
         }
     
