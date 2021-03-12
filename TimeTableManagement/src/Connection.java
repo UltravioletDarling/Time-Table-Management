@@ -12,8 +12,8 @@ import java.sql.DriverManager;
  * @author Bimsara De Silva
  */
 public class Connection {
-    
-    public static void main(String []args){
+    //sdsd
+    public static void main(String []args){ 
         java.sql.Connection conn = null;
         
         try {
