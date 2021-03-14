@@ -7,7 +7,7 @@ package timetablemanagement;
 
 /**
  *
- * @author swpas
+ * @author Bimsara De Silva
  */
 public class SystemDashboard extends javax.swing.JFrame {
 
