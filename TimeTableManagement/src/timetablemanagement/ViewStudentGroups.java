@@ -33,10 +33,10 @@ import javax.swing.table.TableColumnModel;
  *
  * @author Bimsara De Silva
  */
-public class AcedemicYearAndSemester extends javax.swing.JFrame {
+public class ViewStudentGroups extends javax.swing.JFrame {
     
   
-    public tableCellAlignment centerAlign = new tableCellAlignment();
+  public tableCellAlignment centerAlign = new tableCellAlignment();
   Connection con;
   DefaultTableModel table ;
   String updaterecord = "";
@@ -52,13 +52,13 @@ public class AcedemicYearAndSemester extends javax.swing.JFrame {
      public void mousePressed(MouseEvent me) {
      jTable1 = (JTable)me.getSource();
      int row = jTable1.getSelectedRow();       
-     updaterecord = (String) jTable1.getValueAt(row, 2);     
+     updaterecord = (String) jTable1.getValueAt(row, 5);     
             }
      });
     
     }
     
-    public void showDetails() throws SQLException{
+    public ViewStudentGroups() throws SQLException{
 
         TableCellRenderer rendererFromHeader = jTable1.getTableHeader().getDefaultRenderer();
         JLabel headerLabel = (JLabel) rendererFromHeader;
@@ -67,11 +67,16 @@ public class AcedemicYearAndSemester extends javax.swing.JFrame {
         jTable1.getColumnModel().getColumn(0).setCellRenderer(centerAlign);
         jTable1.getColumnModel().getColumn(1).setCellRenderer(centerAlign);
         jTable1.getColumnModel().getColumn(2).setCellRenderer(centerAlign);
+        jTable1.getColumnModel().getColumn(3).setCellRenderer(centerAlign);
+        jTable1.getColumnModel().getColumn(4).setCellRenderer(centerAlign);
+        jTable1.getColumnModel().getColumn(5).setCellRenderer(centerAlign);
+        jTable1.getColumnModel().getColumn(6).setCellRenderer(centerAlign);
+        
         
        Statement stmt = null;
        con = new DBconnection().getDB();
        stmt = con.createStatement();
-       String sql = "SELECT id,name,year,semester from AcedemicYearAndSemester ORDER BY year";
+       String sql = "SELECT acedemic_year,semester,program,group_number,sub_group_number,group_id,sub_group_id from AcedemicYearAndSemester ORDER BY acedemic_year";
        
        ResultSet result = stmt.executeQuery(sql);
         table = (DefaultTableModel) jTable1.getModel(); 
@@ -79,9 +84,13 @@ public class AcedemicYearAndSemester extends javax.swing.JFrame {
        Object[] column = new Object[3];
        
        while(result.next()){
-             column[0] = result.getInt("name");
-             column[1] =  result.getInt("year");
-             column[2] =  result.getString("semester");
+             column[0] = result.getInt("acedemic_year");
+             column[1] =  result.getInt("semester");
+             column[2] =  result.getString("program");
+             column[3] = result.getInt("group_number");
+             column[4] = result.getInt("sub_group_number");
+             column[5] = result.getInt("group_id");
+             column[6] = result.getInt("sub_group_id");
              table.addRow(column);
              
        }
@@ -92,8 +101,7 @@ public class AcedemicYearAndSemester extends javax.swing.JFrame {
     return this.updaterecord;
     }
     
-    
-     
+   
    
     /**
      * This method is called from within the constructor to initialize the form.
@@ -124,7 +132,7 @@ public class AcedemicYearAndSemester extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Name", "Acedemic Year", "Acedemic Semester"
+                "Year", "Semester", "Program", "Group", "SubGroup", "Group ID", "SubGroup ID"
             }
         ) {
             Class[] types = new Class [] {
@@ -250,10 +258,10 @@ public class AcedemicYearAndSemester extends javax.swing.JFrame {
       JOptionPane.showMessageDialog(this, "No records are selected","Error",JOptionPane.ERROR_MESSAGE);
       }else{
           try {
-              new UpdateYearAndSemester(updaterecord).setVisible(true);
+              new UpdateStudentGroup(updaterecord).setVisible(true);
               this.setVisible(false);
           } catch (SQLException e) {
-              Logger.getLogger(AcedemicYearAndSemester.class.getName()).log(Level.SEVERE, null, e);
+              Logger.getLogger(ViewStudentGroups.class.getName()).log(Level.SEVERE, null, e);
           }
       }
     }//GEN-LAST:event_updateyandsActionPerformed
@@ -272,7 +280,7 @@ public class AcedemicYearAndSemester extends javax.swing.JFrame {
 
         stmt = new DBconnection().getDB().createStatement();
                 
-        String sql = "DELETE FROM AcedemicYearAndSemester" + " WHERE Name = '"+updaterecord+"'";
+        String sql = "DELETE FROM student_group" + " WHERE group_id = '"+updaterecord+"'";
         System.out.println(sql);
         stmt.executeUpdate(sql);
      
@@ -289,7 +297,8 @@ public class AcedemicYearAndSemester extends javax.swing.JFrame {
     }//GEN-LAST:event_deleteyandsActionPerformed
 
     private void addyandsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addyandsActionPerformed
-        // TODO add your handling code here:
+        new AddNewStudentGroup().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_addyandsActionPerformed
 
     /**
@@ -309,21 +318,51 @@ public class AcedemicYearAndSemester extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AcedemicYearAndSemester.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewStudentGroups.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AcedemicYearAndSemester.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewStudentGroups.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AcedemicYearAndSemester.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewStudentGroups.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AcedemicYearAndSemester.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewStudentGroups.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
+      try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(ViewStudentGroups.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(ViewStudentGroups.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(ViewStudentGroups.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(ViewStudentGroups.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+      
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            
+             
+            
             public void run() {
-                new AcedemicYearAndSemester().setVisible(true);
+                
+                try {
+                    new ViewStudentGroups().setVisible(true);
+                    
+                } catch (SQLException ex) {
+                    Logger.getLogger(ViewStudentGroups.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
