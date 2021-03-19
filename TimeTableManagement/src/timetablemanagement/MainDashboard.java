@@ -5,6 +5,10 @@
  */
 package timetablemanagement;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Bimsara De Silva
@@ -32,7 +36,7 @@ public class MainDashboard extends javax.swing.JFrame {
         SystemLecturer3 = new javax.swing.JButton();
         SystemLecturer4 = new javax.swing.JButton();
         SystemWorkDays = new javax.swing.JButton();
-        SystemLecturer5 = new javax.swing.JButton();
+        students = new javax.swing.JButton();
         SystemStatistic = new javax.swing.JButton();
         SystemTag = new javax.swing.JButton();
         SystemLecturer1 = new javax.swing.JButton();
@@ -94,15 +98,15 @@ public class MainDashboard extends javax.swing.JFrame {
             }
         });
 
-        SystemLecturer5.setBackground(new java.awt.Color(0, 102, 255));
-        SystemLecturer5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        SystemLecturer5.setText("Students");
-        SystemLecturer5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        SystemLecturer5.setContentAreaFilled(false);
-        SystemLecturer5.setOpaque(true);
-        SystemLecturer5.addActionListener(new java.awt.event.ActionListener() {
+        students.setBackground(new java.awt.Color(0, 102, 255));
+        students.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        students.setText("Students");
+        students.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        students.setContentAreaFilled(false);
+        students.setOpaque(true);
+        students.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SystemLecturer5ActionPerformed(evt);
+                studentsActionPerformed(evt);
             }
         });
 
@@ -158,7 +162,7 @@ public class MainDashboard extends javax.swing.JFrame {
         jDesktopPane1.setLayer(SystemLecturer3, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(SystemLecturer4, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(SystemWorkDays, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(SystemLecturer5, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(students, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(SystemStatistic, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(SystemTag, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(SystemLecturer1, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -176,7 +180,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(SystemWorkDays, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(SystemLecturer5, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(students, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
@@ -203,7 +207,7 @@ public class MainDashboard extends javax.swing.JFrame {
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(SystemLecturer1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SystemLecturer5, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(students, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(46, 46, 46))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -322,9 +326,14 @@ public class MainDashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_SystemLecturer4ActionPerformed
 
-    private void SystemLecturer5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SystemLecturer5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SystemLecturer5ActionPerformed
+    private void studentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentsActionPerformed
+       try {
+            // TODO add your handling code here:
+            new ViewStudentGroups().setVisible(true);
+        } catch (SQLException e) {
+            Logger.getLogger(MainDashboard.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }//GEN-LAST:event_studentsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -366,7 +375,6 @@ public class MainDashboard extends javax.swing.JFrame {
     private javax.swing.JButton SystemLecturer1;
     private javax.swing.JButton SystemLecturer3;
     private javax.swing.JButton SystemLecturer4;
-    private javax.swing.JButton SystemLecturer5;
     private javax.swing.JButton SystemStatistic;
     private javax.swing.JButton SystemStatistic1;
     private javax.swing.JButton SystemTag;
@@ -376,5 +384,6 @@ public class MainDashboard extends javax.swing.JFrame {
     private javax.swing.JDesktopPane jDesktopPane2;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton students;
     // End of variables declaration//GEN-END:variables
 }

@@ -71,12 +71,13 @@ public class ViewStudentGroups extends javax.swing.JFrame {
         jTable1.getColumnModel().getColumn(4).setCellRenderer(centerAlign);
         jTable1.getColumnModel().getColumn(5).setCellRenderer(centerAlign);
         jTable1.getColumnModel().getColumn(6).setCellRenderer(centerAlign);
+        jTable1.getColumnModel().getColumn(7).setCellRenderer(centerAlign);
         
         
        Statement stmt = null;
        con = new DBconnection().getDB();
        stmt = con.createStatement();
-       String sql = "SELECT acedemic_year,semester,program,group_number,sub_group_number,group_id,sub_group_id from AcedemicYearAndSemester ORDER BY acedemic_year";
+       String sql = "SELECT acedemic_year,semester,program,group_number,sub_group_number,group_id,sub_group_id,name from student_group ORDER BY acedemic_year";
        
        ResultSet result = stmt.executeQuery(sql);
         table = (DefaultTableModel) jTable1.getModel(); 
@@ -91,6 +92,7 @@ public class ViewStudentGroups extends javax.swing.JFrame {
              column[4] = result.getInt("sub_group_number");
              column[5] = result.getInt("group_id");
              column[6] = result.getInt("sub_group_id");
+             column[7] = result.getString("name");
              table.addRow(column);
              
        }

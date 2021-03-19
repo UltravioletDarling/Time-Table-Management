@@ -66,7 +66,7 @@
                   <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="SystemWorkDays" max="32767" attributes="0"/>
-                      <Component id="SystemLecturer5" min="-2" pref="240" max="-2" attributes="0"/>
+                      <Component id="students" min="-2" pref="240" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
@@ -101,7 +101,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="SystemLecturer1" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
-                              <Component id="SystemLecturer5" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                              <Component id="students" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                       </Group>
@@ -214,7 +214,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SystemWorkDaysActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="SystemLecturer5">
+        <Component class="javax.swing.JButton" name="students">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="66" red="0" type="rgb"/>
@@ -232,7 +232,7 @@
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SystemLecturer5ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="studentsActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="SystemStatistic">

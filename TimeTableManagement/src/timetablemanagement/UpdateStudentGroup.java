@@ -6,51 +6,67 @@
 package timetablemanagement;
 
 import DataBase.DBconnection;
-import java.awt.Color;
-import java.sql.Connection;
-import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
 /**
  *
  * @author Bimsara De Silva
  */
-public class AddNewStudentGroup extends javax.swing.JFrame {
+public class UpdateStudentGroup extends javax.swing.JFrame {
     
-    Connection con;
+    String value;
+    Statement stmt = null;
    
 
-    public AddNewStudentGroup() {
+    public UpdateStudentGroup(String value) throws SQLException {
+         this.value = value;
         initComponents();
-        setLocationRelativeTo(null);
+        displayDetails();
+         setLocationRelativeTo(null);
+    }
+    
+     private UpdateStudentGroup() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-
-      public void createTable() throws SQLException, ClassNotFoundException{
+     
+    public void displayDetails() throws SQLException{
+    
+       
+      
+       stmt = new DBconnection().getDB().createStatement();
+       String sql = "SELECT acedemic_year,semester,program,group_number,sub_group_number,group_id,sub_group_id from student_group WHERE name = "+"'"+value+"'";
+      
+       ResultSet rs = stmt.executeQuery(sql);
+        while(rs.next()){
+            int a = rs.getInt("acedemic_year");
+            int b = rs.getInt("semester");
+            String Program = rs.getString("program");
+            int c = rs.getInt("group_number");
+            int d = rs.getInt("sub_group_number");
+            int e = rs.getInt("group_id");
+            int f = rs.getInt("sub_group_id");
+            String Name = rs.getString("name");
         
-          con = new DBconnection().getDB();
-          Statement stmt = con.createStatement();
-          String sql = "CREATE TABLE IF NOT EXISTS student_group  " +
-                   "( acedemic_year INT not NULL, " +
-                   " semester INT, " + 
-                   " program VARCHAR(50) UNIQUE, " + 
-                  " group_number INT, " + 
-                   " sub_group_number INT, " + 
-                   " group_id INT, " + 
-                   " sub_group_id INT, " + 
-                  " name VARCHAR(10), " + 
-                   " PRIMARY KEY ( group_id ))"; 
-          
-          
-          stmt.executeUpdate(sql);
+            year.setText(String.valueOf(a));
+            semester1.setText(String.valueOf(b));
+            program.setText(Program);
+            gnumber.setText(String.valueOf(c));
+            sgnumber.setText(String.valueOf(d));
+            gid.setText(String.valueOf(e));
+            sgid.setText(String.valueOf(f));
+        
+ 
+       
+        }
+       
       
     }
+
     
 
      
@@ -83,13 +99,13 @@ public class AddNewStudentGroup extends javax.swing.JFrame {
         sgid = new javax.swing.JTextField();
         sgnumber = new javax.swing.JTextField();
         clearbutton = new javax.swing.JButton();
-        submitbutton = new javax.swing.JButton();
+        updatebutton = new javax.swing.JButton();
         viewrecordsbutton = new javax.swing.JButton();
 
         jLabel4.setBackground(new java.awt.Color(204, 204, 204));
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Add New Student group");
+        jLabel4.setText("Update Student group");
         jLabel4.setOpaque(true);
 
         jLabel2.setBackground(new java.awt.Color(204, 204, 204));
@@ -188,15 +204,15 @@ public class AddNewStudentGroup extends javax.swing.JFrame {
             }
         });
 
-        submitbutton.setBackground(new java.awt.Color(0, 204, 0));
-        submitbutton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        submitbutton.setText("Submit");
-        submitbutton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        submitbutton.setContentAreaFilled(false);
-        submitbutton.setOpaque(true);
-        submitbutton.addActionListener(new java.awt.event.ActionListener() {
+        updatebutton.setBackground(new java.awt.Color(0, 204, 0));
+        updatebutton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        updatebutton.setText("Update");
+        updatebutton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        updatebutton.setContentAreaFilled(false);
+        updatebutton.setOpaque(true);
+        updatebutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitbuttonActionPerformed(evt);
+                updatebuttonActionPerformed(evt);
             }
         });
 
@@ -215,7 +231,7 @@ public class AddNewStudentGroup extends javax.swing.JFrame {
         jDesktopPane1.setLayer(sgid, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(sgnumber, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(clearbutton, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(submitbutton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(updatebutton, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -260,7 +276,7 @@ public class AddNewStudentGroup extends javax.swing.JFrame {
                                     .addComponent(sgnumber, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jDesktopPane1Layout.createSequentialGroup()
                                 .addGap(37, 37, 37)
-                                .addComponent(submitbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(updatebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(clearbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(33, 33, 33)))
@@ -299,7 +315,7 @@ public class AddNewStudentGroup extends javax.swing.JFrame {
                     .addComponent(sgid, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(submitbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updatebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(clearbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -316,8 +332,8 @@ public class AddNewStudentGroup extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -352,16 +368,8 @@ public class AddNewStudentGroup extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_programActionPerformed
 
-    private void submitbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitbuttonActionPerformed
-        
-        try {
-            createTable();
-        } catch (SQLException ex) {
-            Logger.getLogger(ViewStudentGroups.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ViewStudentGroups.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+    private void updatebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatebuttonActionPerformed
+         
          String AcademicYear = year.getText();
          String Semester = semester1.getText();
          String Program = program.getText();
@@ -369,7 +377,6 @@ public class AddNewStudentGroup extends javax.swing.JFrame {
          String SGNumber = sgnumber.getText();
          String GID = gid.getText();
          String SGID = sgid.getText();
-         
         try{
         if(AcademicYear.equals("") || Semester.equals("") || Program.equals("") || GNumber.equals("") || SGNumber.equals("") || GID.equals("")|| SGID.equals("")){        
         JOptionPane.showMessageDialog(this, "Invalid Input","Error",JOptionPane.ERROR_MESSAGE);
@@ -386,20 +393,17 @@ public class AddNewStudentGroup extends javax.swing.JFrame {
         String name = "Y"+a+".S"+b;
 
 
-          con = new DBconnection().getDB();
-           
-         Statement stmt = con.createStatement();
-           
-             String sql = "INSERT INTO AcademicYear "+" VALUES ('"+a+"','"+b+"','"+Program+"','"+c+"','"+d+"','"+e+"','"+f+"','"+name+"')";
-                                
-             
-             stmt.executeUpdate(sql);
+            stmt = new DBconnection().getDB().createStatement();
+            String sql = "UPDATE student_group   " +
+            "SET acedemic_year = "+a+",semester  = "+b+",program  = '"+program+"',group_number = "+c+",sub_group_number = "+d+",group_id = "+e+",sub_group_id = "+e+" WHERE Name = '"+value+"'";
+            System.out.println(sql);
+            stmt.executeUpdate(sql);
                             
             
-        //succes msg
-        JOptionPane.showMessageDialog(this,name+" has been added to the database","Succesful",JOptionPane.INFORMATION_MESSAGE);
+        
+        JOptionPane.showMessageDialog(this,name+" has been sucessfully added","Succesful",JOptionPane.INFORMATION_MESSAGE);
         year.setText("");
-         semester1.setText("");
+        semester1.setText("");
         }
         }catch(Exception e){
         year.setText("");
@@ -409,17 +413,19 @@ public class AddNewStudentGroup extends javax.swing.JFrame {
         sgnumber.setText("");
         gid.setText("");
         sgid.setText("");
+        
+        System.out.print(e);
           
-        JOptionPane.showMessageDialog(this, "Invalid Input","Error",JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Error","Error",JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_submitbuttonActionPerformed
+    }//GEN-LAST:event_updatebuttonActionPerformed
 
     private void viewrecordsbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewrecordsbuttonActionPerformed
          try {
             new ViewStudentGroups().setVisible(true);
             this.setVisible(false);
         } catch (SQLException e) {
-            Logger.getLogger(AddNewStudentGroup.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(UpdateStudentGroup.class.getName()).log(Level.SEVERE, null, e);
         }
     }//GEN-LAST:event_viewrecordsbuttonActionPerformed
 
@@ -470,23 +476,20 @@ public class AddNewStudentGroup extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AddNewStudentGroup.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateStudentGroup.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AddNewStudentGroup.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateStudentGroup.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AddNewStudentGroup.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateStudentGroup.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AddNewStudentGroup.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateStudentGroup.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+    
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AddNewStudentGroup().setVisible(true);
+                new UpdateStudentGroup().setVisible(true);
             }
         });
     }
@@ -508,7 +511,7 @@ public class AddNewStudentGroup extends javax.swing.JFrame {
     private javax.swing.JTextField semester1;
     private javax.swing.JTextField sgid;
     private javax.swing.JTextField sgnumber;
-    private javax.swing.JButton submitbutton;
+    private javax.swing.JButton updatebutton;
     private javax.swing.JButton viewrecordsbutton;
     private javax.swing.JTextField year;
     // End of variables declaration//GEN-END:variables
