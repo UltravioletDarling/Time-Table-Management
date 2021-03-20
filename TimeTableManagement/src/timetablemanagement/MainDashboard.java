@@ -327,12 +327,9 @@ public class MainDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_SystemLecturer4ActionPerformed
 
     private void studentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentsActionPerformed
-       try {
-            // TODO add your handling code here:
-            new ViewStudentGroups().setVisible(true);
-        } catch (SQLException e) {
-            Logger.getLogger(MainDashboard.class.getName()).log(Level.SEVERE, null, e);
-        }
+
+            new studentgroups().setVisible(true);
+        
     }//GEN-LAST:event_studentsActionPerformed
 
     /**
