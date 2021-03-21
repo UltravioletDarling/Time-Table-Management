@@ -295,7 +295,9 @@ public class MainDashboard extends javax.swing.JFrame {
 
     private void SystemTagActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SystemTagActionPerformed
         // TODO add your handling code here:
-        // new Tags().setVisible(true);
+            dispose();
+            ManageTags mt = new ManageTags();
+            mt.setVisible(true);
     }//GEN-LAST:event_SystemTagActionPerformed
 
     private void SystemLecturer1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SystemLecturer1ActionPerformed
@@ -327,8 +329,10 @@ public class MainDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_SystemLecturer4ActionPerformed
 
     private void studentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentsActionPerformed
-
-            new studentgroups().setVisible(true);
+            dispose();
+            studentgroups sg = new studentgroups();
+            sg.setVisible(true);
+          
         
     }//GEN-LAST:event_studentsActionPerformed
 
