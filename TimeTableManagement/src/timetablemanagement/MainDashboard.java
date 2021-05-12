@@ -306,8 +306,9 @@ public class MainDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_SystemLecturer1ActionPerformed
 
     private void SystemWorkDaysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SystemWorkDaysActionPerformed
-        // TODO add your handling code here:
-        //new WorkingDays().setVisible(true);
+            dispose();
+            Workingdaysandhours wd = new Workingdaysandhours();
+            wd.setVisible(true);
 
     }//GEN-LAST:event_SystemWorkDaysActionPerformed
 

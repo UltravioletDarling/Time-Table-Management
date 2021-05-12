@@ -95,6 +95,11 @@ public class studentgroups extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        jTable1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jTable1MouseDragged(evt);
+            }
+        });
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTable1MouseClicked(evt);
@@ -223,7 +228,7 @@ public class studentgroups extends javax.swing.JFrame {
             }
         });
 
-        semestercombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "S1", "S2", "S3", "S4" }));
+        semestercombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "S1", "S2", " " }));
         semestercombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 semestercomboActionPerformed(evt);
@@ -643,6 +648,10 @@ public class studentgroups extends javax.swing.JFrame {
         gid.setText(grid);
         sgid.setText(sgrid);
     }//GEN-LAST:event_generateActionPerformed
+
+    private void jTable1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseDragged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTable1MouseDragged
 
     /**
      * @param args the command line arguments
