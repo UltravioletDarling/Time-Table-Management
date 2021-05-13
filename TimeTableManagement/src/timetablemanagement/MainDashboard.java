@@ -33,7 +33,7 @@ public class MainDashboard extends javax.swing.JFrame {
     private void initComponents() {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
-        SystemStatistic1 = new javax.swing.JButton();
+        SystemSessions = new javax.swing.JButton();
         SystemLecturer3 = new javax.swing.JButton();
         SystemLecturer4 = new javax.swing.JButton();
         SystemWorkDays = new javax.swing.JButton();
@@ -42,27 +42,28 @@ public class MainDashboard extends javax.swing.JFrame {
         SystemTag = new javax.swing.JButton();
         SystemLecturer1 = new javax.swing.JButton();
         SystemTimeTable = new javax.swing.JButton();
+        SystemTimeTable1 = new javax.swing.JButton();
         jDesktopPane2 = new javax.swing.JDesktopPane();
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        SystemStatistic1.setBackground(new java.awt.Color(0, 102, 255));
-        SystemStatistic1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        SystemStatistic1.setText("Sessions");
-        SystemStatistic1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        SystemStatistic1.setContentAreaFilled(false);
-        SystemStatistic1.setOpaque(true);
-        SystemStatistic1.addActionListener(new java.awt.event.ActionListener() {
+        SystemSessions.setBackground(new java.awt.Color(0, 102, 255));
+        SystemSessions.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        SystemSessions.setText("Sessions");
+        SystemSessions.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        SystemSessions.setContentAreaFilled(false);
+        SystemSessions.setOpaque(true);
+        SystemSessions.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SystemStatistic1ActionPerformed(evt);
+                SystemSessionsActionPerformed(evt);
             }
         });
 
         SystemLecturer3.setBackground(new java.awt.Color(0, 102, 255));
         SystemLecturer3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        SystemLecturer3.setText("Location");
+        SystemLecturer3.setText("Locations");
         SystemLecturer3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         SystemLecturer3.setContentAreaFilled(false);
         SystemLecturer3.setOpaque(true);
@@ -147,9 +148,9 @@ public class MainDashboard extends javax.swing.JFrame {
             }
         });
 
-        SystemTimeTable.setBackground(new java.awt.Color(0, 102, 255));
+        SystemTimeTable.setBackground(new java.awt.Color(255, 0, 153));
         SystemTimeTable.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        SystemTimeTable.setText("Time Tables");
+        SystemTimeTable.setText("Generate Time Tables");
         SystemTimeTable.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         SystemTimeTable.setContentAreaFilled(false);
         SystemTimeTable.setOpaque(true);
@@ -159,7 +160,19 @@ public class MainDashboard extends javax.swing.JFrame {
             }
         });
 
-        jDesktopPane1.setLayer(SystemStatistic1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        SystemTimeTable1.setBackground(new java.awt.Color(0, 102, 255));
+        SystemTimeTable1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        SystemTimeTable1.setText("Not Available Times");
+        SystemTimeTable1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        SystemTimeTable1.setContentAreaFilled(false);
+        SystemTimeTable1.setOpaque(true);
+        SystemTimeTable1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SystemTimeTable1ActionPerformed(evt);
+            }
+        });
+
+        jDesktopPane1.setLayer(SystemSessions, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(SystemLecturer3, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(SystemLecturer4, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(SystemWorkDays, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -168,37 +181,42 @@ public class MainDashboard extends javax.swing.JFrame {
         jDesktopPane1.setLayer(SystemTag, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(SystemLecturer1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(SystemTimeTable, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(SystemTimeTable1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(SystemLecturer1, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
-                    .addComponent(SystemTag, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(SystemWorkDays, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(students, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
+                .addGap(27, 27, 27)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(SystemLecturer4, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(SystemLecturer1, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                            .addComponent(SystemTag, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(SystemWorkDays, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(students, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(SystemTimeTable1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addComponent(SystemStatistic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(18, 18, 18)
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(SystemLecturer3, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
-                    .addComponent(SystemStatistic1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(33, Short.MAX_VALUE))
-            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(110, 110, 110)
-                .addComponent(SystemTimeTable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(131, 131, 131))
+                        .addGap(20, 20, 20)
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(SystemLecturer4, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                .addGap(7, 7, 7)
+                                .addComponent(SystemStatistic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(SystemLecturer3, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
+                            .addComponent(SystemSessions, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(SystemTimeTable, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(33, 33, 33))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -219,10 +237,12 @@ public class MainDashboard extends javax.swing.JFrame {
                     .addComponent(SystemTag, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SystemWorkDays, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SystemStatistic, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SystemStatistic1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(SystemTimeTable, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
-                .addContainerGap())
+                    .addComponent(SystemSessions, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SystemTimeTable1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SystemTimeTable, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 65)); // NOI18N
@@ -243,7 +263,7 @@ public class MainDashboard extends javax.swing.JFrame {
             .addGroup(jDesktopPane2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 1005, Short.MAX_VALUE)
                     .addGroup(jDesktopPane2Layout.createSequentialGroup()
                         .addGap(346, 346, 346)
                         .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -257,7 +277,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -322,9 +342,11 @@ public class MainDashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_SystemLecturer3ActionPerformed
 
-    private void SystemStatistic1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SystemStatistic1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SystemStatistic1ActionPerformed
+    private void SystemSessionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SystemSessionsActionPerformed
+            dispose();
+            Sessions ses = new Sessions();
+            ses.setVisible(true);
+    }//GEN-LAST:event_SystemSessionsActionPerformed
 
     private void SystemLecturer4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SystemLecturer4ActionPerformed
         // TODO add your handling code here:
@@ -337,6 +359,10 @@ public class MainDashboard extends javax.swing.JFrame {
           
         
     }//GEN-LAST:event_studentsActionPerformed
+
+    private void SystemTimeTable1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SystemTimeTable1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SystemTimeTable1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -378,10 +404,11 @@ public class MainDashboard extends javax.swing.JFrame {
     private javax.swing.JButton SystemLecturer1;
     private javax.swing.JButton SystemLecturer3;
     private javax.swing.JButton SystemLecturer4;
+    private javax.swing.JButton SystemSessions;
     private javax.swing.JButton SystemStatistic;
-    private javax.swing.JButton SystemStatistic1;
     private javax.swing.JButton SystemTag;
     private javax.swing.JButton SystemTimeTable;
+    private javax.swing.JButton SystemTimeTable1;
     private javax.swing.JButton SystemWorkDays;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JDesktopPane jDesktopPane2;

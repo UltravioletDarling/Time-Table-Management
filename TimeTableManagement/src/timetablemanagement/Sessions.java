@@ -124,13 +124,14 @@ public class Sessions extends javax.swing.JFrame {
         Edit_no = new javax.swing.JButton();
         delete_no = new javax.swing.JButton();
         clearbutton_no = new javax.swing.JButton();
+        clearbutton_cs1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel7.setBackground(new java.awt.Color(204, 204, 204));
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Manage Sessions");
+        jLabel7.setText("                      Manage Sessions");
         jLabel7.setOpaque(true);
 
         jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -304,7 +305,6 @@ public class Sessions extends javax.swing.JFrame {
                                 .addGap(51, 51, 51)
                                 .addComponent(submit_cs, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)))
-                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tag, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(groupid, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -338,7 +338,6 @@ public class Sessions extends javax.swing.JFrame {
                     .addComponent(lecturer2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel20)
                     .addComponent(tag, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -599,7 +598,7 @@ public class Sessions extends javax.swing.JFrame {
                                     .addComponent(minutes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(ampm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel25))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -623,7 +622,7 @@ public class Sessions extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(69, 69, 69)))))
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Parallel Sessions", jPanel2);
@@ -636,6 +635,11 @@ public class Sessions extends javax.swing.JFrame {
                 "ID", "Subject 1", "Group 1", "Tag 1", "Subject 2", "Group 2", "Tag 2"
             }
         ));
+        jTable3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable3MouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(jTable3);
         if (jTable3.getColumnModel().getColumnCount() > 0) {
             jTable3.getColumnModel().getColumn(1).setResizable(false);
@@ -901,10 +905,22 @@ public class Sessions extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(clearbutton_no, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Non Overlapping Sessions", jPanel3);
+
+        clearbutton_cs1.setBackground(new java.awt.Color(153, 153, 153));
+        clearbutton_cs1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        clearbutton_cs1.setText("Back To Main Dashboard");
+        clearbutton_cs1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        clearbutton_cs1.setContentAreaFilled(false);
+        clearbutton_cs1.setOpaque(true);
+        clearbutton_cs1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearbutton_cs1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -913,17 +929,22 @@ public class Sessions extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jTabbedPane1)
-                        .addContainerGap())))
+                        .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(clearbutton_cs1, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(9, 9, 9))
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel7)
-                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(clearbutton_cs1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(35, 35, 35)
                 .addComponent(jTabbedPane1))
         );
 
@@ -1857,8 +1878,8 @@ public class Sessions extends javax.swing.JFrame {
     }//GEN-LAST:event_group2_noActionPerformed
 
     private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
-        DefaultTableModel dft = (DefaultTableModel) jTable1.getModel();
-        int selectedIndex = jTable1.getSelectedRow();
+        DefaultTableModel dft = (DefaultTableModel) jTable2.getModel();
+        int selectedIndex = jTable2.getSelectedRow();
         String parallelsessions = null;
 
         subject1.setSelectedItem(dft.getValueAt(selectedIndex, 1).toString());
@@ -1867,6 +1888,30 @@ public class Sessions extends javax.swing.JFrame {
         day.setSelectedItem(dft.getValueAt(selectedIndex, 4).toString());
        
     }//GEN-LAST:event_jTable2MouseClicked
+
+    private void jTable3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable3MouseClicked
+                                  
+
+        DefaultTableModel dft = (DefaultTableModel) jTable3.getModel();
+        int selectedIndex = jTable3.getSelectedRow();
+        String consecutivesessions = null;
+
+        subject1_no.setSelectedItem(dft.getValueAt(selectedIndex, 1).toString());
+        group1_no.setSelectedItem(dft.getValueAt(selectedIndex, 2).toString());
+        tag1_no.setSelectedItem(dft.getValueAt(selectedIndex, 3).toString());
+        subject2_no.setSelectedItem(dft.getValueAt(selectedIndex, 4).toString());
+        group2_no.setSelectedItem(dft.getValueAt(selectedIndex, 5).toString());
+        tag2_no.setSelectedItem(dft.getValueAt(selectedIndex, 6).toString());
+
+       
+         
+    }//GEN-LAST:event_jTable3MouseClicked
+
+    private void clearbutton_cs1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearbutton_cs1ActionPerformed
+        dispose();
+        MainDashboard md = new MainDashboard();
+        md.setVisible(true);
+    }//GEN-LAST:event_clearbutton_cs1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1907,9 +1952,9 @@ public class Sessions extends javax.swing.JFrame {
     private javax.swing.JButton Edit_cs;
     private javax.swing.JButton Edit_no;
     private javax.swing.JButton Edit_ps;
-    private javax.swing.JComboBox<String> M1ComboBox1;
     private javax.swing.JComboBox<String> ampm;
     private javax.swing.JButton clearbutton_cs;
+    private javax.swing.JButton clearbutton_cs1;
     private javax.swing.JButton clearbutton_no;
     private javax.swing.JButton clearbutton_ps;
     private javax.swing.JComboBox<String> day;
@@ -1917,13 +1962,11 @@ public class Sessions extends javax.swing.JFrame {
     private javax.swing.JButton delete_no;
     private javax.swing.JButton delete_ps;
     private javax.swing.JSpinner durationSpinner;
-    private javax.swing.JComboBox<String> gpComboBox2;
     private javax.swing.JComboBox<String> group1_no;
     private javax.swing.JComboBox<String> group2_no;
     private javax.swing.JComboBox<String> groupComboBox;
     private javax.swing.JComboBox<String> groupid;
     private javax.swing.JComboBox<String> hours;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
@@ -1939,19 +1982,14 @@ public class Sessions extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -1971,7 +2009,6 @@ public class Sessions extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> subject1_no;
     private javax.swing.JComboBox<String> subject2;
     private javax.swing.JComboBox<String> subject2_no;
-    private javax.swing.JComboBox<String> subjectComboBox2;
     private javax.swing.JComboBox<String> subjectcode;
     private javax.swing.JComboBox<String> subjectcs;
     private javax.swing.JButton submit_cs;
