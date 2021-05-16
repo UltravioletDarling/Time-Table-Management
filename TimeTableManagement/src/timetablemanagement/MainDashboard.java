@@ -6,6 +6,7 @@
 package timetablemanagement;
 
 
+import Interfaces.Rooms;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -336,10 +337,19 @@ public class MainDashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
         //new Statistics().setVisible(true);
         dispose();
+        
+        Interfaces.StatisticsDashBoard s1 = new Interfaces.StatisticsDashBoard();
+        s1.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_SystemStatisticActionPerformed
 
     private void SystemLecturer3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SystemLecturer3ActionPerformed
         // TODO add your handling code here:
+         Interfaces.LocationDashBoard r1 = new Interfaces.LocationDashBoard();
+         r1.setVisible(true);
+        this.dispose();
+        
+        
     }//GEN-LAST:event_SystemLecturer3ActionPerformed
 
     private void SystemSessionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SystemSessionsActionPerformed
