@@ -6,6 +6,7 @@
 package Interfaces;
 
 import DBconnection.dbcon;
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -159,6 +160,17 @@ public class Rooms extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         jLabel6.setText("ID");
+
+        jTextField1.setForeground(new java.awt.Color(153, 153, 153));
+        jTextField1.setText("Enter Building Name ");
+        jTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField1FocusLost(evt);
+            }
+        });
 
         jButton4.setBackground(new java.awt.Color(0, 0, 204));
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
@@ -583,6 +595,25 @@ public class Rooms extends javax.swing.JFrame {
            // jComboBox2.setSelectedItem("Select a Type");
             capacity.setText("");
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
+        // TODO add your handling code here:
+        
+        if(jTextField1.getText().equals("Enter Building Name ")){
+            
+            jTextField1.setText("");
+            jTextField1.setForeground(new Color(153,153,153));
+        }
+    }//GEN-LAST:event_jTextField1FocusGained
+
+    private void jTextField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusLost
+        // TODO add your handling code here:
+        if(jTextField1.getText().equals("")){
+            
+            jTextField1.setText("Enter Building Name ");
+            jTextField1.setForeground(new Color(153,153,153));
+        } 
+    }//GEN-LAST:event_jTextField1FocusLost
 
     /**
      * @param args the command line arguments

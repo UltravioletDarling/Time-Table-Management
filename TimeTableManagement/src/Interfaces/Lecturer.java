@@ -6,6 +6,7 @@
 package Interfaces;
 
 import DBconnection.dbcon;
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -144,6 +145,16 @@ public class Lecturer extends javax.swing.JFrame {
 
         jLabel4.setText("ID");
 
+        text.setForeground(new java.awt.Color(153, 153, 153));
+        text.setText("Enter Lecturers Name ");
+        text.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                textFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                textFocusLost(evt);
+            }
+        });
         text.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textActionPerformed(evt);
@@ -417,6 +428,29 @@ public class Lecturer extends javax.swing.JFrame {
                  jComboBox1.setSelectedIndex(0);
         
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void textFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textFocusGained
+        // TODO add your handling code here:
+        
+          if(text.getText().equals("Enter Lecturers Name ")){
+             
+            
+              text.setText("");
+            text.setForeground(new Color(153,153,153));
+            
+        }
+    }//GEN-LAST:event_textFocusGained
+
+    private void textFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textFocusLost
+        // TODO add your handling code here:
+         if(text.getText().equals("")){
+            
+           
+             text.setText("Enter Lecturers Name ");
+            text.setForeground(new Color(153,153,153));
+            
+        }
+    }//GEN-LAST:event_textFocusLost
 
     /**
      * @param args the command line arguments
