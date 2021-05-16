@@ -444,7 +444,7 @@ public class SessionTag extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         String name = jTextField1.getText();
-         String sql = "SELECT TID,Room,Subject,Tag From tag where Subject = '"+name+"'";
+         String sql = "SELECT TID,Room,Subject,Tag From tag where Subject LIKE '%"+ name +"%'";
         try {
                  stm = con.prepareStatement(sql);
                  rs = stm.executeQuery();

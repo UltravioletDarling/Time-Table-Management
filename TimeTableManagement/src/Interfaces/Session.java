@@ -394,7 +394,7 @@ public class Session extends javax.swing.JFrame {
         
         String name = jTextField1.getText();
         
-         String sql = "SELECT SID,Room,Session From session where Session = '"+ name +"'";
+         String sql = "SELECT SID,Room,Session From session where Session LIKE '%"+ name +"%'";;
          
          try { 
              stm = con.prepareStatement(sql);

@@ -402,7 +402,7 @@ public class Subject extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         String name = jTextField1.getText();
-          String sql = "SELECT SID,Room,Subject From subject where Subject = '"+name+"'";
+          String sql = "SELECT SID,Room,Subject From subject where Subject LIKE '%"+ name +"%'";
         try {
             stm = con.prepareStatement(sql);
             rs = stm.executeQuery();

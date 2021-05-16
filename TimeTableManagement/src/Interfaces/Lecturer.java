@@ -387,7 +387,7 @@ public class Lecturer extends javax.swing.JFrame {
         
       String nam = text.getText();
       String name = text.getText();
-      String sql = "SELECT LID,Lecturer,Room From lecturer where Room = '"+nam+"'";
+      String sql = "SELECT LID,Lecturer,Room From lecturer where Lecturer LIKE '%"+ name +"%'";
         try {
               stm = con.prepareStatement(sql);
               rs = stm.executeQuery();

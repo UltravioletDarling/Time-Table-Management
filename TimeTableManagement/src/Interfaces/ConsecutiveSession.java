@@ -479,8 +479,9 @@ public class ConsecutiveSession extends javax.swing.JFrame {
         // TODO add your handling code here:
         
        String name = jTextField1.getText();
+      
        
-         String sql = "SELECT CSID,Room,Session01,Session02 From csession where Room = '"+ name +"'";
+         String sql = "SELECT CSID,Room,Session01,Session02 From csession where Session02 or Session01 LIKE '%"+ name +"%'";
          try {
              stm = con.prepareStatement(sql);
          rs = stm.executeQuery();

@@ -459,7 +459,7 @@ public class Group extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         String name = jTextField1.getText();
-          String sql = "SELECT GID,Room,Studentgroup,Studentsubgroup From student where Room = '"+name+"'";
+          String sql = "SELECT GID,Room,Studentgroup,Studentsubgroup From student where Room  LIKE '%"+ name +"%'";
           try {
               stm = con.prepareStatement(sql);
             rs = stm.executeQuery();

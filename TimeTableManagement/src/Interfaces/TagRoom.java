@@ -504,7 +504,7 @@ public class TagRoom extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         String name = jTextField1.getText();
-        String sql = "SELECT TID,Room,Tag From rtag where Room = '"+name+"'"; 
+        String sql = "SELECT TID,Room,Tag From rtag where Tag LIKE '%"+ name +"%'"; 
         try {  
             stm = con.prepareStatement(sql);
             rs = stm.executeQuery();
