@@ -107,12 +107,12 @@ public class session_main extends javax.swing.JFrame {
    
      private void groupid(){
          try {
-             String sql = "SELECT * FROM student_groups";
+             String sql = "SELECT * FROM studentgroupsre";
              pst = con.prepareStatement(sql);
              rs = pst.executeQuery();
              
              while(rs.next()){
-             String groupid1 = rs.getString("Group_ID");
+             String groupid1 = rs.getString("subgroupid");
              
              GroupidCombo.addItem(groupid1);
              }

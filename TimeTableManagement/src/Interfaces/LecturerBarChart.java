@@ -136,7 +136,7 @@ public class LecturerBarChart extends javax.swing.JFrame {
                 String name = rs.getString("lecturername");
                 jComboBox1.addItem(name);
             }
-        }
+        } //test
         catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
         }
