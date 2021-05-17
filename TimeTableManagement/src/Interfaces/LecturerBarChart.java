@@ -124,23 +124,7 @@ public class LecturerBarChart extends javax.swing.JFrame {
 
     
     
-    private void sestwocombo(){
-
-        try{
-            Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost/timetable","root","");
-            String sql = "select * from lecturers";
-            pst = con.prepareStatement(sql);
-            ResultSet rs = pst.executeQuery();
-            while(rs.next()){
-                String name = rs.getString("lecturername");
-                jComboBox1.addItem(name);
-            }
-        } //test
-        catch(Exception e){
-            JOptionPane.showMessageDialog(null, e);
-        }
-    }
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
         
