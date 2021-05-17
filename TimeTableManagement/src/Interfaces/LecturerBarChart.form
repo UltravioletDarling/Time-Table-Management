@@ -101,18 +101,14 @@
     <Component class="javax.swing.JComboBox" name="jComboBox1">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="11">
-            <StringItem index="0" value="Select Lecturers"/>
-            <StringItem index="1" value="Ms.Kushnara Siriwardana "/>
+          <StringArray count="7">
+            <StringItem index="0" value="Select Lecturer"/>
+            <StringItem index="1" value="Ms.Kushnara Siriwardana"/>
             <StringItem index="2" value="Prof.Nimal Rajapakse"/>
             <StringItem index="3" value="Prof.Rahula Attalage"/>
-            <StringItem index="4" value="Dr.Anuradha Karunasena"/>
-            <StringItem index="5" value="Dr.Manouri Jayasinghe"/>
-            <StringItem index="6" value="Mr.Prasanna S. haddela"/>
-            <StringItem index="7" value="Ms.Anjalie Gamage"/>
-            <StringItem index="8" value="Ms.Namalie Walgampaya"/>
-            <StringItem index="9" value="Ms.Geethanjali Wimalarathne "/>
-            <StringItem index="10" value=" "/>
+            <StringItem index="4" value="DR.Anuradha Karunasena"/>
+            <StringItem index="5" value="Ms.Disni Siriwardhana"/>
+            <StringItem index="6" value=" "/>
           </StringArray>
         </Property>
       </Properties>

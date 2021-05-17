@@ -12,6 +12,11 @@ import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.ChartPanel;
 
@@ -25,6 +30,9 @@ public class StudentChart extends javax.swing.JFrame {
     /**
      * Creates new form StudentChart
      */
+      Connection con = null;
+     PreparedStatement pst = null;
+     ResultSet rs = null;
     public StudentChart() {
         initComponents();
     }
@@ -134,22 +142,25 @@ public class StudentChart extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
+       
+
+      
         
         DefaultCategoryDataset db = new DefaultCategoryDataset();
-        db.setValue(60, "attendence", "1st week");
-        db.setValue(50, "attendence", "2nd week");
+        db.setValue(100, "attendence", "1st week");
+        db.setValue(70, "attendence", "2nd week");
         db.setValue(50, "attendence", "3rd week");
-        db.setValue(35, "attendence", "4th week");
-        db.setValue(40, "attendence", "5th week");
-        db.setValue(20, "attendence", "6th week");
-        db.setValue(15, "attendence", "7th week");
-        db.setValue(45, "attendence", "8th week");
-         db.setValue(60, "attendence", "9th week");
-        db.setValue(15, "attendence", "10th week");
-        db.setValue(20, "attendence", "11th week");
-        db.setValue(35, "attendence", "12th week");
-        db.setValue(40, "attendence", "13th week");
-        db.setValue(20, "attendence", "14th week");
+        db.setValue(65, "attendence", "4th week");
+        db.setValue(70, "attendence", "5th week");
+        db.setValue(30, "attendence", "6th week");
+        db.setValue(75, "attendence", "7th week");
+        db.setValue(85, "attendence", "8th week");
+        db.setValue(90, "attendence", "9th week");
+        db.setValue(75, "attendence", "10th week");
+        db.setValue(90, "attendence", "11th week");
+        db.setValue(75, "attendence", "12th week");
+        db.setValue(80, "attendence", "13th week");
+        db.setValue(90, "attendence", "14th week");
         
         
          JFreeChart jchart = ChartFactory.createBarChart("Student Statistic","Weeks","Attendence", db, PlotOrientation.VERTICAL, true,true,false);
@@ -165,8 +176,7 @@ public class StudentChart extends javax.swing.JFrame {
         
         
         
-        
-        
+         
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

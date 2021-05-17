@@ -65,7 +65,7 @@ public class LecturerBarChart extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Lecturers", "Ms.Kushnara Siriwardana ", "Prof.Nimal Rajapakse", "Prof.Rahula Attalage", "Dr.Anuradha Karunasena", "Dr.Manouri Jayasinghe", "Mr.Prasanna S. haddela", "Ms.Anjalie Gamage", "Ms.Namalie Walgampaya", "Ms.Geethanjali Wimalarathne ", " " }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Lecturer", "Ms.Kushnara Siriwardana", "Prof.Nimal Rajapakse", "Prof.Rahula Attalage", "DR.Anuradha Karunasena", "Ms.Disni Siriwardhana", " " }));
 
         LPanal.setBackground(new java.awt.Color(153, 153, 255));
         LPanal.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lecturer Statics", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Cambria", 0, 18))); // NOI18N
@@ -145,17 +145,19 @@ public class LecturerBarChart extends javax.swing.JFrame {
         
         
         String ses = jComboBox1.getSelectedItem().toString();
-        String k = "Kushnara Suriyawansa";
-        String D = "Dewmini Mendis";
-        String R = "Rasitha Senevirathne";
-        String A = "Ayodya Rathnayake";
-        String M = "Amanda Perera";
-        String S = "Savindu Ranasinghe";
+        String k = "Ms.Kushnara Siriwardana";
+        String D = "Prof.Nimal Rajapakse";
+        String R = "Prof.Rahula Attalage";
+        String A = "DR.Anuradha karunasena";
+        String B = "Ms.Disni Siriwardhana";
+        
+        
+       
         
         
          try{
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost/timetable","root","");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/mynewdb","root","");
             String sql = "select * from lecturers WHERE lecturername=?";
             pst.setString(1, ses);
             
@@ -173,41 +175,53 @@ public class LecturerBarChart extends javax.swing.JFrame {
          if (ses.equals(k)) { 
              
              
+                   DefaultCategoryDataset db = new DefaultCategoryDataset();
+                     db.setValue(5, "Groups", "IP");
+                     db.setValue(4, "Groups", "OOC");
+                     db.setValue(3, "Groups", "OOP");
+       
+        
+        // test
+        JFreeChart jchart = ChartFactory.createBarChart("Lecturer Statistic","Subject","Groups", db, PlotOrientation.VERTICAL, true,true,false);
+        
+        CategoryPlot plot = jchart.getCategoryPlot();
+        plot.setRangeGridlinePaint(Color.black);
+        
+        
+        ChartFrame cf = new ChartFrame("Lecture Statistic",jchart,true);
+        cf.setVisible(true);
+        cf.setSize(500, 400);
+             
+             
             
         } else if (ses.equals(D)) {
             
             
+        DefaultCategoryDataset db = new DefaultCategoryDataset();
+        db.setValue(6, "Groups", "ISDM");
+        db.setValue(7, "Groups", "DBS");
+        db.setValue(4, "Groups", "DMS");
+       
+        
+        // test
+        JFreeChart jchart = ChartFactory.createBarChart("Lecturer Statistic","Subject","Groups", db, PlotOrientation.VERTICAL, true,true,false);
+        
+        CategoryPlot plot = jchart.getCategoryPlot();
+        plot.setRangeGridlinePaint(Color.black);
+        
+        
+        ChartFrame cf = new ChartFrame("Lecture Statistic",jchart,true);
+        cf.setVisible(true);
+        cf.setSize(500, 400);
             
             
         } else if (ses.equals(R)) {
-            
-            
-            
-        
-        } else if (ses.equals(A)) {
-            
-            
-            
-        } else if (ses.equals(M)) {
-            
-            
-            
-        } else if (ses.equals(S)) {
-            
-            
-            
-        }
-         
-     
-
-
-        
-        
+                
         
         DefaultCategoryDataset db = new DefaultCategoryDataset();
-        db.setValue(5, "Groups", "SE");
-        db.setValue(4, "Groups", "OOC");
-        db.setValue(3, "Groups", "OOP");
+        db.setValue(10, "Groups", "EAP");
+        db.setValue(7, "Groups", "EA");
+        db.setValue(6, "Groups", "CS");
        
         
         // test
@@ -226,12 +240,57 @@ public class LecturerBarChart extends javax.swing.JFrame {
         //LPanal.add(cp);
         //LPanal.updateUI();
         
+        }else if (ses.equals(B)) {
+                
+        
+        DefaultCategoryDataset db = new DefaultCategoryDataset();
+        db.setValue(4, "Groups", "IWT");
+        db.setValue(4, "Groups", "NDM");
+        db.setValue(4, "Groups", "CN");
+       
+        
+        // test
+        JFreeChart jchart = ChartFactory.createBarChart("Lecturer Statistic","Subject","Groups", db, PlotOrientation.VERTICAL, true,true,false);
+        
+        CategoryPlot plot = jchart.getCategoryPlot();
+        plot.setRangeGridlinePaint(Color.black);
         
         
+        ChartFrame cf = new ChartFrame("Lecture Statistic",jchart,true);
+        cf.setVisible(true);
+        cf.setSize(500, 400);
+       // ChartPanel cp = new ChartPanel(jchart);
+        
+       // LPanal.removeAll();
+        //LPanal.add(cp);
+        //LPanal.updateUI();
+        
+        }else if (ses.equals(A)) {
+                
+        
+        DefaultCategoryDataset db = new DefaultCategoryDataset();
+        db.setValue(2, "Groups", "DMS");
+        db.setValue(3, "Groups", "SPM");
+        db.setValue(3, "Groups", "SE");
+       
+        
+        // test
+        JFreeChart jchart = ChartFactory.createBarChart("Lecturer Statistic","Subject","Groups", db, PlotOrientation.VERTICAL, true,true,false);
+        
+        CategoryPlot plot = jchart.getCategoryPlot();
+        plot.setRangeGridlinePaint(Color.black);
         
         
+        ChartFrame cf = new ChartFrame("Lecture Statistic",jchart,true);
+        cf.setVisible(true);
+        cf.setSize(500, 400);
+       // ChartPanel cp = new ChartPanel(jchart);
         
+       // LPanal.removeAll();
+        //LPanal.add(cp);
+        //LPanal.updateUI();
         
+        }    
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

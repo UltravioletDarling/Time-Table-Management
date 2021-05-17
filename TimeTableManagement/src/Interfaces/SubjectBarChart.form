@@ -111,21 +111,14 @@
               <Color blue="ff" green="ff" red="66" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="14">
+              <StringArray count="7">
                 <StringItem index="0" value="Select a Subject"/>
-                <StringItem index="1" value="ITPM"/>
-                <StringItem index="2" value="OOP"/>
-                <StringItem index="3" value="SE"/>
-                <StringItem index="4" value="SPM"/>
-                <StringItem index="5" value="OOC"/>
-                <StringItem index="6" value="ITP"/>
-                <StringItem index="7" value="CN"/>
-                <StringItem index="8" value="OSSA"/>
-                <StringItem index="9" value="PAF"/>
-                <StringItem index="10" value="NDM"/>
-                <StringItem index="11" value="EAP"/>
-                <StringItem index="12" value=" "/>
-                <StringItem index="13" value=" "/>
+                <StringItem index="1" value="IP"/>
+                <StringItem index="2" value="SPM"/>
+                <StringItem index="3" value="OOC"/>
+                <StringItem index="4" value="ITPM"/>
+                <StringItem index="5" value="DBS"/>
+                <StringItem index="6" value=" "/>
               </StringArray>
             </Property>
           </Properties>
