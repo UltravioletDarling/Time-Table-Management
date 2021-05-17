@@ -1952,7 +1952,7 @@ public class Sessions extends javax.swing.JFrame {
         // TODO add your handling code here:
   
         String searchquery = jTextField2.getText();
-        String sql = "Select lecturer1,lecturer2,subjectcode,subject,groupid,tag from consecutivesessions where lecturer1 subjectcode  LIKE '%"+ searchquery +"%'";
+        String sql = "Select lecturer1,lecturer2,subjectcode,subject,groupid,tag from consecutivesessions where lecturer1  LIKE '%"+ searchquery +"%'  OR  lecturer2 LIKE '%"+ searchquery +"%' OR  subjectcode LIKE '%"+ searchquery +"%' OR subject LIKE '%"+ searchquery +"%' OR groupid LIKE '%"+ searchquery +"%' OR tag LIKE '%"+ searchquery +"%'  ";
 
         try {
 
