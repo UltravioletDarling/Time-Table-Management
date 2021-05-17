@@ -10,6 +10,12 @@ import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+import net.proteanit.sql.DbUtils;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.ChartPanel;
 /**
@@ -21,6 +27,9 @@ public class LecturerBarChart extends javax.swing.JFrame {
     /**
      * Creates new form LecturerBarChart
      */
+      Connection con = null;
+     PreparedStatement pst = null;
+     ResultSet rs = null;
     public LecturerBarChart() {
         initComponents();
     }
@@ -113,7 +122,87 @@ public class LecturerBarChart extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    
+    private void sestwocombo(){
+
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/timetable","root","");
+            String sql = "select * from lecturers";
+            pst = con.prepareStatement(sql);
+            ResultSet rs = pst.executeQuery();
+            while(rs.next()){
+                String name = rs.getString("lecturername");
+                jComboBox1.addItem(name);
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+        
+        String ses = jComboBox1.getSelectedItem().toString();
+        String k = "Kushnara Suriyawansa";
+        String D = "Dewmini Mendis";
+        String R = "Rasitha Senevirathne";
+        String A = "Ayodya Rathnayake";
+        String M = "Amanda Perera";
+        String S = "Savindu Ranasinghe";
+        
+        
+         try{
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/timetable","root","");
+            String sql = "select * from lecturers WHERE lecturername=?";
+            pst.setString(1, ses);
+            
+            pst = con.prepareStatement(sql);
+            ResultSet rs = pst.executeQuery();
+           
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+         
+         
+         
+       
+         if (ses.equals(k)) { 
+             
+             
+            
+        } else if (ses.equals(D)) {
+            
+            
+            
+            
+        } else if (ses.equals(R)) {
+            
+            
+            
+        
+        } else if (ses.equals(A)) {
+            
+            
+            
+        } else if (ses.equals(M)) {
+            
+            
+            
+        } else if (ses.equals(S)) {
+            
+            
+            
+        }
+         
+     
+
+
+        
+        
         
         DefaultCategoryDataset db = new DefaultCategoryDataset();
         db.setValue(5, "Groups", "SE");
