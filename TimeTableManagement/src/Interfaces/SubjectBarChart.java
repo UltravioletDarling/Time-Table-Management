@@ -30,9 +30,11 @@ public class SubjectBarChart extends javax.swing.JFrame {
     /**
      * Creates new form SubjectBarChart
      */
-     Connection con = null;
-     PreparedStatement pst = null;
-     ResultSet rs = null;
+       Connection con = null;
+       PreparedStatement pst = null;
+       ResultSet rs = null;
+     
+     
     public SubjectBarChart() {
         initComponents();
     }
@@ -135,7 +137,7 @@ public class SubjectBarChart extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       String ses = jComboBox1.getSelectedItem().toString();
+        String ses = jComboBox1.getSelectedItem().toString();
         String k = "IP";
         String D = "SPM";
         String R = "OOC";
@@ -158,99 +160,93 @@ public class SubjectBarChart extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, e);
         }
          if(ses.equals(k)){
+               
                 DefaultPieDataset pi = new DefaultPieDataset();
                 pi.setValue("Lecture Halls",new Integer(5));
                 pi.setValue("Labs",new Integer(3));
       
-        JFreeChart chart = ChartFactory.createPieChart("Subject Statistic", pi, true, true,true);
-        PiePlot p = (PiePlot)chart.getPlot();
-        //p.setForegroundAlpha(TOP_ALIGNMENT);
-        ChartFrame frame = new ChartFrame("Subject Statistics",chart);
-        frame.setVisible(true);
-        frame.setSize(450,500);
+            JFreeChart chart = ChartFactory.createPieChart("Subject Statistic", pi, true, true,true);
+            PiePlot p = (PiePlot)chart.getPlot();
+           //p.setForegroundAlpha(TOP_ALIGNMENT);
+           ChartFrame frame = new ChartFrame("Subject Statistics",chart);
+           frame.setVisible(true);
+           frame.setSize(450,500);
         
-        
-        
-             
+       
          }else if(ses.equals(D)){
              
-                      
-        
-         DefaultPieDataset pi = new DefaultPieDataset();
-         pi.setValue("Lecture Halls",new Integer(10));
-         pi.setValue("Labs",new Integer(4));
+                DefaultPieDataset pi = new DefaultPieDataset();
+                pi.setValue("Lecture Halls",new Integer(10));
+                pi.setValue("Labs",new Integer(4));
       
-        JFreeChart chart = ChartFactory.createPieChart("Subject Statistic", pi, true, true,true);
-        PiePlot p = (PiePlot)chart.getPlot();
-        //p.setForegroundAlpha(TOP_ALIGNMENT);
-        ChartFrame frame = new ChartFrame("Subject Statistics",chart);
-        frame.setVisible(true);
-        frame.setSize(450,500);
+             JFreeChart chart = ChartFactory.createPieChart("Subject Statistic", pi, true, true,true);
+             PiePlot p = (PiePlot)chart.getPlot();
+             //p.setForegroundAlpha(TOP_ALIGNMENT);
+             ChartFrame frame = new ChartFrame("Subject Statistics",chart);
+             frame.setVisible(true);
+             frame.setSize(450,500);
         
         
          }else if(ses.equals(R)){
              
                       
-        
-         DefaultPieDataset pi = new DefaultPieDataset();
-         pi.setValue("Lecture Halls",new Integer(5));
-         pi.setValue("Labs",new Integer(5));
+                 DefaultPieDataset pi = new DefaultPieDataset();
+                 pi.setValue("Lecture Halls",new Integer(5));
+                 pi.setValue("Labs",new Integer(5));
       
-        JFreeChart chart = ChartFactory.createPieChart("Subject Statistic", pi, true, true,true);
-        PiePlot p = (PiePlot)chart.getPlot();
-        //p.setForegroundAlpha(TOP_ALIGNMENT);
-        ChartFrame frame = new ChartFrame("Subject Statistics",chart);
-        frame.setVisible(true);
-        frame.setSize(450,500);
+              JFreeChart chart = ChartFactory.createPieChart("Subject Statistic", pi, true, true,true);
+              PiePlot p = (PiePlot)chart.getPlot();
+              //p.setForegroundAlpha(TOP_ALIGNMENT);
+              ChartFrame frame = new ChartFrame("Subject Statistics",chart);
+              frame.setVisible(true);
+              frame.setSize(450,500);
         
         
          }else if(ses.equals(A)){
              
                       
-        
-         DefaultPieDataset pi = new DefaultPieDataset();
-         pi.setValue("Lecture Halls",new Integer(9));
-         pi.setValue("Labs",new Integer(6));
+               DefaultPieDataset pi = new DefaultPieDataset();
+               pi.setValue("Lecture Halls",new Integer(9));
+               pi.setValue("Labs",new Integer(6));
       
-        JFreeChart chart = ChartFactory.createPieChart("Subject Statistic", pi, true, true,true);
-        PiePlot p = (PiePlot)chart.getPlot();
-        //p.setForegroundAlpha(TOP_ALIGNMENT);
-        ChartFrame frame = new ChartFrame("Subject Statistics",chart);
-        frame.setVisible(true);
-        frame.setSize(450,500);
+                 JFreeChart chart = ChartFactory.createPieChart("Subject Statistic", pi, true, true,true);
+                 PiePlot p = (PiePlot)chart.getPlot();
+                 //p.setForegroundAlpha(TOP_ALIGNMENT);
+                 ChartFrame frame = new ChartFrame("Subject Statistics",chart);
+                 frame.setVisible(true);
+                 frame.setSize(450,500);
         
          }else if(ses.equals(B)){
              
                       
         
-         DefaultPieDataset pi = new DefaultPieDataset();
-         pi.setValue("Lecture Halls",new Integer(12));
-         pi.setValue("Labs",new Integer(5));
+                DefaultPieDataset pi = new DefaultPieDataset();
+                pi.setValue("Lecture Halls",new Integer(12));
+                pi.setValue("Labs",new Integer(5));
       
-        JFreeChart chart = ChartFactory.createPieChart("Subject Statistic", pi, true, true,true);
-        PiePlot p = (PiePlot)chart.getPlot();
-        //p.setForegroundAlpha(TOP_ALIGNMENT);
-        ChartFrame frame = new ChartFrame("Subject Statistics",chart);
-        frame.setVisible(true);
-        frame.setSize(450,500);
+               JFreeChart chart = ChartFactory.createPieChart("Subject Statistic", pi, true, true,true);
+               PiePlot p = (PiePlot)chart.getPlot();
+               //p.setForegroundAlpha(TOP_ALIGNMENT);
+               ChartFrame frame = new ChartFrame("Subject Statistics",chart);
+               frame.setVisible(true);
+               frame.setSize(450,500);
         
          }else if(ses.equals(C)){
              
                       
         
-         DefaultPieDataset pi = new DefaultPieDataset();
-         pi.setValue("Lecture Halls",new Integer(15));
-         pi.setValue("Labs",new Integer(6));
+               DefaultPieDataset pi = new DefaultPieDataset();
+               pi.setValue("Lecture Halls",new Integer(15));
+               pi.setValue("Labs",new Integer(6));
       
-        JFreeChart chart = ChartFactory.createPieChart("Subject Statistic", pi, true, true,true);
-        PiePlot p = (PiePlot)chart.getPlot();
-        //p.setForegroundAlpha(TOP_ALIGNMENT);
-        ChartFrame frame = new ChartFrame("Subject Statistics",chart);
-        frame.setVisible(true);
-        frame.setSize(450,500);
+               JFreeChart chart = ChartFactory.createPieChart("Subject Statistic", pi, true, true,true);
+               PiePlot p = (PiePlot)chart.getPlot();
+               //p.setForegroundAlpha(TOP_ALIGNMENT);
+               ChartFrame frame = new ChartFrame("Subject Statistics",chart);
+               frame.setVisible(true);
+               frame.setSize(450,500);
         
-        
-         } 
+        } 
                 
         
          /*DefaultPieDataset pi = new DefaultPieDataset();
@@ -264,11 +260,7 @@ public class SubjectBarChart extends javax.swing.JFrame {
         frame.setVisible(true);
         frame.setSize(450,500);*/
         
-        
-        
-        
-        
-        
+           
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

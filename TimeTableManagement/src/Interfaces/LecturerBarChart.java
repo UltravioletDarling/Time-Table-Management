@@ -28,8 +28,9 @@ public class LecturerBarChart extends javax.swing.JFrame {
      * Creates new form LecturerBarChart
      */
       Connection con = null;
-     PreparedStatement pst = null;
-     ResultSet rs = null;
+      PreparedStatement pst = null;
+      ResultSet rs = null;
+     
     public LecturerBarChart() {
         initComponents();
     }

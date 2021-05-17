@@ -31,8 +31,10 @@ public class StudentChart extends javax.swing.JFrame {
      * Creates new form StudentChart
      */
       Connection con = null;
-     PreparedStatement pst = null;
-     ResultSet rs = null;
+      PreparedStatement pst = null;
+      ResultSet rs = null;
+     
+     
     public StudentChart() {
         initComponents();
     }
@@ -142,10 +144,7 @@ public class StudentChart extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
-       
-
-      
-        
+  
         DefaultCategoryDataset db = new DefaultCategoryDataset();
         db.setValue(100, "attendence", "1st week");
         db.setValue(70, "attendence", "2nd week");
@@ -173,10 +172,7 @@ public class StudentChart extends javax.swing.JFrame {
         cf.setVisible(true);
         cf.setSize(500, 400);
         
-        
-        
-        
-         
+            
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
