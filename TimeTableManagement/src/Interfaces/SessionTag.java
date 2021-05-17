@@ -6,6 +6,7 @@
 package Interfaces;
 
 import DBconnection.dbcon;
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -151,6 +152,17 @@ public class SessionTag extends javax.swing.JFrame {
         });
 
         jLabel5.setText("ID");
+
+        jTextField1.setForeground(new java.awt.Color(153, 153, 153));
+        jTextField1.setText("Enter Subject ");
+        jTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField1FocusLost(evt);
+            }
+        });
 
         jButton4.setBackground(new java.awt.Color(0, 51, 204));
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
@@ -473,6 +485,29 @@ public class SessionTag extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
+        // TODO add your handling code here:
+         if(jTextField1.getText().equals("Enter Subject ")){
+            
+            jTextField1.setText("");
+            jTextField1.setForeground(new Color(153,153,153));
+            
+        }
+
+    }//GEN-LAST:event_jTextField1FocusGained
+
+    private void jTextField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusLost
+        // TODO add your handling code here:
+        
+         if(jTextField1.getText().equals("")){
+            
+            jTextField1.setText("Enter Subject ");
+            jTextField1.setForeground(new Color(153,153,153));
+            
+        }
+
+    }//GEN-LAST:event_jTextField1FocusLost
 
     
     /**
