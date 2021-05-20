@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 import net.proteanit.sql.DbUtils;
 
 
-/**
+/** //test
  *
  * @author Dell
  */
@@ -295,6 +295,7 @@ public class ConsecutiveSession extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed

@@ -118,14 +118,13 @@ public class StatisticsDashBoard extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         
-        LecturerBarChart l1 = new LecturerBarChart();
-          l1.setVisible(true);
-          this.dispose();
+       
         
         
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -133,19 +132,14 @@ public class StatisticsDashBoard extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         
-           StudentChart s1 = new StudentChart();
-          s1.setVisible(true);
-          this.dispose();
+         
         
         
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
-          SubjectBarChart s1 = new SubjectBarChart();
-          s1.setVisible(true);
-          this.dispose();
+       
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
