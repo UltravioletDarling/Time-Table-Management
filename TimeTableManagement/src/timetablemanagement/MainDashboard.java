@@ -367,7 +367,9 @@ public class MainDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_SystemSessionsActionPerformed
 
     private void SystemLecturer4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SystemLecturer4ActionPerformed
-        // TODO add your handling code here:
+       member2.modules_main mm = new member2.modules_main();
+           mm.setVisible(true);
+           this.dispose();
     }//GEN-LAST:event_SystemLecturer4ActionPerformed
 
     private void studentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentsActionPerformed

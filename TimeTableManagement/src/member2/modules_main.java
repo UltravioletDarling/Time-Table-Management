@@ -461,10 +461,9 @@ public class modules_main extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
 
-      member2main mem = new member2main();
-      mem.setVisible(true);
-      this.dispose();
-        
+      timetablemanagement.MainDashboard l1 = new timetablemanagement.MainDashboard();
+           l1.setVisible(true);
+           this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
