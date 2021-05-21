@@ -57,9 +57,9 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="SystemLecturer1" pref="240" max="32767" attributes="0"/>
@@ -71,7 +71,7 @@
                               <Component id="students" min="-2" pref="240" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Component id="SystemTimeTable1" max="32767" attributes="0"/>
+                      <Component id="SystemSessions" max="32767" attributes="0"/>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
@@ -86,18 +86,18 @@
                                   <Component id="SystemStatistic" max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="SystemLecturer3" pref="214" max="32767" attributes="0"/>
-                              <Component id="SystemSessions" max="32767" attributes="0"/>
+                              <Component id="SystemTimeTable1" pref="225" max="32767" attributes="0"/>
+                              <Component id="SystemLecturer3" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                          <Component id="SystemTimeTable" min="-2" pref="459" max="-2" attributes="0"/>
+                          <Component id="SystemTimeTable" min="-2" pref="470" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -107,32 +107,38 @@
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="SystemLecturer1" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
-                              <Component id="students" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="SystemLecturer1" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                                      <Component id="students" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                  <Component id="SystemLecturer3" min="-2" pref="70" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="SystemTag" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                              <Component id="SystemWorkDays" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                              <Component id="SystemStatistic" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                              <Component id="SystemTimeTable1" alignment="3" min="-2" pref="71" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="SystemLecturer3" min="-2" pref="70" max="-2" attributes="0"/>
-                              <Component id="SystemLecturer4" min="-2" pref="70" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                          <Component id="SystemLecturer4" min="-2" pref="70" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="SystemTag" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
-                      <Component id="SystemWorkDays" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
-                      <Component id="SystemStatistic" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
-                      <Component id="SystemSessions" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="SystemTimeTable" min="-2" pref="55" max="-2" attributes="0"/>
+                      <Component id="SystemSessions" min="-2" pref="56" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="SystemTimeTable1" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-                      <Component id="SystemTimeTable" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="37" max="32767" attributes="0"/>
+                  <EmptySpace pref="41" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -141,7 +147,7 @@
         <Component class="javax.swing.JButton" name="SystemSessions">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="66" red="0" type="rgb"/>
+              <Color blue="66" green="99" red="0" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="18" style="1"/>
@@ -361,7 +367,7 @@
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel4" alignment="0" pref="1005" max="32767" attributes="0"/>
+                      <Component id="jLabel4" alignment="0" pref="1017" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="346" max="-2" attributes="0"/>
                           <Component id="jLabel2" max="32767" attributes="0"/>
@@ -379,7 +385,7 @@
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="15" max="32767" attributes="0"/>
+                  <EmptySpace pref="18" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
