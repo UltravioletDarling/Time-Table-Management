@@ -331,6 +331,11 @@ public class MainDashboard extends javax.swing.JFrame {
 
     private void SystemLecturer1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SystemLecturer1ActionPerformed
         // TODO add your handling code here:
+         member2.member2main l1 = new member2.member2main();
+           l1.setVisible(true);
+           this.dispose();
+
+        
     }//GEN-LAST:event_SystemLecturer1ActionPerformed
 
     private void SystemWorkDaysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SystemWorkDaysActionPerformed

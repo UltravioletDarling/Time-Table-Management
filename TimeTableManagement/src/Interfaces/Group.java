@@ -398,7 +398,7 @@ public class Group extends javax.swing.JFrame {
                 rs = stm.executeQuery();
                 
                 while(rs.next()){
-                    String name = rs.getString("Group");
+                    String name = rs.getString("Group1");
                     jComboBox2.addItem(name);
                 }
         

@@ -50,6 +50,11 @@ public class member2main extends javax.swing.JFrame {
         });
 
         jButton3.setText("Time Table Management Dashboard");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         jLabel1.setText("Lecturers and Modules Details");
@@ -119,6 +124,14 @@ public class member2main extends javax.swing.JFrame {
         ses1.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        
+         timetablemanagement.MainDashboard l1 = new timetablemanagement.MainDashboard();
+           l1.setVisible(true);
+           this.dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
