@@ -464,6 +464,8 @@ public class SessionTag extends javax.swing.JFrame {
                  rs = stm.executeQuery();
         
                 jTable1.setModel(DbUtils.resultSetToTableModel(rs));
+                
+               jTextField1.setText(""); 
             
         } catch (Exception e) {
         }

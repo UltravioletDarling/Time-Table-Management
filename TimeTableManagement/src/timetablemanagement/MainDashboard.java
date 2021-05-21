@@ -348,6 +348,10 @@ public class MainDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_SystemStatisticActionPerformed
 
     private void SystemLecturer3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SystemLecturer3ActionPerformed
+       Interfaces.LocationDashBoard l1 = new Interfaces.LocationDashBoard();
+           l1.setVisible(true);
+           this.dispose();
+
         
     }//GEN-LAST:event_SystemLecturer3ActionPerformed
 

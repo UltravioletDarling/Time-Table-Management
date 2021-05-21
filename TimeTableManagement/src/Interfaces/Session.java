@@ -415,6 +415,8 @@ public class Session extends javax.swing.JFrame {
         
              jTable1.setModel(DbUtils.resultSetToTableModel(rs));
             
+             jTextField1.setText("");
+             
         } catch (Exception e) {
         }
     }//GEN-LAST:event_jButton4ActionPerformed

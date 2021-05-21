@@ -475,10 +475,12 @@ public class Group extends javax.swing.JFrame {
         String name = jTextField1.getText();
           String sql = "SELECT GID,Room,Studentgroup,Studentsubgroup From student where Room  LIKE '%"+ name +"%'";
           try {
-              stm = con.prepareStatement(sql);
-            rs = stm.executeQuery();
-           jTable1.setModel(DbUtils.resultSetToTableModel(rs));
+                stm = con.prepareStatement(sql);
+               rs = stm.executeQuery();
+               jTable1.setModel(DbUtils.resultSetToTableModel(rs));
            
+               jTextField1.setText("");
+               
         } catch (Exception e) {
         }
         

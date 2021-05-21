@@ -149,6 +149,8 @@ public class LecturerBarChart extends javax.swing.JFrame {
             
             pst = con.prepareStatement(sql);
             ResultSet rs = pst.executeQuery();
+            
+            jComboBox1.setSelectedIndex(0);
            
         }
         catch(Exception e){

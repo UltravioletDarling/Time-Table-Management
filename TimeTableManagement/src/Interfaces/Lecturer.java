@@ -406,6 +406,9 @@ public class Lecturer extends javax.swing.JFrame {
               rs = stm.executeQuery();
         
         jTable1.setModel(DbUtils.resultSetToTableModel(rs));
+         
+        text.setText("");
+        
         } catch (Exception e) {
         }
        

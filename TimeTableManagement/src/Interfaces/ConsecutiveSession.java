@@ -498,8 +498,11 @@ public class ConsecutiveSession extends javax.swing.JFrame {
          String sql = "SELECT CSID,Room,Session01,Session02 From csession where Session02 or Session01 LIKE '%"+ name +"%'";
          try {
              stm = con.prepareStatement(sql);
-         rs = stm.executeQuery();
-          jTable1.setModel(DbUtils.resultSetToTableModel(rs));
+             rs = stm.executeQuery();
+             jTable1.setModel(DbUtils.resultSetToTableModel(rs));
+          
+             jTextField1.setText("");
+          
         } catch (Exception e) {
         }
  

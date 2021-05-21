@@ -175,6 +175,11 @@ public class TagRoom extends javax.swing.JFrame {
                 jTextField1FocusLost(evt);
             }
         });
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
         jButton4.setBackground(new java.awt.Color(0, 51, 204));
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
@@ -524,6 +529,8 @@ public class TagRoom extends javax.swing.JFrame {
         
             jTable1.setModel(DbUtils.resultSetToTableModel(rs));
             
+             jTextField1.setText("");
+             
         } catch (Exception e) {
         }
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -578,6 +585,10 @@ public class TagRoom extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_jTextField1FocusLost
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     
     /**
