@@ -36,6 +36,7 @@ public class Locations extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         updateRRTable();
         updateNATable();
+        fillcombolecturer1();
     }
 
     /**
@@ -54,7 +55,6 @@ public class Locations extends javax.swing.JFrame {
         reservedroomssave = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         rrUpdate = new javax.swing.JButton();
-        rrDate = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         rrTable = new javax.swing.JTable();
@@ -63,9 +63,9 @@ public class Locations extends javax.swing.JFrame {
         rrRoom = new javax.swing.JComboBox<>();
         rrReset = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
+        day = new javax.swing.JComboBox<>();
         naT = new javax.swing.JPanel();
         naUpdate = new javax.swing.JButton();
-        naTime = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         naSID = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -78,6 +78,7 @@ public class Locations extends javax.swing.JFrame {
         naSubgroup = new javax.swing.JComboBox<>();
         naSave = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        timeslot = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -120,13 +121,6 @@ public class Locations extends javax.swing.JFrame {
         rrUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rrUpdateActionPerformed(evt);
-            }
-        });
-
-        rrDate.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        rrDate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rrDateActionPerformed(evt);
             }
         });
 
@@ -184,6 +178,13 @@ public class Locations extends javax.swing.JFrame {
         jLabel7.setText("Reserved Rooms");
         jLabel7.setOpaque(true);
 
+        day.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" }));
+        day.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dayActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -209,10 +210,10 @@ public class Locations extends javax.swing.JFrame {
                                             .addComponent(jLabel5)
                                             .addComponent(jLabel1))
                                         .addGap(27, 27, 27)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(rrTime, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(rrRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(rrDate, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(rrTime, 0, 175, Short.MAX_VALUE)
+                                            .addComponent(rrRoom, 0, 175, Short.MAX_VALUE)
+                                            .addComponent(day, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                     .addComponent(reservedroomssave, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(133, 133, 133)
@@ -238,7 +239,7 @@ public class Locations extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(rrDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(day, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -269,20 +270,13 @@ public class Locations extends javax.swing.JFrame {
             }
         });
 
-        naTime.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        naTime.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                naTimeActionPerformed(evt);
-            }
-        });
-
         jLabel8.setBackground(new java.awt.Color(204, 204, 204));
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Not Available Times Of Students");
         jLabel8.setOpaque(true);
 
-        naSID.setText("Student Sub Group ID");
+        naSID.setText(" Sub Group ID");
 
         naTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -310,7 +304,7 @@ public class Locations extends javax.swing.JFrame {
             }
         });
 
-        jLabel6.setText("Time");
+        jLabel6.setText("TimeSlot");
 
         naGroup.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Y1.S1", "Y1.S2", "Y2.S1", "Y2.S2", "Y3.S1", "Y3.S2", "Y4.S1", "Y4.S2" }));
         naGroup.addActionListener(new java.awt.event.ActionListener() {
@@ -361,6 +355,13 @@ public class Locations extends javax.swing.JFrame {
             }
         });
 
+        timeslot.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "8.30", "9.30", "10.30", "11.30", "12.30", "13.30", "14.30", "15.30", "16.30", "17.30", "18.30", " " }));
+        timeslot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                timeslotActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout naTLayout = new javax.swing.GroupLayout(naT);
         naT.setLayout(naTLayout);
         naTLayout.setHorizontalGroup(
@@ -374,32 +375,30 @@ public class Locations extends javax.swing.JFrame {
                     .addGroup(naTLayout.createSequentialGroup()
                         .addGap(55, 55, 55)
                         .addGroup(naTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(naTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(naTLayout.createSequentialGroup()
-                                    .addGap(113, 113, 113)
-                                    .addComponent(naUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(naDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(naTLayout.createSequentialGroup()
-                                    .addComponent(naID)
-                                    .addGap(27, 27, 27)
-                                    .addComponent(naGroup, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(naTLayout.createSequentialGroup()
-                                    .addComponent(naSID)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(naSubgroup, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(naTLayout.createSequentialGroup()
+                                .addGap(113, 113, 113)
+                                .addComponent(naUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27)
+                                .addComponent(naDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(naTLayout.createSequentialGroup()
+                                .addComponent(naID)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(naGroup, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(naTLayout.createSequentialGroup()
                                 .addGroup(naTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(naSID)
                                     .addComponent(jLabel6)
                                     .addComponent(naSave, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(41, 41, 41)
-                                .addComponent(naTime, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(26, 26, 26)
+                                .addGroup(naTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(naSubgroup, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(timeslot, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(naTLayout.createSequentialGroup()
                         .addGap(133, 133, 133)
                         .addComponent(naReset, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(32, 32, 32)
+                .addGap(37, 37, 37)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 158, Short.MAX_VALUE))
+                .addGap(0, 96, Short.MAX_VALUE))
             .addGroup(naTLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -423,7 +422,7 @@ public class Locations extends javax.swing.JFrame {
                         .addGap(37, 37, 37)
                         .addGroup(naTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(naTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(timeslot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(46, 46, 46)
                         .addGroup(naTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(naSave, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -461,11 +460,37 @@ public class Locations extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+   
+    
+   
+    PreparedStatement pst;
+    
+     private void fillcombolecturer1(){
+         
+        
+        
+        try{
+            String sql = "select * from studentgroupsre";
+            pst = conn.prepareStatement(sql);
+            ResultSet rs = pst.executeQuery();
+            while(rs.next()){
+                String groupid = rs.getString("groupid");
+                naGroup.addItem(groupid);
+                String subgroupid = rs.getString("subgroupid");
+                naGroup.addItem(subgroupid);
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+     
+     
+     
 
     private void rrResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rrResetActionPerformed
         rrRoom.setSelectedIndex(0);
-        rrDate.setText("");
+        day.setSelectedIndex(0);
         rrTime.setSelectedIndex(0);
     }//GEN-LAST:event_rrResetActionPerformed
 
@@ -494,18 +519,14 @@ public class Locations extends javax.swing.JFrame {
         int row = rrTable.getSelectedRow();
         rrId = Integer.parseInt(dft.getValueAt(row, 0).toString());
         rrRoom.setSelectedItem(dft.getValueAt(row, 1).toString());
-        rrDate.setText(dft.getValueAt(row, 2).toString());
+        day.setSelectedItem(dft.getValueAt(row, 2).toString());
         rrTime.setSelectedItem(dft.getValueAt(row, 3).toString());
     }//GEN-LAST:event_rrTableMouseClicked
-
-    private void rrDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rrDateActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rrDateActionPerformed
 
     private void rrUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rrUpdateActionPerformed
 
         String roomValue = rrRoom.getItemAt(rrRoom.getSelectedIndex());
-        String dateValue = rrDate.getText();
+        String dateValue = day.getItemAt(day.getSelectedIndex());
         String timeValue = rrTime.getItemAt(rrTime.getSelectedIndex());
 
         System.out.println("DB connected. updating " + roomValue + ", " + dateValue + ", " + timeValue);
@@ -532,7 +553,7 @@ public class Locations extends javax.swing.JFrame {
 
     private void reservedroomssaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reservedroomssaveActionPerformed
         String roomValue = rrRoom.getItemAt(rrRoom.getSelectedIndex());
-        String dateValue = rrDate.getText();
+        String dateValue = day.getItemAt(day.getSelectedIndex());
         String timeValue = rrTime.getItemAt(rrTime.getSelectedIndex());
 
         System.out.println("DB connected. saving " + roomValue + ", " + dateValue + ", " + timeValue);
@@ -563,7 +584,7 @@ public class Locations extends javax.swing.JFrame {
        
         String groupValue = naGroup.getItemAt(naGroup.getSelectedIndex());
         String subGroupValue = naSubgroup.getItemAt(naSubgroup.getSelectedIndex());
-        String timeValue = naTime.getText();
+        String timeValue = timeslot.getItemAt(timeslot.getSelectedIndex());
 
         System.out.println("DB connected. updating " + groupValue + ", " + subGroupValue + ", " + timeValue);
 
@@ -581,17 +602,13 @@ public class Locations extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_naUpdateActionPerformed
 
-    private void naTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_naTimeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_naTimeActionPerformed
-
     private void naTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_naTableMouseClicked
         DefaultTableModel dft = (DefaultTableModel) naTable.getModel();
         int row = naTable.getSelectedRow();
         int naId = Integer.parseInt(dft.getValueAt(row, 0).toString());
         naGroup.setSelectedItem(dft.getValueAt(row, 1).toString());
         naSubgroup.setSelectedItem(dft.getValueAt(row, 2).toString());
-        naTime.setText(dft.getValueAt(row, 3).toString());
+        timeslot.setSelectedItem(dft.getValueAt(row, 3).toString());
         
 
     }//GEN-LAST:event_naTableMouseClicked
@@ -618,7 +635,7 @@ public class Locations extends javax.swing.JFrame {
         int naId = Integer.parseInt(dft.getValueAt(row, 0).toString());
         naGroup.setSelectedItem(dft.getValueAt(row, 1).toString());
         naSubgroup.setSelectedItem(dft.getValueAt(row, 2).toString());
-        naTime.setText(dft.getValueAt(row, 3).toString());
+        timeslot.setSelectedItem(dft.getValueAt(row, 3).toString());
         
     }
     
@@ -629,7 +646,7 @@ public class Locations extends javax.swing.JFrame {
     private void naResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_naResetActionPerformed
         naGroup.setSelectedIndex(0);
         naSubgroup.setSelectedIndex(0);
-        naTime.setText("");
+        timeslot.setSelectedIndex(0);
         
     }//GEN-LAST:event_naResetActionPerformed
 
@@ -640,7 +657,7 @@ public class Locations extends javax.swing.JFrame {
     private void naSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_naSaveActionPerformed
         String groupValue = naGroup.getItemAt(naGroup.getSelectedIndex());
         String subGroupValue = naSubgroup.getItemAt(naSubgroup.getSelectedIndex());
-        String timeValue = naTime.getText();
+        String timeValue = timeslot.getItemAt(naSubgroup.getSelectedIndex());
         
 
         System.out.println("DB connected. saving " + groupValue + ", " + subGroupValue + ", " + timeValue);
@@ -665,6 +682,14 @@ public class Locations extends javax.swing.JFrame {
         MainDashboard md = new MainDashboard();
         md.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void dayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dayActionPerformed
+
+    private void timeslotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timeslotActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_timeslotActionPerformed
 
     /**
      * @param args the command line arguments
@@ -748,6 +773,7 @@ public class Locations extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> day;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
@@ -769,15 +795,14 @@ public class Locations extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> naSubgroup;
     private javax.swing.JPanel naT;
     private javax.swing.JTable naTable;
-    private javax.swing.JTextField naTime;
     private javax.swing.JButton naUpdate;
     private javax.swing.JButton reservedroomssave;
-    private javax.swing.JTextField rrDate;
     private javax.swing.JButton rrDelete;
     private javax.swing.JButton rrReset;
     private javax.swing.JComboBox<String> rrRoom;
     private javax.swing.JTable rrTable;
     private javax.swing.JComboBox<String> rrTime;
     private javax.swing.JButton rrUpdate;
+    private javax.swing.JComboBox<String> timeslot;
     // End of variables declaration//GEN-END:variables
 }

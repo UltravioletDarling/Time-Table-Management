@@ -23,6 +23,7 @@ import javax.swing.JTable;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.util.Calendar;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -69,7 +70,7 @@ public class Timetablegeneration extends javax.swing.JFrame {
             pst = con.prepareStatement(sql);
             ResultSet rs = pst.executeQuery();
             while(rs.next()){
-                String lecturername = rs.getString("lecturername");
+                String lecturername = rs.getString("lecturers_name");
                 lecturercombo.addItem(lecturername);
             }
         }
@@ -113,6 +114,9 @@ public class Timetablegeneration extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, e);
         }
     }
+     
+     
+     
     
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -233,6 +237,14 @@ public class Timetablegeneration extends javax.swing.JFrame {
         });
         timetablelecturer.setRowHeight(50);
         jScrollPane6.setViewportView(timetablelecturer);
+        if (timetablelecturer.getColumnModel().getColumnCount() > 0) {
+            timetablelecturer.getColumnModel().getColumn(1).setHeaderValue("Tuesday");
+            timetablelecturer.getColumnModel().getColumn(2).setHeaderValue("Wednesday");
+            timetablelecturer.getColumnModel().getColumn(3).setHeaderValue("Thursday");
+            timetablelecturer.getColumnModel().getColumn(4).setHeaderValue("Friday");
+            timetablelecturer.getColumnModel().getColumn(5).setHeaderValue("Saturday");
+            timetablelecturer.getColumnModel().getColumn(6).setHeaderValue("Sunday");
+        }
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel15.setText("8.30");
@@ -765,11 +777,11 @@ public class Timetablegeneration extends javax.swing.JFrame {
        int p;
               try {
             
-            String lect = lecturercombo.getSelectedItem().toString();
+            String lecturer = lecturercombo.getSelectedItem().toString();
         
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost/timetable","root","");
-            pst = con.prepareStatement("select * from lectureractivesession where lecturer='"+ lect +"' order by timeslot" );
+            pst = con.prepareStatement("select * from lectureractivesession where lecturer='"+ lecturer +"' order by timeslot" );
            
            
             ResultSet rs = pst.executeQuery();
@@ -795,8 +807,7 @@ public class Timetablegeneration extends javax.swing.JFrame {
                    }
                    
                    dft.addRow(v2);
-               }
-               
+               }   
             
         } catch (ClassNotFoundException ex) {
             

@@ -591,6 +591,254 @@ public class NotAvailableTimes extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
+        fillcomboroomcombo();
+    }//GEN-LAST:event_jTabbedPane1MouseClicked
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void delete1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_delete1ActionPerformed
+
+    private void update1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_update1ActionPerformed
+
+    private void save1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_save1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_save1ActionPerformed
+
+    private void clear1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clear1ActionPerformed
+
+    private void natable3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_natable3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_natable3MouseClicked
+
+    private void naampm1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_naampm1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_naampm1ActionPerformed
+
+    private void nahours1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nahours1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nahours1ActionPerformed
+
+    private void roomcomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roomcomboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_roomcomboActionPerformed
+
+    private void naday1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_naday1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_naday1ActionPerformed
+
+    private void nadayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nadayActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nadayActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        String search = jTextField5.getText();
+        String sql = "Select lecturer,group1,session,day,sttime,duration from notavailablelecturer where lecturer  LIKE '%"+ search +"%'  OR  group1 LIKE '%"+ search +"%' OR  session LIKE '%"+ search +"%' OR day LIKE '%"+ search +"%' OR sttime LIKE '%"+ search +"%' OR duration LIKE '%"+ search +"%'  ";
+
+        try {
+
+            pst = con.prepareStatement(sql);
+            ResultSet rs = pst.executeQuery();
+
+            natable.setModel(DbUtils.resultSetToTableModel(rs));
+
+            jTextField5.setText("");
+
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
+        nalecturer.setSelectedIndex(0);
+        nagroup.setSelectedIndex(0);
+        nasession.setSelectedIndex(0);
+        naday.setSelectedIndex(0);
+        nahours.setSelectedIndex(0);
+        namins.setSelectedIndex(0);
+        naampm.setSelectedIndex(0);
+        naduration.setValue(0);
+    }//GEN-LAST:event_clearActionPerformed
+
+    private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
+
+        DefaultTableModel dft = (DefaultTableModel) natable.getModel();
+        int selectedIndex = natable.getSelectedRow();
+
+        try {
+
+            int id = Integer.parseInt(dft.getValueAt(selectedIndex, 0).toString());
+
+            int dialogResult = JOptionPane.showConfirmDialog(null, "Are you sure?","Warning",JOptionPane.YES_NO_OPTION);
+
+            if(dialogResult == JOptionPane.YES_OPTION)
+            {
+                Class.forName("com.mysql.jdbc.Driver");
+                con = DriverManager.getConnection("jdbc:mysql://localhost/timetable","root","");
+                pst = con.prepareStatement("delete from notavailablelecturer where id=?");
+
+                pst.setInt(1, id);
+
+            }
+
+            pst.executeUpdate();
+
+            JOptionPane.showMessageDialog(this,"Successfully Deleted");
+            table_update_na();
+
+        } catch (ClassNotFoundException ex) {
+
+            Logger.getLogger(Sessions.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        catch (SQLException ex) {
+
+            Logger.getLogger(Sessions.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_deleteActionPerformed
+
+    private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
+
+        DefaultTableModel dft = (DefaultTableModel) natable.getModel();
+        int selectedIndex = natable.getSelectedRow();
+
+        try {
+
+            int id = Integer.parseInt(dft.getValueAt(selectedIndex, 0).toString());
+            String lecturer = nalecturer.getSelectedItem().toString();
+            String group = nagroup.getSelectedItem().toString();
+            String session = nasession.getSelectedItem().toString();
+            String day = naday.getSelectedItem().toString();
+            String hours = nahours.getSelectedItem().toString();
+            String minutes = namins.getSelectedItem().toString();
+            String ampm = naampm.getSelectedItem().toString();
+            String duration = naduration.getValue().toString();
+
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/timetable","root","");
+            pst = con.prepareStatement("update notavailablelecturer set lecturer=?,group1=?,session=?,day=?,sttime=?,duration=? where id=? ");
+
+            pst.setString(1, lecturer);
+            pst.setString(2, group);
+            pst.setString(3, session);
+            pst.setString(4, day);
+            pst.setString(5, hours+":"+minutes+" "+ampm);
+            pst.setString(6, duration);
+            pst.setInt(7, id);
+            pst.executeUpdate();
+
+            JOptionPane.showMessageDialog(this,"Successfully Updated");
+
+            nalecturer.setSelectedIndex(0);
+            nagroup.setSelectedIndex(0);
+            nasession.setSelectedIndex(0);
+            naday.setSelectedIndex(0);
+            nahours.setSelectedIndex(0);
+            namins.setSelectedIndex(0);
+            naampm.setSelectedIndex(0);
+            naduration.setValue(0);
+
+            table_update_na();
+
+        } catch (ClassNotFoundException ex) {
+
+            Logger.getLogger(Sessions.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        catch (SQLException ex) {
+
+            Logger.getLogger(Sessions.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_updateActionPerformed
+
+    private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
+
+        String lecturer = nalecturer.getSelectedItem().toString();
+        String group = nagroup.getSelectedItem().toString();
+        String session = nasession.getSelectedItem().toString();
+        String day = naday.getSelectedItem().toString();
+        String hours = nahours.getSelectedItem().toString();
+        String minutes = namins.getSelectedItem().toString();
+        String ampm = naampm.getSelectedItem().toString();
+        String duration = naduration.getValue().toString();
+
+        java.sql.Connection con;
+        java.sql.PreparedStatement ps;
+
+        try {
+
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/timetable","root","");
+            ps = con.prepareStatement("insert into notavailablelecturer(lecturer,group1,session,day,sttime,duration)values(?,?,?,?,?,?)");
+
+            ps.setString(1, lecturer);
+            ps.setString(2, group);
+            ps.setString(3, session);
+            ps.setString(4, day);
+            ps.setString(5, hours+":"+minutes+" "+ampm);
+            ps.setString(6, duration);
+
+            ps.executeUpdate();
+
+            JOptionPane.showMessageDialog(this,"Successfully Added");
+
+            nalecturer.setSelectedIndex(0);
+            nagroup.setSelectedIndex(0);
+            nasession.setSelectedIndex(0);
+            naday.setSelectedIndex(0);
+            nahours.setSelectedIndex(0);
+            namins.setSelectedIndex(0);
+            naampm.setSelectedIndex(0);
+            naduration.setValue(0);
+
+            table_update_na();
+
+        } catch (ClassNotFoundException ex) {
+
+            Logger.getLogger(Sessions.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        catch (SQLException ex) {
+
+            Logger.getLogger(Sessions.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_saveActionPerformed
+
+    private void naampmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_naampmActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_naampmActionPerformed
+
+    private void nahoursActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nahoursActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nahoursActionPerformed
+
+    private void nagroupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nagroupActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nagroupActionPerformed
+
+    private void nasessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nasessionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nasessionActionPerformed
+
+    private void nalecturerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nalecturerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nalecturerActionPerformed
+
+    private void natableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_natableMouseClicked
+        DefaultTableModel dft = (DefaultTableModel) natable.getModel();
+        int selectedIndex = natable.getSelectedRow();
+        String notavailablesessions = null;
+
+        nalecturer.setSelectedItem(dft.getValueAt(selectedIndex, 1).toString());
+        nagroup.setSelectedItem(dft.getValueAt(selectedIndex, 2).toString());
+        nasession.setSelectedItem(dft.getValueAt(selectedIndex, 3).toString());
+        naduration.setValue(dft.getValueAt(selectedIndex, 6).toString());
+    }//GEN-LAST:event_natableMouseClicked
       
      private void table_update_na()
          {
@@ -648,7 +896,7 @@ public class NotAvailableTimes extends javax.swing.JFrame {
             pst = con.prepareStatement(sql);
             ResultSet rs = pst.executeQuery();
             while(rs.next()){ 
-                String lecturername = rs.getString("lecturername");
+                String lecturername = rs.getString("lecturers_name");
                 nalecturer.addItem(lecturername);
             }
         }
@@ -692,260 +940,6 @@ public class NotAvailableTimes extends javax.swing.JFrame {
         }
     }
     
-    private void natableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_natableMouseClicked
-        DefaultTableModel dft = (DefaultTableModel) natable.getModel();
-        int selectedIndex = natable.getSelectedRow();
-        String notavailablesessions = null;
-
-        nalecturer.setSelectedItem(dft.getValueAt(selectedIndex, 1).toString());
-        nagroup.setSelectedItem(dft.getValueAt(selectedIndex, 2).toString());
-        nasession.setSelectedItem(dft.getValueAt(selectedIndex, 3).toString());
-        naduration.setValue(dft.getValueAt(selectedIndex, 6).toString());
-    }//GEN-LAST:event_natableMouseClicked
-
-    private void nalecturerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nalecturerActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nalecturerActionPerformed
-
-    private void nasessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nasessionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nasessionActionPerformed
-
-    private void nagroupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nagroupActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nagroupActionPerformed
-
-    private void nahoursActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nahoursActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nahoursActionPerformed
-
-    private void naampmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_naampmActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_naampmActionPerformed
-
-    private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
-
-        String lecturer = nalecturer.getSelectedItem().toString();
-        String group = nagroup.getSelectedItem().toString();
-        String session = nasession.getSelectedItem().toString();
-        String day = naday.getSelectedItem().toString();
-        String hours = nahours.getSelectedItem().toString();
-        String minutes = namins.getSelectedItem().toString();
-        String ampm = naampm.getSelectedItem().toString();
-        String duration = naduration.getValue().toString();
-
-       java.sql.Connection con;
-        java.sql.PreparedStatement ps;
-
-        try {
-
-            Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost/timetable","root","");
-            ps = con.prepareStatement("insert into notavailablelecturer(lecturer,group1,session,day,sttime,duration)values(?,?,?,?,?,?)");
-          
-            
-            ps.setString(1, lecturer);
-            ps.setString(2, group);
-            ps.setString(3, session);
-            ps.setString(4, day);
-            ps.setString(5, hours+":"+minutes+" "+ampm);
-            ps.setString(6, duration);
-           
-            ps.executeUpdate();
-
-            JOptionPane.showMessageDialog(this,"Successfully Added");
-
-            nalecturer.setSelectedIndex(0);
-            nagroup.setSelectedIndex(0);
-            nasession.setSelectedIndex(0);
-            naday.setSelectedIndex(0);
-            nahours.setSelectedIndex(0);
-            namins.setSelectedIndex(0);
-            naampm.setSelectedIndex(0);
-            naduration.setValue(0);
-         
-            
-            table_update_na();
-
-        } catch (ClassNotFoundException ex) {
-
-            Logger.getLogger(Sessions.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        catch (SQLException ex) {
-
-            Logger.getLogger(Sessions.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }//GEN-LAST:event_saveActionPerformed
-
-    private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
-
-        DefaultTableModel dft = (DefaultTableModel) natable.getModel();
-       int selectedIndex = natable.getSelectedRow();
-
-        try {
-
-        int id = Integer.parseInt(dft.getValueAt(selectedIndex, 0).toString());
-        String lecturer = nalecturer.getSelectedItem().toString();
-        String group = nagroup.getSelectedItem().toString();
-        String session = nasession.getSelectedItem().toString();
-        String day = naday.getSelectedItem().toString();  
-        String hours = nahours.getSelectedItem().toString();
-        String minutes = namins.getSelectedItem().toString();
-        String ampm = naampm.getSelectedItem().toString();
-        String duration = naduration.getValue().toString();
-
-        Class.forName("com.mysql.jdbc.Driver");
-        con = DriverManager.getConnection("jdbc:mysql://localhost/timetable","root","");
-        pst = con.prepareStatement("update notavailablelecturer set lecturer=?,group1=?,session=?,day=?,sttime=?,duration=? where id=? ");
-
-        pst.setString(1, lecturer);
-        pst.setString(2, group);
-        pst.setString(3, session);
-        pst.setString(4, day);
-        pst.setString(5, hours+":"+minutes+" "+ampm);
-        pst.setString(6, duration);
-        pst.setInt(7, id);
-        pst.executeUpdate();
-
-        JOptionPane.showMessageDialog(this,"Successfully Updated");
-
-        nalecturer.setSelectedIndex(0);
-        nagroup.setSelectedIndex(0);
-        nasession.setSelectedIndex(0);
-        naday.setSelectedIndex(0);
-        nahours.setSelectedIndex(0);
-        namins.setSelectedIndex(0);
-        naampm.setSelectedIndex(0);
-        naduration.setValue(0);
-
-        table_update_na();
-         
-
-        } catch (ClassNotFoundException ex) {
-
-            Logger.getLogger(Sessions.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        catch (SQLException ex) {
-
-            Logger.getLogger(Sessions.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }//GEN-LAST:event_updateActionPerformed
-
-    private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
-
-        DefaultTableModel dft = (DefaultTableModel) natable.getModel();
-        int selectedIndex = natable.getSelectedRow();
-
-        try {
-
-            int id = Integer.parseInt(dft.getValueAt(selectedIndex, 0).toString());
-
-            int dialogResult = JOptionPane.showConfirmDialog(null, "Are you sure?","Warning",JOptionPane.YES_NO_OPTION);
-
-            if(dialogResult == JOptionPane.YES_OPTION)
-            {
-                Class.forName("com.mysql.jdbc.Driver");
-                con = DriverManager.getConnection("jdbc:mysql://localhost/timetable","root","");
-                pst = con.prepareStatement("delete from notavailablelecturer where id=?");
-
-                pst.setInt(1, id);
-
-            }
-
-            pst.executeUpdate();
-
-            JOptionPane.showMessageDialog(this,"Successfully Deleted");
-            table_update_na();
-
-        } catch (ClassNotFoundException ex) {
-
-            Logger.getLogger(Sessions.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        catch (SQLException ex) {
-
-            Logger.getLogger(Sessions.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }//GEN-LAST:event_deleteActionPerformed
-
-    private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
-        nalecturer.setSelectedIndex(0);
-        nagroup.setSelectedIndex(0);
-        nasession.setSelectedIndex(0);
-        naday.setSelectedIndex(0);
-        nahours.setSelectedIndex(0);
-        namins.setSelectedIndex(0);
-        naampm.setSelectedIndex(0);
-        naduration.setValue(0);
-    }//GEN-LAST:event_clearActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        String search = jTextField5.getText();
-        String sql = "Select lecturer,group1,session,day,sttime,duration from notavailablelecturer where lecturer  LIKE '%"+ search +"%'  OR  group1 LIKE '%"+ search +"%' OR  session LIKE '%"+ search +"%' OR day LIKE '%"+ search +"%' OR sttime LIKE '%"+ search +"%' OR duration LIKE '%"+ search +"%'  ";
-
-        try {
-
-            pst = con.prepareStatement(sql);
-            ResultSet rs = pst.executeQuery();
-
-            natable.setModel(DbUtils.resultSetToTableModel(rs));
-
-            jTextField5.setText("");
-
-        } catch (Exception e) {
-        }
-    }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void nadayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nadayActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nadayActionPerformed
-
-    private void naday1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_naday1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_naday1ActionPerformed
-
-    private void roomcomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roomcomboActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_roomcomboActionPerformed
-
-    private void nahours1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nahours1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nahours1ActionPerformed
-
-    private void naampm1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_naampm1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_naampm1ActionPerformed
-
-    private void natable3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_natable3MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_natable3MouseClicked
-
-    private void clear1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_clear1ActionPerformed
-
-    private void save1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_save1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_save1ActionPerformed
-
-    private void update1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_update1ActionPerformed
-
-    private void delete1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_delete1ActionPerformed
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
-
-    private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
-       fillcomboroomcombo();
-    }//GEN-LAST:event_jTabbedPane1MouseClicked
-
     /**
      * @param args the command line arguments
      */

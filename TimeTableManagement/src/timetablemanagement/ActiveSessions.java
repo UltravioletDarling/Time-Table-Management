@@ -1379,7 +1379,7 @@ public class ActiveSessions extends javax.swing.JFrame {
             pst = con.prepareStatement(sql);
             ResultSet rs = pst.executeQuery();
             while(rs.next()){
-                String lecturer = rs.getString("lecturername");
+                String lecturer = rs.getString("lecturers_name");
                 lecturer2.addItem(lecturer); 
                 sl1.addItem(lecturer);
                 sl2.addItem(lecturer);
