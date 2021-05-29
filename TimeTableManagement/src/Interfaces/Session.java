@@ -7,6 +7,7 @@ package Interfaces;
 //IT19216256_Member 04
 
 import DBconnection.dbcon;
+import DBconnection.dbcontimetable;
 import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -23,6 +24,7 @@ public class Session extends javax.swing.JFrame {
     
     
     Connection con = null;
+    Connection con2 = null;
     PreparedStatement stm = null;
     ResultSet rs = null;
     
@@ -35,10 +37,11 @@ public class Session extends javax.swing.JFrame {
         
          //Connect to DataBase 
         con = dbcon.connect();
-        
+         con2 = dbcontimetable.connect();
         //load table 
         loadtable();
         roomcombo();
+        sescombo();
         
     }
     
@@ -70,7 +73,6 @@ public class Session extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        Session = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -82,6 +84,7 @@ public class Session extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        jComboBox2 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -206,11 +209,11 @@ public class Session extends javax.swing.JFrame {
                 .addGap(25, 25, 25))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(Session, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -242,8 +245,8 @@ public class Session extends javax.swing.JFrame {
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(54, 54, 54)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Session, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(59, 246, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton5)
@@ -272,7 +275,7 @@ public class Session extends javax.swing.JFrame {
         
         
         String room = jComboBox1.getSelectedItem().toString();
-        String ses = Session.getText();
+        String ses = jComboBox2.getSelectedItem().toString();
         
         try {
             
@@ -282,7 +285,7 @@ public class Session extends javax.swing.JFrame {
         
                   loadtable();
                   jComboBox1.setSelectedItem("Select a Room");
-                  Session.setText("");
+                  jComboBox1.setSelectedIndex(0);
         } catch (Exception e) {
         }
         
@@ -303,7 +306,7 @@ public class Session extends javax.swing.JFrame {
         
         
           jComboBox1.setSelectedItem(room);
-           Session.setText(ses);
+          jComboBox2.setSelectedItem(ses);
           jLabel4.setText(id);
         
         
@@ -320,7 +323,7 @@ public class Session extends javax.swing.JFrame {
             
             String id = jLabel4.getText();
             String room = jComboBox1.getSelectedItem().toString();
-            String ses = Session.getText();
+            String ses = jComboBox2.getSelectedItem().toString();
             
              String sql = "UPDATE session SET Room ='"+ room +"', Session = '"+ ses +"' where SID = '"+ id +"'";
              
@@ -333,7 +336,7 @@ public class Session extends javax.swing.JFrame {
                    loadtable();
                   jLabel4.setText("");
                   jComboBox1.setSelectedItem("Select a Room");
-                  Session.setText("");
+                  jComboBox1.setSelectedIndex(0);
                  
             } catch (Exception e) {
             }
@@ -353,13 +356,32 @@ public class Session extends javax.swing.JFrame {
     private void roomcombo(){
     
         try {
-               String sql = "SELECT * From ro ";
-                stm = con.prepareStatement(sql);
+              String sql = "SELECT * From rooms ";
+                stm = con2.prepareStatement(sql);
                 rs = stm.executeQuery();
                 
                 while(rs.next()){
                     String name = rs.getString("Room");
                     jComboBox1.addItem(name);
+                }
+        
+        } catch (Exception e) {
+        }
+    
+    
+    }
+    
+    
+     private void sescombo(){
+    
+        try {
+              String sql = "SELECT * From sessionsmain ";
+                stm = con2.prepareStatement(sql);
+                rs = stm.executeQuery();
+                
+                while(rs.next()){
+                    String name = rs.getString("subject");
+                    jComboBox2.addItem(name);
                 }
         
         } catch (Exception e) {
@@ -384,7 +406,7 @@ public class Session extends javax.swing.JFrame {
                   loadtable();
                   jLabel4.setText("");
                   jComboBox1.setSelectedItem("Select a Room");
-                  Session.setText("");
+                  jComboBox2.setSelectedIndex(0);
                   
             } catch (Exception e) {
             }
@@ -434,7 +456,7 @@ public class Session extends javax.swing.JFrame {
         // TODO add your handling code here:
                   jLabel4.setText("");
                   jComboBox1.setSelectedItem("Select a Room");
-                  Session.setText("");
+                  jComboBox2.setSelectedIndex(0);
         
         
     }//GEN-LAST:event_jButton6ActionPerformed
@@ -495,7 +517,6 @@ public class Session extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Session;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -503,6 +524,7 @@ public class Session extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;

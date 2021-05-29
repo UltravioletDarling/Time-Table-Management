@@ -7,6 +7,7 @@ package Interfaces;
 //IT19216256_Member 04
 
 import DBconnection.dbcon;
+import DBconnection.dbcontimetable;
 import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -26,6 +27,7 @@ public class SessionTag extends javax.swing.JFrame {
     
     
     Connection con = null;
+     Connection con2 = null;
     PreparedStatement stm = null;
     ResultSet rs = null;
     
@@ -40,7 +42,7 @@ public class SessionTag extends javax.swing.JFrame {
         
           //Connect to DataBase 
             con = dbcon.connect();
-        
+            con2 = dbcontimetable.connect();
 
           //table load 
           loadtable();
@@ -100,6 +102,12 @@ public class SessionTag extends javax.swing.JFrame {
         jLabel2.setText("Subject");
 
         jLabel3.setText("Tag");
+
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -369,8 +377,8 @@ public class SessionTag extends javax.swing.JFrame {
     private void roomcombo(){
     
         try {
-               String sql = "SELECT * From ro ";
-                stm = con.prepareStatement(sql);
+                String sql = "SELECT * From rooms ";
+                stm = con2.prepareStatement(sql);
                 rs = stm.executeQuery();
                 
                 while(rs.next()){
@@ -388,12 +396,12 @@ public class SessionTag extends javax.swing.JFrame {
      private void subjectcombo(){
     
         try {
-               String sql = "SELECT * From subj ";
-                stm = con.prepareStatement(sql);
+               String sql = "SELECT * From modules ";
+                stm = con2.prepareStatement(sql);
                 rs = stm.executeQuery();
                 
                 while(rs.next()){
-                    String name = rs.getString("subjectname");
+                    String name = rs.getString("Module_name");
                     jComboBox2.addItem(name);
                 }
         
@@ -512,6 +520,10 @@ public class SessionTag extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_jTextField1FocusLost
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     
     /**

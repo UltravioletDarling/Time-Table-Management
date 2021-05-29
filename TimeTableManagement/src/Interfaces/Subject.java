@@ -7,6 +7,7 @@ package Interfaces;
 //IT19216256_Member 04
 
 import DBconnection.dbcon;
+import DBconnection.dbcontimetable;
 import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -22,6 +23,7 @@ import net.proteanit.sql.DbUtils;
 public class Subject extends javax.swing.JFrame {
 
     Connection con = null;
+    Connection con2 = null;
     PreparedStatement stm = null;
     ResultSet rs = null;
     
@@ -38,12 +40,14 @@ public class Subject extends javax.swing.JFrame {
         
           //Connect to DataBase 
         con = dbcon.connect();
+        con2 = dbcontimetable.connect();
         
         
         
         //load table 
         loadtable();
         roomcombo();
+        subcombo();
         
         
     }
@@ -76,7 +80,6 @@ public class Subject extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Subject = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -91,6 +94,7 @@ public class Subject extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        jComboBox2 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -205,11 +209,10 @@ public class Subject extends javax.swing.JFrame {
                                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel4)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jComboBox1, 0, 175, Short.MAX_VALUE)
-                                        .addComponent(Subject))))
+                                    .addComponent(jComboBox1, 0, 175, Short.MAX_VALUE)
+                                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
@@ -260,7 +263,7 @@ public class Subject extends javax.swing.JFrame {
                         .addGap(31, 31, 31)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Subject, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(182, 182, 182))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -283,7 +286,7 @@ public class Subject extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
      
          String room = jComboBox1.getSelectedItem().toString();
-         String sub = Subject.getText();
+         String sub = jComboBox2.getSelectedItem().toString();
          
          try {
              String qi = "INSERT INTO subject(Room,Subject) values ('"+ room +"', '"+ sub +"')";
@@ -292,7 +295,7 @@ public class Subject extends javax.swing.JFrame {
         
                   loadtable();
               jComboBox1.setSelectedIndex(0);
-              Subject.setText("");
+              jComboBox2.setSelectedIndex(0);
              
              
              
@@ -314,7 +317,7 @@ public class Subject extends javax.swing.JFrame {
         String  sub = jTable1.getValueAt(r, 2).toString();
         
           jComboBox1.setSelectedItem(room);
-          Subject.setText(sub);
+          jComboBox2.setSelectedItem(sub);
           jLabel4.setText(id);
         
         
@@ -330,7 +333,7 @@ public class Subject extends javax.swing.JFrame {
              
             String id = jLabel4.getText();
             String room = jComboBox1.getSelectedItem().toString();
-            String sub = Subject.getText();
+            String sub = jComboBox2.getSelectedItem().toString();
             
             
             String sql = "UPDATE subject SET Room ='"+ room +"', Subject = '"+ sub +"' where SID = '"+ id +"'";
@@ -344,7 +347,7 @@ public class Subject extends javax.swing.JFrame {
                    loadtable();
                      jLabel4.setText("");
                      jComboBox1.setSelectedIndex(0);
-                     Subject.setText("");
+                     jComboBox2.setSelectedIndex(0);
                  
                  
              } catch (Exception e) {
@@ -364,8 +367,8 @@ public class Subject extends javax.swing.JFrame {
       private void roomcombo(){
     
         try {
-               String sql = "SELECT * From ro ";
-                stm = con.prepareStatement(sql);
+                String sql = "SELECT * From rooms ";
+                stm = con2.prepareStatement(sql);
                 rs = stm.executeQuery();
                 
                 while(rs.next()){
@@ -379,6 +382,24 @@ public class Subject extends javax.swing.JFrame {
     
     }
     
+      
+       private void subcombo(){
+    
+        try {
+                String sql = "SELECT * From modules ";
+                stm = con2.prepareStatement(sql);
+                rs = stm.executeQuery();
+                
+                while(rs.next()){
+                    String name = rs.getString("Module_name");
+                    jComboBox2.addItem(name);
+                }
+        
+        } catch (Exception e) {
+        }
+    
+    
+    }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
         int x = JOptionPane.showConfirmDialog(null, "Do You really want to Delete");
@@ -397,7 +418,7 @@ public class Subject extends javax.swing.JFrame {
                   loadtable();
                    jLabel4.setText("");
                    jComboBox1.setSelectedIndex(0);
-                   Subject.setText("");
+                   jComboBox2.setSelectedIndex(0);
                  
                 
             } catch (Exception e) {
@@ -442,7 +463,7 @@ public class Subject extends javax.swing.JFrame {
         // TODO add your handling code here:
                    jLabel4.setText("");
                    jComboBox1.setSelectedIndex(0);
-                   Subject.setText("");
+                   jComboBox2.setSelectedIndex(0);
         
         
     }//GEN-LAST:event_jButton6ActionPerformed
@@ -505,7 +526,6 @@ public class Subject extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Subject;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -513,6 +533,7 @@ public class Subject extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;

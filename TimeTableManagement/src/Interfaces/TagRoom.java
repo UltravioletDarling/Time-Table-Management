@@ -7,6 +7,7 @@ package Interfaces;
 //IT19216256_Member 04 
 
 import DBconnection.dbcon;
+import DBconnection.dbcontimetable;
 import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -23,6 +24,7 @@ import net.proteanit.sql.DbUtils;
 public class TagRoom extends javax.swing.JFrame {
 
     Connection con = null;
+    Connection con2 = null;
     PreparedStatement stm = null;
     ResultSet rs = null;
     
@@ -37,7 +39,7 @@ public class TagRoom extends javax.swing.JFrame {
         
              //Connect to DataBase 
         con = dbcon.connect();
-        
+        con2 = dbcontimetable.connect();
         //load table 
         loadtable();
         roomcombo();
@@ -455,15 +457,14 @@ public class TagRoom extends javax.swing.JFrame {
       private void roomcombo(){
     
         try {
-               String sql = "SELECT * From ro ";
-                stm = con.prepareStatement(sql);
+                String sql = "SELECT * From rooms ";
+                stm = con2.prepareStatement(sql);
                 rs = stm.executeQuery();
                 
                 while(rs.next()){
                     String name = rs.getString("Room");
                     jComboBox1.addItem(name);
                 }
-        
         } catch (Exception e) {
         }
     

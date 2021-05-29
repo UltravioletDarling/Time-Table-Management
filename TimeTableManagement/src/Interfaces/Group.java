@@ -7,6 +7,7 @@ package Interfaces;
 //IT19216256_Member 04
 
 import DBconnection.dbcon;
+import DBconnection.dbcontimetable;
 import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -19,6 +20,7 @@ public class Group extends javax.swing.JFrame {
     
     
     Connection con = null;
+     Connection con2 = null;
     PreparedStatement stm = null;
     ResultSet rs = null;
     
@@ -30,6 +32,8 @@ public class Group extends javax.swing.JFrame {
         
           //Connect to DataBase 
             con = dbcon.connect();
+            con2 = dbcontimetable.connect();
+
         //table load 
         
         loadtable();
@@ -376,8 +380,8 @@ public class Group extends javax.swing.JFrame {
     private void roomcombo(){
     
         try {
-               String sql = "SELECT * From ro ";
-                stm = con.prepareStatement(sql);
+              String sql = "SELECT * From rooms ";
+                stm = con2.prepareStatement(sql);
                 rs = stm.executeQuery();
                 
                 while(rs.next()){
@@ -393,12 +397,12 @@ public class Group extends javax.swing.JFrame {
      private void groupcombo(){
     
         try {
-               String sql = "SELECT * From gro ";
-                stm = con.prepareStatement(sql);
+               String sql = "SELECT * From studentgroupsre ";
+                stm = con2.prepareStatement(sql);
                 rs = stm.executeQuery();
                 
                 while(rs.next()){
-                    String name = rs.getString("Group1");
+                    String name = rs.getString("groupid");
                     jComboBox2.addItem(name);
                 }
         
@@ -411,12 +415,12 @@ public class Group extends javax.swing.JFrame {
       private void subgroupcombo(){
     
         try {
-               String sql = "SELECT * From sgro ";
-                stm = con.prepareStatement(sql);
+               String sql = "SELECT * From studentgroupsre ";
+                stm = con2.prepareStatement(sql);
                 rs = stm.executeQuery();
                 
                 while(rs.next()){
-                    String name = rs.getString("Subgroup");
+                    String name = rs.getString("subgroupid");
                     jComboBox3.addItem(name);
                 }
         
