@@ -223,7 +223,7 @@ public class NotAvailableTimes extends javax.swing.JFrame {
 
         jLabel10.setText("Day");
 
-        naday.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" }));
+        naday.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", " " }));
         naday.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nadayActionPerformed(evt);
@@ -362,7 +362,7 @@ public class NotAvailableTimes extends javax.swing.JFrame {
 
         jLabel11.setText("Day");
 
-        naday1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" }));
+        naday1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", " " }));
         naday1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 naday1ActionPerformed(evt);

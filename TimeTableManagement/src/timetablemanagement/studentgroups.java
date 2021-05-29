@@ -241,7 +241,7 @@ public class studentgroups extends javax.swing.JFrame {
             }
         });
 
-        subgroupcombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2" }));
+        subgroupcombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
         subgroupcombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 subgroupcomboActionPerformed(evt);
@@ -377,11 +377,8 @@ public class studentgroups extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel11)
                                     .addComponent(sgid, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(semestercombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel9))))
+                            .addComponent(semestercombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9))
                         .addGap(13, 13, 13)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
@@ -671,7 +668,7 @@ public class studentgroups extends javax.swing.JFrame {
 
     private void generateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateActionPerformed
         String grid = yearcombo.getSelectedItem().toString()+semestercombo.getSelectedItem().toString()+"."+gnumber.getText();
-        String sgrid = grid +"."+ subgroupcombo.getSelectedItem().toString();
+        String sgrid = yearcombo.getSelectedItem().toString()+semestercombo.getSelectedItem().toString() +"."+ program.getText()+"."+gnumber.getText() +"."+ subgroupcombo.getSelectedItem().toString();
         
         gid.setText(grid);
         sgid.setText(sgrid);

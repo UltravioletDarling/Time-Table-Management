@@ -264,14 +264,12 @@
                     <Component class="javax.swing.JTable" name="timetablelecturer">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="7" rowCount="0">
+                          <Table columnCount="5" rowCount="0">
                             <Column editable="true" title="Monday" type="java.lang.String"/>
                             <Column editable="true" title="Tuesday" type="java.lang.String"/>
                             <Column editable="true" title="Wednesday" type="java.lang.String"/>
                             <Column editable="true" title="Thursday" type="java.lang.String"/>
                             <Column editable="true" title="Friday" type="java.lang.String"/>
-                            <Column editable="true" title="Saturday" type="java.lang.String"/>
-                            <Column editable="true" title="Sunday" type="java.lang.String"/>
                           </Table>
                         </Property>
                         <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -282,32 +280,22 @@
                               <Renderer/>
                             </Column>
                             <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                              <Title value="Tuesday"/>
+                              <Title/>
                               <Editor/>
                               <Renderer/>
                             </Column>
                             <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                              <Title value="Wednesday"/>
+                              <Title/>
                               <Editor/>
                               <Renderer/>
                             </Column>
                             <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                              <Title value="Thursday"/>
+                              <Title/>
                               <Editor/>
                               <Renderer/>
                             </Column>
                             <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                              <Title value="Friday"/>
-                              <Editor/>
-                              <Renderer/>
-                            </Column>
-                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                              <Title value="Saturday"/>
-                              <Editor/>
-                              <Renderer/>
-                            </Column>
-                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                              <Title value="Sunday"/>
+                              <Title/>
                               <Editor/>
                               <Renderer/>
                             </Column>
@@ -547,28 +535,16 @@
                     <Component class="javax.swing.JTable" name="timetablestudents">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="7" rowCount="0">
+                          <Table columnCount="5" rowCount="0">
                             <Column editable="true" title="Monday" type="java.lang.String"/>
                             <Column editable="true" title="Tuesday" type="java.lang.String"/>
                             <Column editable="true" title="Wednesday" type="java.lang.String"/>
                             <Column editable="true" title="Thursday" type="java.lang.String"/>
                             <Column editable="true" title="Friday" type="java.lang.String"/>
-                            <Column editable="true" title="Saturday" type="java.lang.String"/>
-                            <Column editable="true" title="Sunday" type="java.lang.String"/>
                           </Table>
                         </Property>
                         <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                           <TableColumnModel selectionModel="0">
-                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                              <Title/>
-                              <Editor/>
-                              <Renderer/>
-                            </Column>
-                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                              <Title/>
-                              <Editor/>
-                              <Renderer/>
-                            </Column>
                             <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                               <Title/>
                               <Editor/>
@@ -825,28 +801,16 @@
                     <Component class="javax.swing.JTable" name="timetablelocation">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="7" rowCount="0">
+                          <Table columnCount="5" rowCount="0">
                             <Column editable="true" title="Monday" type="java.lang.String"/>
                             <Column editable="true" title="Tuesday" type="java.lang.String"/>
                             <Column editable="true" title="Wednesday" type="java.lang.String"/>
                             <Column editable="true" title="Thursday" type="java.lang.String"/>
                             <Column editable="true" title="Friday" type="java.lang.String"/>
-                            <Column editable="true" title="Saturday" type="java.lang.String"/>
-                            <Column editable="true" title="Sunday" type="java.lang.String"/>
                           </Table>
                         </Property>
                         <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                           <TableColumnModel selectionModel="0">
-                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                              <Title/>
-                              <Editor/>
-                              <Renderer/>
-                            </Column>
-                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                              <Title/>
-                              <Editor/>
-                              <Renderer/>
-                            </Column>
                             <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                               <Title/>
                               <Editor/>

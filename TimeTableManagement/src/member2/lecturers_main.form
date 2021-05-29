@@ -283,7 +283,7 @@
           <StringArray count="3">
             <StringItem index="0" value="Main Building"/>
             <StringItem index="1" value="New Building"/>
-            <StringItem index="2" value=" "/>
+            <StringItem index="2" value="D-Block"/>
           </StringArray>
         </Property>
       </Properties>

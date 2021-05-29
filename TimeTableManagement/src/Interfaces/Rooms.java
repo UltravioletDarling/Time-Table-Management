@@ -34,6 +34,7 @@ public class Rooms extends javax.swing.JFrame {
      */
     public Rooms() {
         initComponents();
+       
         
           //Connect to DataBase 
         con = dbcon.connect();
@@ -76,7 +77,7 @@ public class Rooms extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        buildingcombo = new javax.swing.JComboBox<>();
         Room = new javax.swing.JTextField();
         capacity = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
@@ -103,9 +104,9 @@ public class Rooms extends javax.swing.JFrame {
 
         jLabel4.setText("Capacity");
 
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        buildingcombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                buildingcomboActionPerformed(evt);
             }
         });
 
@@ -245,7 +246,7 @@ public class Rooms extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(jComboBox1, 0, 175, Short.MAX_VALUE)
+                                                .addComponent(buildingcombo, 0, 175, Short.MAX_VALUE)
                                                 .addComponent(Room)
                                                 .addComponent(capacity, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE))
                                             .addGroup(layout.createSequentialGroup()
@@ -279,7 +280,7 @@ public class Rooms extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(buildingcombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -308,13 +309,13 @@ public class Rooms extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void buildingcomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buildingcomboActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_buildingcomboActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
-        String buil = jComboBox1.getSelectedItem().toString();
+        String buil = buildingcombo.getSelectedItem().toString();
         String roon = Room.getText();
      
         String cap = capacity.getText();
@@ -337,7 +338,7 @@ public class Rooms extends javax.swing.JFrame {
                   loadtable();
             
                   
-            jComboBox1.setSelectedItem("Select a Building");
+            buildingcombo.setSelectedItem("Select a Building");
             Room.setText("");
             if(jRadioButton1.isSelected()){
                 
@@ -376,7 +377,7 @@ public class Rooms extends javax.swing.JFrame {
          
          
          
-          jComboBox1.setSelectedItem(name);
+          buildingcombo.setSelectedItem(name);
            Room.setText(room);
           if(type.equals(one)){
                
@@ -411,7 +412,7 @@ public class Rooms extends javax.swing.JFrame {
               
                
             String id = jLabel6.getText();
-            String name = jComboBox1.getSelectedItem().toString();
+            String name = buildingcombo.getSelectedItem().toString();
             String room = Room.getText();
            // String type = jComboBox2.getSelectedItem().toString();
             String cap = capacity.getText();
@@ -440,7 +441,7 @@ public class Rooms extends javax.swing.JFrame {
                    loadtable();
               
                    jLabel6.setText("");
-            jComboBox1.setSelectedItem("Select a Building");
+            buildingcombo.setSelectedItem("Select a Building");
             Room.setText("");
             
             
@@ -476,13 +477,13 @@ public class Rooms extends javax.swing.JFrame {
     private void bildingcombo(){
     
         try {
-               String sql = "SELECT * From buil ";
+               String sql = "SELECT * From building ";
                 stm = con.prepareStatement(sql);
                 rs = stm.executeQuery();
                 
                 while(rs.next()){
                     String name = rs.getString("BuildingName");
-                    jComboBox1.addItem(name);
+                    buildingcombo.addItem(name);
                 }
         
         } catch (Exception e) {
@@ -513,7 +514,7 @@ public class Rooms extends javax.swing.JFrame {
                //load table
                loadtable();
              jLabel6.setText("");
-            jComboBox1.setSelectedItem("Select a Building");
+            buildingcombo.setSelectedItem("Select a Building");
             Room.setText("");
              if(jRadioButton1.isSelected()){
                 
@@ -583,7 +584,7 @@ public class Rooms extends javax.swing.JFrame {
         // TODO add your handling code here:
         
           jLabel6.setText("");
-            jComboBox1.setSelectedItem("Select a Building");
+            buildingcombo.setSelectedItem("Select a Building");
             Room.setText("");
              if(jRadioButton1.isSelected()){
                 
@@ -654,6 +655,7 @@ public class Rooms extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Room;
+    private javax.swing.JComboBox<String> buildingcombo;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JTextField capacity;
     private javax.swing.JButton jButton1;
@@ -662,7 +664,6 @@ public class Rooms extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -479,14 +479,13 @@
                 <Component class="javax.swing.JComboBox" name="naday">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="7">
+                      <StringArray count="6">
                         <StringItem index="0" value="Monday"/>
                         <StringItem index="1" value="Tuesday"/>
                         <StringItem index="2" value="Wednesday"/>
                         <StringItem index="3" value="Thursday"/>
                         <StringItem index="4" value="Friday"/>
-                        <StringItem index="5" value="Saturday"/>
-                        <StringItem index="6" value="Sunday"/>
+                        <StringItem index="5" value=" "/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -665,14 +664,13 @@
             <Component class="javax.swing.JComboBox" name="naday1">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="7">
+                  <StringArray count="6">
                     <StringItem index="0" value="Monday"/>
                     <StringItem index="1" value="Tuesday"/>
                     <StringItem index="2" value="Wednesday"/>
                     <StringItem index="3" value="Thursday"/>
                     <StringItem index="4" value="Friday"/>
-                    <StringItem index="5" value="Saturday"/>
-                    <StringItem index="6" value="Sunday"/>
+                    <StringItem index="5" value=" "/>
                   </StringArray>
                 </Property>
               </Properties>

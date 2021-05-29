@@ -126,7 +126,7 @@ public class lecturers_main extends javax.swing.JFrame {
             }
         });
 
-        build.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Main Building", "New Building", " " }));
+        build.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Main Building", "New Building", "D-Block" }));
 
         lvl.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6" }));
 

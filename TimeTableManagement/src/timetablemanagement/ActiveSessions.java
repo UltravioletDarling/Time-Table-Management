@@ -60,14 +60,12 @@ public class ActiveSessions extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         subjecta = new javax.swing.JComboBox<>();
         subjectb = new javax.swing.JComboBox<>();
         subjectc = new javax.swing.JComboBox<>();
         subjectd = new javax.swing.JComboBox<>();
         subjecte = new javax.swing.JComboBox<>();
-        subjectf = new javax.swing.JComboBox<>();
         savelecturer = new javax.swing.JButton();
         updatelecturer = new javax.swing.JButton();
         deletelecturer = new javax.swing.JButton();
@@ -76,11 +74,9 @@ public class ActiveSessions extends javax.swing.JFrame {
         lsg3 = new javax.swing.JComboBox<>();
         lsg4 = new javax.swing.JComboBox<>();
         lsg5 = new javax.swing.JComboBox<>();
-        lsg6 = new javax.swing.JComboBox<>();
         lo3 = new javax.swing.JComboBox<>();
         lo4 = new javax.swing.JComboBox<>();
         lo2 = new javax.swing.JComboBox<>();
-        lo6 = new javax.swing.JComboBox<>();
         lo1 = new javax.swing.JComboBox<>();
         lo5 = new javax.swing.JComboBox<>();
         jLabel41 = new javax.swing.JLabel();
@@ -96,12 +92,10 @@ public class ActiveSessions extends javax.swing.JFrame {
         subject3 = new javax.swing.JComboBox<>();
         subject2 = new javax.swing.JComboBox<>();
         subject1 = new javax.swing.JComboBox<>();
-        subject6 = new javax.swing.JComboBox<>();
         subject5 = new javax.swing.JComboBox<>();
         subject4 = new javax.swing.JComboBox<>();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         savestudent = new javax.swing.JButton();
@@ -112,13 +106,11 @@ public class ActiveSessions extends javax.swing.JFrame {
         sl3 = new javax.swing.JComboBox<>();
         sl4 = new javax.swing.JComboBox<>();
         sl5 = new javax.swing.JComboBox<>();
-        sl6 = new javax.swing.JComboBox<>();
         slo1 = new javax.swing.JComboBox<>();
         slo2 = new javax.swing.JComboBox<>();
         slo3 = new javax.swing.JComboBox<>();
         slo4 = new javax.swing.JComboBox<>();
         slo5 = new javax.swing.JComboBox<>();
-        slo6 = new javax.swing.JComboBox<>();
         jLabel43 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -132,12 +124,10 @@ public class ActiveSessions extends javax.swing.JFrame {
         subject9 = new javax.swing.JComboBox<>();
         subject8 = new javax.swing.JComboBox<>();
         subject7 = new javax.swing.JComboBox<>();
-        subject12 = new javax.swing.JComboBox<>();
         subject11 = new javax.swing.JComboBox<>();
         subject10 = new javax.swing.JComboBox<>();
         jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
         savelocation = new javax.swing.JButton();
@@ -150,13 +140,11 @@ public class ActiveSessions extends javax.swing.JFrame {
         ls3 = new javax.swing.JComboBox<>();
         ls4 = new javax.swing.JComboBox<>();
         ls5 = new javax.swing.JComboBox<>();
-        ls6 = new javax.swing.JComboBox<>();
         lll1 = new javax.swing.JComboBox<>();
         lll2 = new javax.swing.JComboBox<>();
         lll3 = new javax.swing.JComboBox<>();
         lll4 = new javax.swing.JComboBox<>();
         lll5 = new javax.swing.JComboBox<>();
-        lll6 = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         clearbutton_cs1 = new javax.swing.JButton();
 
@@ -167,7 +155,7 @@ public class ActiveSessions extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Lecturer ", "Timeslot", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+                "ID", "Lecturer ", "Timeslot", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"
             }
         ));
         jTable1.setRowHeight(30);
@@ -208,45 +196,41 @@ public class ActiveSessions extends javax.swing.JFrame {
         jLabel20.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel20.setText("Thursday");
 
-        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel21.setText("Saturday");
-
         jLabel22.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel22.setText("Friday");
 
+        subjecta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         subjecta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 subjectaActionPerformed(evt);
             }
         });
 
+        subjectb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         subjectb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 subjectbActionPerformed(evt);
             }
         });
 
+        subjectc.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         subjectc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 subjectcActionPerformed(evt);
             }
         });
 
+        subjectd.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         subjectd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 subjectdActionPerformed(evt);
             }
         });
 
+        subjecte.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         subjecte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 subjecteActionPerformed(evt);
-            }
-        });
-
-        subjectf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                subjectfActionPerformed(evt);
             }
         });
 
@@ -283,72 +267,70 @@ public class ActiveSessions extends javax.swing.JFrame {
             }
         });
 
+        lsg1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         lsg1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lsg1ActionPerformed(evt);
             }
         });
 
+        lsg2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         lsg2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lsg2ActionPerformed(evt);
             }
         });
 
+        lsg3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         lsg3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lsg3ActionPerformed(evt);
             }
         });
 
+        lsg4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         lsg4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lsg4ActionPerformed(evt);
             }
         });
 
+        lsg5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         lsg5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lsg5ActionPerformed(evt);
             }
         });
 
-        lsg6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lsg6ActionPerformed(evt);
-            }
-        });
-
+        lo3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         lo3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lo3ActionPerformed(evt);
             }
         });
 
+        lo4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         lo4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lo4ActionPerformed(evt);
             }
         });
 
+        lo2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         lo2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lo2ActionPerformed(evt);
             }
         });
 
-        lo6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lo6ActionPerformed(evt);
-            }
-        });
-
+        lo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         lo1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lo1ActionPerformed(evt);
             }
         });
 
+        lo5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         lo5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lo5ActionPerformed(evt);
@@ -385,10 +367,6 @@ public class ActiveSessions extends javax.swing.JFrame {
                             .addComponent(jLabel18)
                             .addComponent(jLabel17))
                         .addGap(21, 21, 21))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addGap(353, 353, 353)
-                        .addComponent(jLabel21)
-                        .addGap(0, 19, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(33, 33, 33)
                         .addComponent(savelecturer, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -403,18 +381,15 @@ public class ActiveSessions extends javax.swing.JFrame {
                             .addComponent(jLabel22))))
                 .addGap(22, 22, 22)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(subjectb, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(subjecta, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(subjecte, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(subjectc, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(subjectd, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(subjectf, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(subjectb, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(subjecta, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(subjecte, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(subjectc, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(subjectd, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(43, 43, 43)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lsg6, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(lsg1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(lsg5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -429,8 +404,7 @@ public class ActiveSessions extends javax.swing.JFrame {
                             .addComponent(lo1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(lo5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(lo3, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lo4, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lo6, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lo4, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -493,19 +467,13 @@ public class ActiveSessions extends javax.swing.JFrame {
                                     .addComponent(jLabel22)
                                     .addComponent(subjecte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lsg5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lo5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(31, 31, 31)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel21)
-                                    .addComponent(subjectf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lsg6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lo6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(lo5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel41)
                             .addComponent(jLabel42))))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(115, Short.MAX_VALUE))
         );
 
         Lecturer.addTab("Lecturer", jPanel2);
@@ -555,12 +523,6 @@ public class ActiveSessions extends javax.swing.JFrame {
             }
         });
 
-        subject6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                subject6ActionPerformed(evt);
-            }
-        });
-
         subject5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 subject5ActionPerformed(evt);
@@ -579,15 +541,12 @@ public class ActiveSessions extends javax.swing.JFrame {
         jLabel29.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel29.setText("Friday");
 
-        jLabel30.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel30.setText("Saturday");
-
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Student group", "Timeslot", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+                "ID", "Student group", "Timeslot", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"
             }
         ));
         jTable2.setRowHeight(30);
@@ -661,12 +620,6 @@ public class ActiveSessions extends javax.swing.JFrame {
             }
         });
 
-        sl6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sl6ActionPerformed(evt);
-            }
-        });
-
         slo1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 slo1ActionPerformed(evt);
@@ -694,12 +647,6 @@ public class ActiveSessions extends javax.swing.JFrame {
         slo5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 slo5ActionPerformed(evt);
-            }
-        });
-
-        slo6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                slo6ActionPerformed(evt);
             }
         });
 
@@ -754,11 +701,9 @@ public class ActiveSessions extends javax.swing.JFrame {
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel29)
-                                    .addComponent(jLabel28)
-                                    .addComponent(jLabel30))
+                                    .addComponent(jLabel28))
                                 .addGap(33, 33, 33)))
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(subject6, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(subject5, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(subject3, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(subject2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -766,7 +711,6 @@ public class ActiveSessions extends javax.swing.JFrame {
                             .addComponent(subject1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(30, 30, 30)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(sl6, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(sl5, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(sl3, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(sl2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -774,7 +718,6 @@ public class ActiveSessions extends javax.swing.JFrame {
                             .addComponent(sl1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(slo6, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(slo5, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(slo3, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(slo2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -825,9 +768,7 @@ public class ActiveSessions extends javax.swing.JFrame {
                                 .addGap(20, 20, 20)
                                 .addComponent(sl4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(23, 23, 23)
-                                .addComponent(sl5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(21, 21, 21)
-                                .addComponent(sl6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(sl5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(subject1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -847,11 +788,7 @@ public class ActiveSessions extends javax.swing.JFrame {
                                 .addGap(23, 23, 23)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel29)
-                                    .addComponent(subject5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(21, 21, 21)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel30)
-                                    .addComponent(subject6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(subject5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(slo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(22, 22, 22)
@@ -861,10 +798,8 @@ public class ActiveSessions extends javax.swing.JFrame {
                                 .addGap(20, 20, 20)
                                 .addComponent(slo4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(23, 23, 23)
-                                .addComponent(slo5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(21, 21, 21)
-                                .addComponent(slo6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(33, 33, 33))))
+                                .addComponent(slo5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(76, 76, 76))))
         );
 
         Lecturer.addTab("Students", jPanel3);
@@ -914,12 +849,6 @@ public class ActiveSessions extends javax.swing.JFrame {
             }
         });
 
-        subject12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                subject12ActionPerformed(evt);
-            }
-        });
-
         subject11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 subject11ActionPerformed(evt);
@@ -938,15 +867,12 @@ public class ActiveSessions extends javax.swing.JFrame {
         jLabel37.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel37.setText("Friday");
 
-        jLabel38.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel38.setText("Saturday");
-
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Location", "Timeslot", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+                "ID", "Location", "Timeslot", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"
             }
         ));
         jTable3.setRowHeight(30);
@@ -1026,12 +952,6 @@ public class ActiveSessions extends javax.swing.JFrame {
             }
         });
 
-        ls6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ls6ActionPerformed(evt);
-            }
-        });
-
         lll1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lll1ActionPerformed(evt);
@@ -1059,12 +979,6 @@ public class ActiveSessions extends javax.swing.JFrame {
         lll5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lll5ActionPerformed(evt);
-            }
-        });
-
-        lll6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lll6ActionPerformed(evt);
             }
         });
 
@@ -1097,21 +1011,24 @@ public class ActiveSessions extends javax.swing.JFrame {
                                 .addComponent(deletelocation, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel39)
+                                .addGap(87, 87, 87)
+                                .addComponent(jLabel40)
+                                .addGap(51, 51, 51))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel34)
                                     .addComponent(jLabel35)
                                     .addComponent(jLabel33)
                                     .addComponent(jLabel36)
-                                    .addComponent(jLabel37)
-                                    .addComponent(jLabel38))
+                                    .addComponent(jLabel37))
                                 .addGap(22, 22, 22)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(subject8, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(subject7, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(subject9, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(subject11, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(subject12, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(subject10, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(46, 46, 46)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1119,7 +1036,6 @@ public class ActiveSessions extends javax.swing.JFrame {
                                     .addComponent(ls1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(ls3, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(ls5, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(ls6, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(ls4, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -1132,14 +1048,7 @@ public class ActiveSessions extends javax.swing.JFrame {
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(lll3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(lll4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(lll5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(lll6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGap(310, 310, 310)
-                                .addComponent(jLabel39)
-                                .addGap(87, 87, 87)
-                                .addComponent(jLabel40)
-                                .addGap(51, 51, 51)))))
+                                            .addComponent(lll5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))))))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -1207,14 +1116,8 @@ public class ActiveSessions extends javax.swing.JFrame {
                                     .addComponent(subject11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel37)
                                     .addComponent(ls5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lll5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(30, 30, 30)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel38)
-                                    .addComponent(subject12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(ls6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lll6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(61, Short.MAX_VALUE))
+                                    .addComponent(lll5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
 
         Lecturer.addTab("Locations", jPanel1);
@@ -1288,7 +1191,7 @@ public class ActiveSessions extends javax.swing.JFrame {
                 ls3.addItem(groupids);
                 ls4.addItem(groupids);
                 ls5.addItem(groupids);
-                ls6.addItem(groupids);
+               
             } 
         }
         catch(Exception e){
@@ -1331,7 +1234,7 @@ public class ActiveSessions extends javax.swing.JFrame {
                 lsg3.addItem(group);
                 lsg4.addItem(group);
                 lsg5.addItem(group);
-                lsg6.addItem(group);
+          
             }
         }
         catch(Exception e){
@@ -1344,7 +1247,7 @@ public class ActiveSessions extends javax.swing.JFrame {
         try{
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost/timetable","root","");
-            String sql = "select * from ro";
+            String sql = "select * from rooms";
             pst = con.prepareStatement(sql);
             ResultSet rs = pst.executeQuery();
             while(rs.next()){
@@ -1355,13 +1258,13 @@ public class ActiveSessions extends javax.swing.JFrame {
                 lo3.addItem(rooms);
                 lo4.addItem(rooms);
                 lo5.addItem(rooms);
-                lo6.addItem(rooms);
+               
                 slo1.addItem(rooms);
                 slo2.addItem(rooms);
                 slo3.addItem(rooms);
                 slo4.addItem(rooms);
                 slo5.addItem(rooms);
-                slo6.addItem(rooms);
+             
                 
             }
         }
@@ -1386,13 +1289,13 @@ public class ActiveSessions extends javax.swing.JFrame {
                 sl3.addItem(lecturer);
                 sl4.addItem(lecturer);
                 sl5.addItem(lecturer);
-                sl6.addItem(lecturer);
+               
                 lll1.addItem(lecturer);
                 lll2.addItem(lecturer);
                 lll3.addItem(lecturer);
                 lll4.addItem(lecturer);
                 lll5.addItem(lecturer);
-                lll6.addItem(lecturer);
+            
             }
         }
         catch(Exception e){
@@ -1406,29 +1309,29 @@ public class ActiveSessions extends javax.swing.JFrame {
         try{
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost/timetable","root","");
-            String sql = "select * from subjects";
+            String sql = "select * from modules";
             pst = con.prepareStatement(sql);
             ResultSet rs = pst.executeQuery();
             while(rs.next()){
-                String subject = rs.getString("subject");
+                String subject = rs.getString("Module_name");
                 subjecta.addItem(subject);
                 subjectb.addItem(subject);
                 subjectc.addItem(subject);
                 subjectd.addItem(subject);
                 subjecte.addItem(subject);
-                subjectf.addItem(subject);
+          
                 subject1.addItem(subject);
                 subject2.addItem(subject);
                 subject3.addItem(subject);
                 subject4.addItem(subject);
                 subject5.addItem(subject);
-                subject6.addItem(subject);
+             
                 subject7.addItem(subject);
                 subject8.addItem(subject);
                 subject9.addItem(subject);
                 subject10.addItem(subject);
                 subject11.addItem(subject);
-                subject12.addItem(subject);
+             
             }
         }
         catch(Exception e){
@@ -1470,7 +1373,7 @@ public class ActiveSessions extends javax.swing.JFrame {
                        v2.add(rs.getString("wednesday"));
                        v2.add(rs.getString("thursday"));
                        v2.add(rs.getString("friday"));
-                       v2.add(rs.getString("saturday"));
+                      
                        
                    }
                    
@@ -1523,7 +1426,7 @@ public class ActiveSessions extends javax.swing.JFrame {
                        v2.add(rs.getString("wednesday"));
                        v2.add(rs.getString("thursday"));
                        v2.add(rs.getString("friday"));
-                       v2.add(rs.getString("saturday"));
+                     
                        
                    }
                    
@@ -1574,7 +1477,7 @@ public class ActiveSessions extends javax.swing.JFrame {
                        v2.add(rs.getString("wednesday"));
                        v2.add(rs.getString("thursday"));
                        v2.add(rs.getString("friday"));
-                       v2.add(rs.getString("saturday"));
+                      
                        
                    }
                    
@@ -1622,7 +1525,7 @@ public class ActiveSessions extends javax.swing.JFrame {
           subjectc.setSelectedItem(wed);
           subjectd.setSelectedItem(thu);
           subjecte.setSelectedItem(fri);
-          subjectf.setSelectedItem(sat);
+          
           
         
     }//GEN-LAST:event_jTable1MouseClicked
@@ -1655,10 +1558,6 @@ public class ActiveSessions extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_subjecteActionPerformed
 
-    private void subjectfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subjectfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_subjectfActionPerformed
-
     private void studentgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentgActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_studentgActionPerformed
@@ -1678,10 +1577,6 @@ public class ActiveSessions extends javax.swing.JFrame {
     private void subject1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subject1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_subject1ActionPerformed
-
-    private void subject6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subject6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_subject6ActionPerformed
 
     private void subject5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subject5ActionPerformed
         // TODO add your handling code here:
@@ -1711,10 +1606,6 @@ public class ActiveSessions extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_subject7ActionPerformed
 
-    private void subject12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subject12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_subject12ActionPerformed
-
     private void subject11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subject11ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_subject11ActionPerformed
@@ -1735,7 +1626,7 @@ public class ActiveSessions extends javax.swing.JFrame {
         subject3.setSelectedItem(dft.getValueAt(selectedIndex, 5).toString());
         subject4.setSelectedItem(dft.getValueAt(selectedIndex, 6).toString());
         subject5.setSelectedItem(dft.getValueAt(selectedIndex, 7).toString());
-        subject6.setSelectedItem(dft.getValueAt(selectedIndex, 8).toString());
+       
       
     }//GEN-LAST:event_jTable2MouseClicked
 
@@ -1751,7 +1642,7 @@ public class ActiveSessions extends javax.swing.JFrame {
         subject9.setSelectedItem(dft.getValueAt(selectedIndex, 5).toString());
         subject10.setSelectedItem(dft.getValueAt(selectedIndex, 6).toString());
         subject11.setSelectedItem(dft.getValueAt(selectedIndex, 7).toString());
-        subject12.setSelectedItem(dft.getValueAt(selectedIndex, 8).toString());
+       
     }//GEN-LAST:event_jTable3MouseClicked
 
     private void savestudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savestudentActionPerformed
@@ -1763,21 +1654,20 @@ public class ActiveSessions extends javax.swing.JFrame {
         String wednesday = subject3.getSelectedItem().toString();
         String thursday = subject4.getSelectedItem().toString();
         String friday = subject5.getSelectedItem().toString();
-        String saturday = subject6.getSelectedItem().toString();
+    
         
         String mondaylec = sl1.getSelectedItem().toString();
         String tuesdaylec = sl2.getSelectedItem().toString();
         String wednesdaylec = sl3.getSelectedItem().toString();
         String thursdaylec = sl4.getSelectedItem().toString();
         String fridaylec = sl5.getSelectedItem().toString();
-        String saturdaylec = sl6.getSelectedItem().toString();
         
         String mondaylo = slo1.getSelectedItem().toString();
         String tuesdaylo = slo2.getSelectedItem().toString();
         String wednesdaylo = slo3.getSelectedItem().toString();
         String thursdaylo = slo4.getSelectedItem().toString();
         String fridaylo = slo5.getSelectedItem().toString();
-        String saturdaylo = slo6.getSelectedItem().toString();
+       
         
 
         Connection con;
@@ -1787,7 +1677,7 @@ public class ActiveSessions extends javax.swing.JFrame {
 
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost/timetable","root","");
-            insert = con.prepareStatement("insert into studentactivesession(studentgroup,timeslot,monday,tuesday,wednesday,thursday,friday,saturday)values(?,?,?,?,?,?,?,?)");
+            insert = con.prepareStatement("insert into studentactivesession(studentgroup,timeslot,monday,tuesday,wednesday,thursday,friday)values(?,?,?,?,?,?,?)");
 
             insert.setString(1, studentgroup);
             insert.setString(2, timeslot);
@@ -1796,7 +1686,7 @@ public class ActiveSessions extends javax.swing.JFrame {
             insert.setString(5, wednesday+" , "+wednesdaylec+" , "+wednesdaylo);
             insert.setString(6, thursday+" , "+thursdaylec+" , "+thursdaylo);
             insert.setString(7, friday+" , "+fridaylec+" , "+fridaylo);
-            insert.setString(8, saturday+" , "+saturdaylec+" , "+saturdaylo);
+         
    
             insert.executeUpdate();
 
@@ -1809,19 +1699,19 @@ public class ActiveSessions extends javax.swing.JFrame {
             subject3.setSelectedIndex(0);
             subject4.setSelectedIndex(0);
             subject5.setSelectedIndex(0);
-            subject6.setSelectedIndex(0);
+          
             sl1.setSelectedIndex(0);
             sl2.setSelectedIndex(0);
             sl3.setSelectedIndex(0);
             sl4.setSelectedIndex(0);
             sl5.setSelectedIndex(0);
-            sl6.setSelectedIndex(0);
+          
             slo1.setSelectedIndex(0);
             slo2.setSelectedIndex(0);
             slo3.setSelectedIndex(0);
             slo4.setSelectedIndex(0);
             slo5.setSelectedIndex(0);
-            slo6.setSelectedIndex(0);
+           
            
             
 
@@ -1852,25 +1742,25 @@ public class ActiveSessions extends javax.swing.JFrame {
         String wednesday = subject3.getSelectedItem().toString();
         String thursday = subject4.getSelectedItem().toString();
         String friday = subject5.getSelectedItem().toString();
-        String saturday = subject6.getSelectedItem().toString();
+       
         
         String mondaylec = sl1.getSelectedItem().toString();
         String tuesdaylec = sl2.getSelectedItem().toString();
         String wednesdaylec = sl3.getSelectedItem().toString();
         String thursdaylec = sl4.getSelectedItem().toString();
         String fridaylec = sl5.getSelectedItem().toString();
-        String saturdaylec = sl6.getSelectedItem().toString();
+      
         
         String mondaylo = slo1.getSelectedItem().toString();
         String tuesdaylo = slo2.getSelectedItem().toString();
         String wednesdaylo = slo3.getSelectedItem().toString();
         String thursdaylo = slo4.getSelectedItem().toString();
         String fridaylo = slo5.getSelectedItem().toString();
-        String saturdaylo = slo6.getSelectedItem().toString();
+        
 
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost/timetable","root","");
-            pst = con.prepareStatement("update studentactivesession set studentgroup=?,timeslot=?,monday=?,tuesday=?,wednesday=?,thursday=?,friday=?,saturday=? where id=? ");
+            pst = con.prepareStatement("update studentactivesession set studentgroup=?,timeslot=?,monday=?,tuesday=?,wednesday=?,thursday=?,friday=? where id=? ");
 
             pst.setString(1, studentgroup);
             pst.setString(2, timeslot);
@@ -1879,7 +1769,7 @@ public class ActiveSessions extends javax.swing.JFrame {
             pst.setString(5, wednesday+" , "+wednesdaylec+" , "+wednesdaylo);
             pst.setString(6, thursday+" , "+thursdaylec+" , "+thursdaylo);
             pst.setString(7, friday+" , "+fridaylec+" , "+fridaylo);
-            pst.setString(8, saturday+" , "+saturdaylec+" , "+saturdaylo);
+          
             pst.setInt(9, id);
             pst.executeUpdate();
 
@@ -1892,19 +1782,19 @@ public class ActiveSessions extends javax.swing.JFrame {
             subject3.setSelectedIndex(0);
             subject4.setSelectedIndex(0);
             subject5.setSelectedIndex(0);
-            subject6.setSelectedIndex(0);
+           
             sl1.setSelectedIndex(0);
             sl2.setSelectedIndex(0);
             sl3.setSelectedIndex(0);
             sl4.setSelectedIndex(0);
             sl5.setSelectedIndex(0);
-            sl6.setSelectedIndex(0);
+           
             slo1.setSelectedIndex(0);
             slo2.setSelectedIndex(0);
             slo3.setSelectedIndex(0);
             slo4.setSelectedIndex(0);
             slo5.setSelectedIndex(0);
-            slo6.setSelectedIndex(0);
+           
             
             table_update_students();
          
@@ -1965,21 +1855,21 @@ public class ActiveSessions extends javax.swing.JFrame {
         String wednesday = subject9.getSelectedItem().toString();
         String thursday = subject10.getSelectedItem().toString();
         String friday = subject11.getSelectedItem().toString();
-        String saturday = subject12.getSelectedItem().toString();
+      
         
         String mondaystu = ls1.getSelectedItem().toString();
         String tuesdaystu = ls2.getSelectedItem().toString();
         String wednesdaystu = ls3.getSelectedItem().toString();
         String thursdaystu = ls4.getSelectedItem().toString();
         String fridaystu = ls5.getSelectedItem().toString();
-        String saturdaystu = ls6.getSelectedItem().toString();
+       
         
         String mondaylec = lll1.getSelectedItem().toString();
         String tuesdaylec = lll2.getSelectedItem().toString();
         String wednesdaylec = lll3.getSelectedItem().toString();
         String thursdaylec = lll4.getSelectedItem().toString();
         String fridaylec = lll5.getSelectedItem().toString();
-        String saturdaylec = lll6.getSelectedItem().toString();
+        
 
         Connection con;
         PreparedStatement insert;
@@ -1988,7 +1878,7 @@ public class ActiveSessions extends javax.swing.JFrame {
 
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost/timetable","root","");
-            insert = con.prepareStatement("insert into locationactivesessions(location,timeslot,monday,tuesday,wednesday,thursday,friday,saturday)values(?,?,?,?,?,?,?,?)");
+            insert = con.prepareStatement("insert into locationactivesessions(location,timeslot,monday,tuesday,wednesday,thursday,friday)values(?,?,?,?,?,?,?)");
 
             insert.setString(1, location);
             insert.setString(2, timeslot);
@@ -1997,7 +1887,7 @@ public class ActiveSessions extends javax.swing.JFrame {
             insert.setString(5, wednesday+" , "+wednesdaystu+" , "+wednesdaylec);
             insert.setString(6, thursday+" , "+thursdaystu+" , "+thursdaylec);
             insert.setString(7, friday+" , "+fridaystu+" , "+fridaylec);
-            insert.setString(8, saturday+" , "+saturdaystu+" , "+saturdaylec);
+          
    
             insert.executeUpdate();
 
@@ -2010,19 +1900,19 @@ public class ActiveSessions extends javax.swing.JFrame {
             subject9.setSelectedIndex(0);
             subject10.setSelectedIndex(0);
             subject11.setSelectedIndex(0);
-            subject12.setSelectedIndex(0);
+            
             ls1.setSelectedIndex(0);
             ls2.setSelectedIndex(0);
             ls3.setSelectedIndex(0);
             ls4.setSelectedIndex(0);
             ls5.setSelectedIndex(0);
-            ls6.setSelectedIndex(0);
+           
             lll1.setSelectedIndex(0);
             lll2.setSelectedIndex(0);
             lll3.setSelectedIndex(0);
             lll4.setSelectedIndex(0);
             lll5.setSelectedIndex(0);
-            lll6.setSelectedIndex(0);
+           
             
          
             table_update_location();
@@ -2052,25 +1942,25 @@ public class ActiveSessions extends javax.swing.JFrame {
         String wednesday = subject9.getSelectedItem().toString();
         String thursday = subject10.getSelectedItem().toString();
         String friday = subject11.getSelectedItem().toString();
-        String saturday = subject12.getSelectedItem().toString();
+       
         
         String mondaystu = ls1.getSelectedItem().toString();
         String tuesdaystu = ls2.getSelectedItem().toString();
         String wednesdaystu = ls3.getSelectedItem().toString();
         String thursdaystu = ls4.getSelectedItem().toString();
         String fridaystu = ls5.getSelectedItem().toString();
-        String saturdaystu = ls6.getSelectedItem().toString();
+       
         
         String mondaylec = lll1.getSelectedItem().toString();
         String tuesdaylec = lll2.getSelectedItem().toString();
         String wednesdaylec = lll3.getSelectedItem().toString();
         String thursdaylec = lll4.getSelectedItem().toString();
         String fridaylec = lll5.getSelectedItem().toString();
-        String saturdaylec = lll6.getSelectedItem().toString();
+       
 
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost/timetable","root","");
-            pst = con.prepareStatement("update locationactivesessions set location=?,timeslot=?,monday=?,tuesday=?,wednesday=?,thursday=?,friday=?,saturday=? where id=? ");
+            pst = con.prepareStatement("update locationactivesessions set location=?,timeslot=?,monday=?,tuesday=?,wednesday=?,thursday=?,friday=? where id=? ");
 
             pst.setString(1, location);
             pst.setString(2, timeslot);
@@ -2079,7 +1969,7 @@ public class ActiveSessions extends javax.swing.JFrame {
             pst.setString(5, wednesday+" , "+wednesdaystu+" , "+wednesdaylec);
             pst.setString(6, thursday+" , "+thursdaystu+" , "+thursdaylec);
             pst.setString(7, friday+" , "+fridaystu+" , "+fridaylec);
-            pst.setString(8, saturday+" , "+saturdaystu+" , "+saturdaylec);
+          
             pst.setInt(9, id);
             pst.executeUpdate();
 
@@ -2092,19 +1982,19 @@ public class ActiveSessions extends javax.swing.JFrame {
             subject9.setSelectedIndex(0);
             subject10.setSelectedIndex(0);
             subject11.setSelectedIndex(0);
-            subject12.setSelectedIndex(0);
+           
             ls1.setSelectedIndex(0);
             ls2.setSelectedIndex(0);
             ls3.setSelectedIndex(0);
             ls4.setSelectedIndex(0);
             ls5.setSelectedIndex(0);
-            ls6.setSelectedIndex(0);
+          
             lll1.setSelectedIndex(0);
             lll2.setSelectedIndex(0);
             lll3.setSelectedIndex(0);
             lll4.setSelectedIndex(0);
             lll5.setSelectedIndex(0);
-            lll6.setSelectedIndex(0);
+            
             
             
          
@@ -2164,21 +2054,21 @@ public class ActiveSessions extends javax.swing.JFrame {
         String wednesday = subjectc.getSelectedItem().toString();
         String thursday = subjectd.getSelectedItem().toString();
         String friday = subjecte.getSelectedItem().toString();
-        String saturday = subjectf.getSelectedItem().toString();
+       
         
         String mondaystu = lsg1.getSelectedItem().toString();
         String tuesdaystu = lsg2.getSelectedItem().toString();
         String wednesdaystu = lsg3.getSelectedItem().toString();
         String thursdaystu = lsg4.getSelectedItem().toString();
         String fridaystu = lsg5.getSelectedItem().toString();
-        String saturdaystu = lsg6.getSelectedItem().toString();
+       
         
         String mondaylo = lo1.getSelectedItem().toString();
         String tuesdaylo = lo2.getSelectedItem().toString();
         String wednesdaylo = lo3.getSelectedItem().toString();
         String thursdaylo = lo4.getSelectedItem().toString();
         String fridaylo = lo5.getSelectedItem().toString();
-        String saturdaylo = lo6.getSelectedItem().toString();
+        
         
 
         Connection con;
@@ -2188,7 +2078,7 @@ public class ActiveSessions extends javax.swing.JFrame {
 
             Class.forName("com.mysql.jdbc.Driver");
              con = DriverManager.getConnection("jdbc:mysql://localhost/timetable","root","");
-            insert = con.prepareStatement("INSERT INTO lectureractivesession (lecturer,timeslot,monday,tuesday,wednesday,thursday,friday,saturday) values(?,?,?,?,?,?,?,?)");
+            insert = con.prepareStatement("INSERT INTO lectureractivesession (lecturer,timeslot,monday,tuesday,wednesday,thursday,friday) values(?,?,?,?,?,?,?)");
 
             insert.setString(1, lecturer);
             insert.setString(2, timeslot1);
@@ -2197,7 +2087,7 @@ public class ActiveSessions extends javax.swing.JFrame {
             insert.setString(5, wednesday+" , "+wednesdaystu+" , "+wednesdaylo);
             insert.setString(6, thursday+" , "+thursdaystu+" , "+thursdaylo);
             insert.setString(7, friday+" , "+fridaystu+" , "+fridaylo);
-            insert.setString(8, saturday+" , "+saturdaystu+" , "+saturdaylo);
+            
             
    
             insert.executeUpdate();
@@ -2211,19 +2101,19 @@ public class ActiveSessions extends javax.swing.JFrame {
             subjectc.setSelectedIndex(0);
             subjectd.setSelectedIndex(0);
             subjecte.setSelectedIndex(0);
-            subjectf.setSelectedIndex(0);
+           
             lsg1.setSelectedIndex(0);
             lsg2.setSelectedIndex(0);
             lsg3.setSelectedIndex(0);
             lsg4.setSelectedIndex(0);
             lsg5.setSelectedIndex(0);
-            lsg6.setSelectedIndex(0);
+          
             lo1.setSelectedIndex(0);
             lo2.setSelectedIndex(0);
             lo3.setSelectedIndex(0);
             lo4.setSelectedIndex(0);
             lo5.setSelectedIndex(0);
-            lo6.setSelectedIndex(0);
+          
             
 
             table_update_lecturers();
@@ -2252,25 +2142,25 @@ public class ActiveSessions extends javax.swing.JFrame {
         String wednesday = subjectc.getSelectedItem().toString();
         String thursday = subjectd.getSelectedItem().toString();
         String friday = subjecte.getSelectedItem().toString();
-        String saturday = subjectf.getSelectedItem().toString();
+       
         
         String mondaystu = lsg1.getSelectedItem().toString();
         String tuesdaystu = lsg2.getSelectedItem().toString();
         String wednesdaystu = lsg3.getSelectedItem().toString();
         String thursdaystu = lsg4.getSelectedItem().toString();
         String fridaystu = lsg5.getSelectedItem().toString();
-        String saturdaystu = lsg6.getSelectedItem().toString();
+       
         
         String mondaylo = lo1.getSelectedItem().toString();
         String tuesdaylo = lo2.getSelectedItem().toString();
         String wednesdaylo = lo3.getSelectedItem().toString();
         String thursdaylo = lo4.getSelectedItem().toString();
         String fridaylo = lo5.getSelectedItem().toString();
-        String saturdaylo = lo6.getSelectedItem().toString();
+       
 
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost/timetable","root","");
-            pst = con.prepareStatement("update lectureractivesession set lecturer=?,timeslot=?,monday=?,tuesday=?,wednesday=?,thursday=?,friday=?,saturday=? where id=? ");
+            pst = con.prepareStatement("update lectureractivesession set lecturer=?,timeslot=?,monday=?,tuesday=?,wednesday=?,thursday=?,friday=? where id=? ");
 
             pst.setString(1, lecturer);
             pst.setString(2, timeslot1);
@@ -2279,7 +2169,7 @@ public class ActiveSessions extends javax.swing.JFrame {
             pst.setString(5, wednesday+" , "+wednesdaystu+" , "+wednesdaylo);
             pst.setString(6, thursday+" , "+thursdaystu+" , "+thursdaylo);
             pst.setString(7, friday+" , "+fridaystu+" , "+fridaylo);
-            pst.setString(8, saturday+" , "+saturdaystu+" , "+saturdaylo);
+         
             pst.setInt(9, id);
             
             pst.executeUpdate();
@@ -2293,19 +2183,17 @@ public class ActiveSessions extends javax.swing.JFrame {
             subjectc.setSelectedIndex(0);
             subjectd.setSelectedIndex(0);
             subjecte.setSelectedIndex(0);
-            subjectf.setSelectedIndex(0);
+            
             lsg1.setSelectedIndex(0);
             lsg2.setSelectedIndex(0);
             lsg3.setSelectedIndex(0);
             lsg4.setSelectedIndex(0);
             lsg5.setSelectedIndex(0);
-            lsg6.setSelectedIndex(0);
             lo1.setSelectedIndex(0);
             lo2.setSelectedIndex(0);
             lo3.setSelectedIndex(0);
             lo4.setSelectedIndex(0);
             lo5.setSelectedIndex(0);
-            lo6.setSelectedIndex(0);
             
             
          
@@ -2377,10 +2265,6 @@ public class ActiveSessions extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ls5ActionPerformed
 
-    private void ls6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ls6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ls6ActionPerformed
-
     private void lll1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lll1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_lll1ActionPerformed
@@ -2400,10 +2284,6 @@ public class ActiveSessions extends javax.swing.JFrame {
     private void lll5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lll5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_lll5ActionPerformed
-
-    private void lll6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lll6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lll6ActionPerformed
 
     private void lsg1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lsg1ActionPerformed
         // TODO add your handling code here:
@@ -2425,10 +2305,6 @@ public class ActiveSessions extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_lsg5ActionPerformed
 
-    private void lsg6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lsg6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lsg6ActionPerformed
-
     private void lo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lo3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_lo3ActionPerformed
@@ -2440,10 +2316,6 @@ public class ActiveSessions extends javax.swing.JFrame {
     private void lo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lo2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_lo2ActionPerformed
-
-    private void lo6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lo6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lo6ActionPerformed
 
     private void lo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lo1ActionPerformed
         // TODO add your handling code here:
@@ -2473,10 +2345,6 @@ public class ActiveSessions extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_sl5ActionPerformed
 
-    private void sl6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sl6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_sl6ActionPerformed
-
     private void slo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_slo1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_slo1ActionPerformed
@@ -2496,10 +2364,6 @@ public class ActiveSessions extends javax.swing.JFrame {
     private void slo5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_slo5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_slo5ActionPerformed
-
-    private void slo6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_slo6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_slo6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2548,7 +2412,6 @@ public class ActiveSessions extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -2557,7 +2420,6 @@ public class ActiveSessions extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
@@ -2565,7 +2427,6 @@ public class ActiveSessions extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
@@ -2588,26 +2449,22 @@ public class ActiveSessions extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> lll3;
     private javax.swing.JComboBox<String> lll4;
     private javax.swing.JComboBox<String> lll5;
-    private javax.swing.JComboBox<String> lll6;
     private javax.swing.JComboBox<String> lo1;
     private javax.swing.JComboBox<String> lo2;
     private javax.swing.JComboBox<String> lo3;
     private javax.swing.JComboBox<String> lo4;
     private javax.swing.JComboBox<String> lo5;
-    private javax.swing.JComboBox<String> lo6;
     private javax.swing.JComboBox<String> locationcombo;
     private javax.swing.JComboBox<String> ls1;
     private javax.swing.JComboBox<String> ls2;
     private javax.swing.JComboBox<String> ls3;
     private javax.swing.JComboBox<String> ls4;
     private javax.swing.JComboBox<String> ls5;
-    private javax.swing.JComboBox<String> ls6;
     private javax.swing.JComboBox<String> lsg1;
     private javax.swing.JComboBox<String> lsg2;
     private javax.swing.JComboBox<String> lsg3;
     private javax.swing.JComboBox<String> lsg4;
     private javax.swing.JComboBox<String> lsg5;
-    private javax.swing.JComboBox<String> lsg6;
     private javax.swing.JButton savelecturer;
     private javax.swing.JButton savelocation;
     private javax.swing.JButton savestudent;
@@ -2616,23 +2473,19 @@ public class ActiveSessions extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> sl3;
     private javax.swing.JComboBox<String> sl4;
     private javax.swing.JComboBox<String> sl5;
-    private javax.swing.JComboBox<String> sl6;
     private javax.swing.JComboBox<String> slo1;
     private javax.swing.JComboBox<String> slo2;
     private javax.swing.JComboBox<String> slo3;
     private javax.swing.JComboBox<String> slo4;
     private javax.swing.JComboBox<String> slo5;
-    private javax.swing.JComboBox<String> slo6;
     private javax.swing.JComboBox<String> studentg;
     private javax.swing.JComboBox<String> subject1;
     private javax.swing.JComboBox<String> subject10;
     private javax.swing.JComboBox<String> subject11;
-    private javax.swing.JComboBox<String> subject12;
     private javax.swing.JComboBox<String> subject2;
     private javax.swing.JComboBox<String> subject3;
     private javax.swing.JComboBox<String> subject4;
     private javax.swing.JComboBox<String> subject5;
-    private javax.swing.JComboBox<String> subject6;
     private javax.swing.JComboBox<String> subject7;
     private javax.swing.JComboBox<String> subject8;
     private javax.swing.JComboBox<String> subject9;
@@ -2641,7 +2494,6 @@ public class ActiveSessions extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> subjectc;
     private javax.swing.JComboBox<String> subjectd;
     private javax.swing.JComboBox<String> subjecte;
-    private javax.swing.JComboBox<String> subjectf;
     private javax.swing.JComboBox<String> timeslot;
     private javax.swing.JComboBox<String> timeslot1;
     private javax.swing.JComboBox<String> timeslot2;

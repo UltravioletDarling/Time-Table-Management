@@ -224,11 +224,11 @@ public class Timetablegeneration extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+                "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -237,14 +237,6 @@ public class Timetablegeneration extends javax.swing.JFrame {
         });
         timetablelecturer.setRowHeight(50);
         jScrollPane6.setViewportView(timetablelecturer);
-        if (timetablelecturer.getColumnModel().getColumnCount() > 0) {
-            timetablelecturer.getColumnModel().getColumn(1).setHeaderValue("Tuesday");
-            timetablelecturer.getColumnModel().getColumn(2).setHeaderValue("Wednesday");
-            timetablelecturer.getColumnModel().getColumn(3).setHeaderValue("Thursday");
-            timetablelecturer.getColumnModel().getColumn(4).setHeaderValue("Friday");
-            timetablelecturer.getColumnModel().getColumn(5).setHeaderValue("Saturday");
-            timetablelecturer.getColumnModel().getColumn(6).setHeaderValue("Sunday");
-        }
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel15.setText("8.30");
@@ -372,11 +364,11 @@ public class Timetablegeneration extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+                "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -513,11 +505,11 @@ public class Timetablegeneration extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+                "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -748,7 +740,7 @@ public class Timetablegeneration extends javax.swing.JFrame {
                        v2.add(rs.getString("wednesday"));
                        v2.add(rs.getString("thursday"));
                        v2.add(rs.getString("friday"));
-                       v2.add(rs.getString("saturday"));
+                      
                        
                    }
                    
@@ -802,7 +794,7 @@ public class Timetablegeneration extends javax.swing.JFrame {
                        v2.add(rs.getString("wednesday"));
                        v2.add(rs.getString("thursday"));
                        v2.add(rs.getString("friday"));
-                       v2.add(rs.getString("saturday"));
+                      
                        
                    }
                    
@@ -880,7 +872,7 @@ public class Timetablegeneration extends javax.swing.JFrame {
                        v2.add(rs.getString("wednesday"));
                        v2.add(rs.getString("thursday"));
                        v2.add(rs.getString("friday"));
-                       v2.add(rs.getString("saturday"));
+                     
                        
                    }
                    
