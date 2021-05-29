@@ -110,7 +110,7 @@
                           </Group>
                       </Group>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="lecturer1" min="-2" pref="141" max="-2" attributes="0"/>
@@ -129,17 +129,15 @@
                                   </Group>
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="groupid" alignment="0" min="-2" pref="141" max="-2" attributes="0"/>
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="Edit_cs" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
-                                          <Component id="tag" alignment="0" min="-2" pref="141" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="Edit_cs" min="-2" pref="90" max="-2" attributes="0"/>
                                   </Group>
+                                  <Component id="tag" alignment="1" min="-2" pref="141" max="-2" attributes="0"/>
+                                  <Component id="groupid" alignment="0" min="-2" pref="141" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="subjectcode" min="-2" pref="141" max="-2" attributes="0"/>
                                   <Component id="lecturer2" min="-2" pref="141" max="-2" attributes="0"/>
@@ -467,7 +465,11 @@
             <Component class="javax.swing.JComboBox" name="tag">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="3">
+                    <StringItem index="0" value="Lecture"/>
+                    <StringItem index="1" value="Tutorial"/>
+                    <StringItem index="2" value="Lab"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
@@ -1336,8 +1338,10 @@
                 <Component class="javax.swing.JComboBox" name="tag1_no">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="1">
-                        <StringItem index="0" value="none"/>
+                      <StringArray count="3">
+                        <StringItem index="0" value="Lecturer"/>
+                        <StringItem index="1" value="Tutorial"/>
+                        <StringItem index="2" value="Lab"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -1452,8 +1456,10 @@
                 <Component class="javax.swing.JComboBox" name="tag2_no">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="1">
-                        <StringItem index="0" value="none"/>
+                      <StringArray count="3">
+                        <StringItem index="0" value="Lecture"/>
+                        <StringItem index="1" value="Tutorial"/>
+                        <StringItem index="2" value="Lab"/>
                       </StringArray>
                     </Property>
                   </Properties>

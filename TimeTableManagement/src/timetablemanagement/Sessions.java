@@ -40,7 +40,7 @@ public class Sessions extends javax.swing.JFrame {
         fillcombolecturer2();
         fillcombosubjectcode();
         fillcombogroupid();
-        fillcombotag();
+      
         fillcombotagno();
         fillcombogroupno();
         fillcombosubjectno();
@@ -257,6 +257,7 @@ public class Sessions extends javax.swing.JFrame {
             }
         });
 
+        tag.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lecture", "Tutorial", "Lab" }));
         tag.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tagActionPerformed(evt);
@@ -322,12 +323,11 @@ public class Sessions extends javax.swing.JFrame {
                                 .addComponent(submit_cs, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(groupid, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(12, 12, 12)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Edit_cs, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tag, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(Edit_cs, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tag, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(groupid, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(subjectcode, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -731,7 +731,7 @@ public class Sessions extends javax.swing.JFrame {
             }
         });
 
-        tag1_no.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "none" }));
+        tag1_no.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lecturer", "Tutorial", "Lab" }));
 
         jLabel27.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel27.setText("Subject 1");
@@ -791,7 +791,7 @@ public class Sessions extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setText("Session 2");
 
-        tag2_no.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "none" }));
+        tag2_no.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lecture", "Tutorial", "Lab" }));
 
         jLabel33.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel33.setText("Subject 2");
@@ -1198,7 +1198,7 @@ public class Sessions extends javax.swing.JFrame {
             pst = con.prepareStatement(sql);
             ResultSet rs = pst.executeQuery();
             while(rs.next()){
-                String lecturername = rs.getString("lecturername");
+                String lecturername = rs.getString("lecturers_name");
                 lecturer1.addItem(lecturername);
             }
         }
@@ -1216,7 +1216,7 @@ public class Sessions extends javax.swing.JFrame {
             pst = con.prepareStatement(sql);
             ResultSet rs = pst.executeQuery();
             while(rs.next()){
-                String lecturername = rs.getString("lecturername");
+                String lecturername = rs.getString("lecturers_name");
                 lecturer2.addItem(lecturername);
             }
         }
@@ -1230,11 +1230,11 @@ public class Sessions extends javax.swing.JFrame {
         try{
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost/timetable","root","");
-            String sql = "select * from subjects";
+            String sql = "select * from modules";
             pst = con.prepareStatement(sql);
             ResultSet rs = pst.executeQuery();
             while(rs.next()){
-                String subject = rs.getString("subject");
+                String subject = rs.getString("Module_code");
                 subjectcode.addItem(subject);
             }
         }
@@ -1248,11 +1248,11 @@ public class Sessions extends javax.swing.JFrame {
         try{
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost/timetable","root","");
-            String sql = "select * from subjects";
+            String sql = "select * from modules";
             pst = con.prepareStatement(sql);
             ResultSet rs = pst.executeQuery();
             while(rs.next()){
-                String subjects = rs.getString("subject");
+                String subjects = rs.getString("Module_name");
                 subjectcs.addItem(subjects);
             }
         }
@@ -1280,23 +1280,7 @@ public class Sessions extends javax.swing.JFrame {
     }
     
     
-     private void fillcombotag(){
-        
-        try{
-            Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost/timetable","root","");
-            String sql = "select * from tags";
-            pst = con.prepareStatement(sql);
-            ResultSet rs = pst.executeQuery();
-            while(rs.next()){
-                String tags = rs.getString("tag");
-                tag.addItem(tags);
-            }
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(null, e);
-        }
-    }
+  
     
     
   //comboboxes of parallel sessions
@@ -1306,11 +1290,11 @@ public class Sessions extends javax.swing.JFrame {
         try{
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost/timetable","root","");
-            String sql = "select * from subjects";
+            String sql = "select * from modules";
             pst = con.prepareStatement(sql);
             ResultSet rs = pst.executeQuery();
             while(rs.next()){
-                String subjects = rs.getString("subject");
+                String subjects = rs.getString("Module_name");
                 subject1.addItem(subjects);
             }
         }
@@ -1324,11 +1308,11 @@ public class Sessions extends javax.swing.JFrame {
         try{
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost/timetable","root","");
-            String sql = "select * from subjects";
+            String sql = "select * from modules";
             pst = con.prepareStatement(sql);
             ResultSet rs = pst.executeQuery();
             while(rs.next()){
-                String subjects = rs.getString("subject");
+                String subjects = rs.getString("Module_name");
                 subject2.addItem(subjects);
                 subject1.addItem(subjects);
             }
@@ -1363,11 +1347,11 @@ public class Sessions extends javax.swing.JFrame {
         try{
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost/timetable","root","");
-            String sql = "select * from subjects";
+            String sql = "select * from modules";
             pst = con.prepareStatement(sql);
             ResultSet rs = pst.executeQuery();
             while(rs.next()){
-                String subjects = rs.getString("subject");
+                String subjects = rs.getString("Module_name");
                 subject1_no.addItem(subjects);
                 subject2_no.addItem(subjects);
             }
