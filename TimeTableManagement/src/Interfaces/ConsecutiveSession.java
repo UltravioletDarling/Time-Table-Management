@@ -329,7 +329,7 @@ public class ConsecutiveSession extends javax.swing.JFrame {
                  jLabel2.setText("");
                  jComboBox1.setSelectedItem("Select a Room");
                  jComboBox2.setSelectedItem("Select a Session");
-                 jComboBox3.setSelectedItem("Select a Session");
+                 jComboBox3.setSelectedIndex(0);
              } catch (Exception e) {
              }
           
@@ -413,7 +413,7 @@ public class ConsecutiveSession extends javax.swing.JFrame {
             
             jComboBox1.setSelectedItem("Select a Room");
             jComboBox2.setSelectedItem("Select a Session");
-            jComboBox3.setSelectedItem("Select a Session");
+            jComboBox3.setSelectedIndex(0);
         } catch (Exception e) {
         }
         
@@ -473,8 +473,7 @@ public class ConsecutiveSession extends javax.swing.JFrame {
                   jLabel2.setText("");
                   jComboBox1.setSelectedItem("Select a Room");
                   jComboBox2.setSelectedItem("Select a Session");
-                  jComboBox3.setSelectedItem("Select a Session");
-                  
+                  jComboBox3.setSelectedIndex(0);
                   
              } catch (Exception e) {
              }

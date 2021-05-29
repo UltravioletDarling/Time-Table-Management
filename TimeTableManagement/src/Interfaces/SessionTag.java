@@ -299,7 +299,7 @@ public class SessionTag extends javax.swing.JFrame {
                  
                 loadtable(); 
                 jComboBox1.setSelectedIndex(0);
-                jComboBox2.setSelectedItem("Select a Subject");
+                jComboBox2.setSelectedIndex(0);
                 jComboBox3.setSelectedItem("Select a Tag");
             
         } catch (Exception e) {
@@ -349,7 +349,7 @@ public class SessionTag extends javax.swing.JFrame {
                    loadtable();
                 jLabel5.setText(""); 
                 jComboBox1.setSelectedIndex(0);
-                jComboBox2.setSelectedItem("Select a Subject");
+                jComboBox2.setSelectedIndex(0);
                 jComboBox3.setSelectedItem("Select a Tag");
              } catch (Exception e) {
              }
@@ -440,7 +440,7 @@ public class SessionTag extends javax.swing.JFrame {
                   loadtable();
                 jLabel5.setText("");
                 jComboBox1.setSelectedIndex(0);
-                jComboBox2.setSelectedItem("Select a Subject");
+                jComboBox2.setSelectedIndex(0);
                 jComboBox3.setSelectedItem("Select a Tag");
                   
                   
