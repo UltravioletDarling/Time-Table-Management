@@ -5,6 +5,7 @@
  */
 package member2;
 
+import DBconnection.dbcon;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -20,6 +21,7 @@ public class lecturers_main extends javax.swing.JFrame {
 
     
      Connection con = null;
+     Connection con2 = null;
      PreparedStatement pst = null;
      ResultSet rs = null;
     
@@ -27,10 +29,11 @@ public class lecturers_main extends javax.swing.JFrame {
     
     public lecturers_main() {
         initComponents();
-        con = con = dbconnectmem2.connect();    
-        
+        con = dbconnectmem2.connect();    
+        con2 = dbcon.connect();
         //loading the table
         loadlecturetable();
+        buildingcombo();
     }
     
     public void loadlecturetable(){
@@ -56,6 +59,24 @@ public class lecturers_main extends javax.swing.JFrame {
     searchbox1.setText(null);
     
     }
+  
+     private void buildingcombo(){
+    
+        try {
+              String sql = "SELECT * From building ";
+                pst = con2.prepareStatement(sql);
+                rs = pst.executeQuery();
+                
+                while(rs.next()){
+                    String name = rs.getString("BuildingName");
+                    buildingcombo.addItem(name);
+                }
+        
+        } catch (Exception e) {
+        }
+    
+    
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -79,7 +100,7 @@ public class lecturers_main extends javax.swing.JFrame {
         fac = new javax.swing.JComboBox<>();
         dept = new javax.swing.JComboBox<>();
         cent = new javax.swing.JComboBox<>();
-        build = new javax.swing.JComboBox<>();
+        buildingcombo = new javax.swing.JComboBox<>();
         lvl = new javax.swing.JComboBox<>();
         rank = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
@@ -125,8 +146,6 @@ public class lecturers_main extends javax.swing.JFrame {
                 centActionPerformed(evt);
             }
         });
-
-        build.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Main Building", "New Building", "D-Block" }));
 
         lvl.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6" }));
 
@@ -247,7 +266,7 @@ public class lecturers_main extends javax.swing.JFrame {
                                                 .addComponent(fac, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addComponent(dept, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addComponent(cent, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(build, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(buildingcombo, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addComponent(lvl, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -299,7 +318,7 @@ public class lecturers_main extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(build, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(buildingcombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
@@ -347,7 +366,7 @@ public class lecturers_main extends javax.swing.JFrame {
         String faculty = fac.getSelectedItem().toString();
         String department = dept.getSelectedItem().toString();
         String center = cent.getSelectedItem().toString();
-        String building = build.getSelectedItem().toString();
+        String building = buildingcombo.getSelectedItem().toString();
         String level = lvl.getSelectedItem().toString();
         String lec_rank = rank.getText();
         
@@ -389,7 +408,7 @@ public class lecturers_main extends javax.swing.JFrame {
        fac.setSelectedItem(faculty);
        dept.setSelectedItem(department);
        cent.setSelectedItem(level);
-       build.setSelectedItem(building);
+       buildingcombo.setSelectedItem(building);
        lvl.setSelectedItem(level);
        rank.setText(lecrank);
      
@@ -408,7 +427,7 @@ public class lecturers_main extends javax.swing.JFrame {
         String faculty = fac.getSelectedItem().toString();
         String department = dept.getSelectedItem().toString();
         String center = cent.getSelectedItem().toString();
-        String building = build.getSelectedItem().toString();
+        String building = buildingcombo.getSelectedItem().toString();
         String level = lvl.getSelectedItem().toString();
         String lec_rank = rank.getText();
        
@@ -523,7 +542,7 @@ public class lecturers_main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> build;
+    private javax.swing.JComboBox<String> buildingcombo;
     private javax.swing.JComboBox<String> cent;
     private javax.swing.JComboBox<String> dept;
     private javax.swing.JTextField empid;
