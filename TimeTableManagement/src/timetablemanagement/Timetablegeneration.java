@@ -102,7 +102,7 @@ public class Timetablegeneration extends javax.swing.JFrame {
         try{
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost/timetable","root","");
-            String sql = "select * from ro";
+            String sql = "select * from rooms";
             pst = con.prepareStatement(sql);
             ResultSet rs = pst.executeQuery();
             while(rs.next()){

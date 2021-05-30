@@ -381,7 +381,7 @@ public class Session extends javax.swing.JFrame {
                 rs = stm.executeQuery();
                 
                 while(rs.next()){
-                    String name = rs.getString("subject");
+                    String name = rs.getString("sessionname");
                     jComboBox2.addItem(name);
                 }
         
