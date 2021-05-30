@@ -51,6 +51,7 @@ public class ConsecutiveSession extends javax.swing.JFrame {
         roomcombo();
         sesonecombo();
         sestwocombo();
+        subcombo();
         
         
         
@@ -62,7 +63,7 @@ public class ConsecutiveSession extends javax.swing.JFrame {
      public void loadtable(){
         
         try{
-        String sql = "SELECT CSID,Room,Session01,Session02 From csession";
+        String sql = "SELECT CSID,Room,Subject,Session01,Session02 From csession";
         stm = con.prepareStatement(sql);
         rs = stm.executeQuery();
         
@@ -102,6 +103,8 @@ public class ConsecutiveSession extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jComboBox4 = new javax.swing.JComboBox<>();
         jComboBox5 = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        jComboBox6 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -230,6 +233,8 @@ public class ConsecutiveSession extends javax.swing.JFrame {
 
         jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lecture", "Tute", "Lab" }));
 
+        jLabel1.setText("Subject");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -242,34 +247,40 @@ public class ConsecutiveSession extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(49, 49, 49)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
-                                    .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(18, 18, 18)
-                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(61, 61, 61)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(4, 4, 4))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel5)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel4)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(61, 61, 61)
+                                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(4, 4, 4))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(39, 39, 39)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(0, 0, Short.MAX_VALUE))))
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(jLabel3)
                             .addGap(38, 38, 38)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLabel2)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jComboBox4, javax.swing.GroupLayout.Alignment.TRAILING, 0, 73, Short.MAX_VALUE)
-                            .addComponent(jComboBox5, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jComboBox6, 0, 196, Short.MAX_VALUE))))
+                    .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
@@ -306,16 +317,20 @@ public class ConsecutiveSession extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3))
-                        .addGap(46, 46, 46)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
+                            .addComponent(jLabel1)
+                            .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(23, 23, 23)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(33, 33, 33)
+                            .addComponent(jLabel4))
+                        .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
                             .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5))))
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -346,18 +361,20 @@ public class ConsecutiveSession extends javax.swing.JFrame {
        String sess = jComboBox3.getSelectedItem().toString();
        String tag1 = jComboBox4.getSelectedItem().toString();
        String tag2 = jComboBox5.getSelectedItem().toString();
-
+       String sub = jComboBox6.getSelectedItem().toString();
+       
        Connection con;
        PreparedStatement ps;
 
         Class.forName("com.mysql.jdbc.Driver");
         con = DriverManager.getConnection("jdbc:mysql://localhost/mynewdb","root","");
-        ps = con.prepareStatement("update csession set Room=?,Session01=?,Session02=? where CSID=? ");
+        ps = con.prepareStatement("update csession set Room=?,Subject=?,Session01=?,Session02=? where CSID=? ");
 
         ps.setString(1, room);
-        ps.setString(2, ses+" ("+tag1+")");
-        ps.setString(3, sess+" ("+tag2+")");
-        ps.setInt(4, id);
+        ps.setString(2, sub);
+        ps.setString(3, ses+" ("+tag1+")");
+        ps.setString(4, sess+" ("+tag2+")");
+        ps.setInt(5, id);
 
         ps.executeUpdate();
 
@@ -370,6 +387,7 @@ public class ConsecutiveSession extends javax.swing.JFrame {
         jComboBox3.setSelectedIndex(0);
         jComboBox4.setSelectedIndex(0);
         jComboBox5.setSelectedIndex(0);
+        jComboBox6.setSelectedIndex(0);
 
         } catch (ClassNotFoundException ex) {
 
@@ -394,6 +412,24 @@ public class ConsecutiveSession extends javax.swing.JFrame {
                 while(rs.next()){
                     String name = rs.getString("Room");
                     jComboBox1.addItem(name);
+                }
+        
+        } catch (Exception e) {
+        }
+    
+    
+    }
+    
+     private void subcombo(){
+    
+        try {
+               String sql = "SELECT * From consecutivesessions ";
+                stm = con2.prepareStatement(sql);
+                rs = stm.executeQuery();
+                
+                while(rs.next()){
+                    String name = rs.getString("subject");
+                    jComboBox6.addItem(name);
                 }
         
         } catch (Exception e) {
@@ -446,6 +482,7 @@ public class ConsecutiveSession extends javax.swing.JFrame {
        String sess = jComboBox3.getSelectedItem().toString();
        String tag1 = jComboBox4.getSelectedItem().toString();
        String tag2 = jComboBox5.getSelectedItem().toString();
+       String sub = jComboBox6.getSelectedItem().toString();
 
         Connection con;
         PreparedStatement ps;
@@ -454,11 +491,12 @@ public class ConsecutiveSession extends javax.swing.JFrame {
 
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost/mynewdb","root","");
-             ps = con.prepareStatement("insert into csession(Room,Session01,Session02)values(?,?,?)");
+             ps = con.prepareStatement("insert into csession(Room,Subject,Session01,Session02)values(?,?,?,?)");
 
             ps.setString(1, room);
-            ps.setString(2, ses+" ("+tag1+")");
-            ps.setString(3, sess+" ("+tag2+")");
+            ps.setString(2, sub);
+            ps.setString(3, ses+" ("+tag1+")");
+            ps.setString(4, sess+" ("+tag2+")");
 
             ps.executeUpdate();
 
@@ -469,9 +507,12 @@ public class ConsecutiveSession extends javax.swing.JFrame {
             jComboBox3.setSelectedIndex(0);
             jComboBox4.setSelectedIndex(0);
             jComboBox5.setSelectedIndex(0);
+            jComboBox6.setSelectedIndex(0);
+            
         } catch (ClassNotFoundException ex) {
 
             Logger.getLogger(Sessions.class.getName()).log(Level.SEVERE, null, ex);
+            
         }
         catch (SQLException ex) {
 
@@ -487,13 +528,14 @@ public class ConsecutiveSession extends javax.swing.JFrame {
         int r = jTable1.getSelectedRow();
         String id = jTable1.getValueAt(r, 0).toString();
         String  room = jTable1.getValueAt(r, 1).toString();
-        String  ses  = jTable1.getValueAt(r, 2).toString();
-        String  sess  = jTable1.getValueAt(r, 3).toString();
-        
-        
+        String  sub  = jTable1.getValueAt(r, 2).toString();
+        String  ses  = jTable1.getValueAt(r, 3).toString();
+        String  sess  = jTable1.getValueAt(r, 4).toString();
+       
           jComboBox1.setSelectedItem(room);
           jComboBox2.setSelectedItem(ses);
           jComboBox3.setSelectedItem(sess);
+          jComboBox6.setSelectedItem(sub);
           jLabel2.setText(id);
        
         
@@ -530,9 +572,10 @@ public class ConsecutiveSession extends javax.swing.JFrame {
                   loadtable();
               
                   jLabel2.setText("");
-                  jComboBox1.setSelectedItem("Select a Room");
-                  jComboBox2.setSelectedItem("Select a Session");
+                  jComboBox1.setSelectedIndex(0);
+                  jComboBox2.setSelectedIndex(0);
                   jComboBox3.setSelectedIndex(0);
+                  jComboBox6.setSelectedIndex(0);
                   
              } catch (Exception e) {
              }
@@ -553,7 +596,7 @@ public class ConsecutiveSession extends javax.swing.JFrame {
        String name = jTextField1.getText();
       
        
-         String sql = "SELECT CSID,Room,Session01,Session02 From csession where Session02 or Session01 LIKE '%"+ name +"%'";
+         String sql = "SELECT CSID,Room,Subject,Session01,Session02 From csession where Session02 or Session01 LIKE '%"+ name +"%'";
          try {
              stm = con.prepareStatement(sql);
              rs = stm.executeQuery();
@@ -590,6 +633,7 @@ public class ConsecutiveSession extends javax.swing.JFrame {
                   jComboBox1.setSelectedIndex(0);
                   jComboBox2.setSelectedIndex(0);
                   jComboBox3.setSelectedIndex(0);
+                  jComboBox6.setSelectedIndex(0);
                   
         
     }//GEN-LAST:event_jButton6ActionPerformed
@@ -669,6 +713,8 @@ public class ConsecutiveSession extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JComboBox<String> jComboBox5;
+    private javax.swing.JComboBox<String> jComboBox6;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

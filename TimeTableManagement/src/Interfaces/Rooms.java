@@ -7,6 +7,7 @@ package Interfaces;
 //IT19216256_Member 04
 
 import DBconnection.dbcon;
+import DBconnection.dbcontimetable;
 import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -25,6 +26,7 @@ import net.proteanit.sql.DbUtils;
 public class Rooms extends javax.swing.JFrame {
     
     Connection con = null;
+    Connection con2 = null;
     PreparedStatement stm = null;
     ResultSet rs = null;
     
@@ -38,7 +40,7 @@ public class Rooms extends javax.swing.JFrame {
         
           //Connect to DataBase 
         con = dbcon.connect();
-        
+        con2 = dbcontimetable.connect();
         //load table 
         loadtable();
         bildingcombo();
@@ -53,7 +55,7 @@ public class Rooms extends javax.swing.JFrame {
         
         try{
         String sql = "SELECT RID,BuildingName,Room,RoomType,Capacity From rooms";
-        stm = con.prepareStatement(sql);
+        stm = con2.prepareStatement(sql);
         rs = stm.executeQuery();
         
         jTable1.setModel(DbUtils.resultSetToTableModel(rs));
@@ -332,7 +334,7 @@ public class Rooms extends javax.swing.JFrame {
         try {
             
             String qi = "INSERT INTO rooms(BuildingName,Room,RoomType,Capacity) values ('"+ buil +"', '"+ roon +"','"+ typ +"','"+ cap +"')";
-                 stm = con.prepareStatement(qi);
+                 stm = con2.prepareStatement(qi);
                  stm.execute();
         
                   loadtable();
@@ -434,7 +436,7 @@ public class Rooms extends javax.swing.JFrame {
               try {
                   
                   
-                   stm = con.prepareStatement(sql);
+                   stm = con2.prepareStatement(sql);
                   stm.execute();
                   
                    //load table
@@ -478,7 +480,7 @@ public class Rooms extends javax.swing.JFrame {
     
         try {
                String sql = "SELECT * From building ";
-                stm = con.prepareStatement(sql);
+                stm = con2.prepareStatement(sql);
                 rs = stm.executeQuery();
                 
                 while(rs.next()){
@@ -508,7 +510,7 @@ public class Rooms extends javax.swing.JFrame {
             
             try {
                 
-                 stm = con.prepareStatement(sql);
+                 stm = con2.prepareStatement(sql);
                     stm.execute();
               
                //load table
@@ -556,7 +558,7 @@ public class Rooms extends javax.swing.JFrame {
         
         try {
              
-            stm = con.prepareStatement(sql);
+            stm = con2.prepareStatement(sql);
             rs =  stm.executeQuery();
             
              jTable1.setModel(DbUtils.resultSetToTableModel(rs));

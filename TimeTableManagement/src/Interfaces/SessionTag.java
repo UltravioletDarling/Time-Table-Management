@@ -308,7 +308,7 @@ public class SessionTag extends javax.swing.JFrame {
                 loadtable(); 
                 jComboBox1.setSelectedIndex(0);
                 jComboBox2.setSelectedIndex(0);
-                jComboBox3.setSelectedItem("Select a Tag");
+                jComboBox3.setSelectedIndex(0);
             
         } catch (Exception e) {
         }
@@ -358,7 +358,7 @@ public class SessionTag extends javax.swing.JFrame {
                 jLabel5.setText(""); 
                 jComboBox1.setSelectedIndex(0);
                 jComboBox2.setSelectedIndex(0);
-                jComboBox3.setSelectedItem("Select a Tag");
+                jComboBox3.setSelectedIndex(0);
              } catch (Exception e) {
              }
   
@@ -449,7 +449,7 @@ public class SessionTag extends javax.swing.JFrame {
                 jLabel5.setText("");
                 jComboBox1.setSelectedIndex(0);
                 jComboBox2.setSelectedIndex(0);
-                jComboBox3.setSelectedItem("Select a Tag");
+                jComboBox3.setSelectedIndex(0);
                   
                   
               } catch (Exception e) {
@@ -492,8 +492,8 @@ public class SessionTag extends javax.swing.JFrame {
         // TODO add your handling code here:
                 jLabel5.setText("");
                 jComboBox1.setSelectedIndex(0);
-                jComboBox2.setSelectedItem("Select a Subject");
-                jComboBox3.setSelectedItem("Select a Tag");
+                jComboBox2.setSelectedIndex(0);
+                jComboBox3.setSelectedIndex(0);
         
         
     }//GEN-LAST:event_jButton6ActionPerformed

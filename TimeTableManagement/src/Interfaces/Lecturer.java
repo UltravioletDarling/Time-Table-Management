@@ -289,7 +289,7 @@ public class Lecturer extends javax.swing.JFrame {
                   loadtable();
                   
                  jComboBox2.setSelectedIndex(0);
-                 jComboBox1.setSelectedItem("Select a Room");
+                 jComboBox1.setSelectedIndex(0);
         } catch (Exception e) {
         }
         
@@ -336,7 +336,7 @@ public class Lecturer extends javax.swing.JFrame {
                  jLabel4.setText("");
                  
                   jComboBox2.setSelectedIndex(0);
-                 jComboBox1.setSelectedItem("Select a Room");
+                 jComboBox1.setSelectedIndex(0);
              
             } catch (Exception e) {
             }
@@ -402,7 +402,7 @@ public class Lecturer extends javax.swing.JFrame {
                  jLabel4.setText("");
                  
                  jComboBox2.setSelectedIndex(0);
-                 jComboBox1.setSelectedItem("Select a Room");
+                 jComboBox1.setSelectedIndex(0);
              
               
                   
