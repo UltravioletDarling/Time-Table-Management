@@ -505,30 +505,35 @@ public class ActiveSessions extends javax.swing.JFrame {
         jLabel27.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel27.setText("Tuesday");
 
+        subject3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         subject3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 subject3ActionPerformed(evt);
             }
         });
 
+        subject2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         subject2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 subject2ActionPerformed(evt);
             }
         });
 
+        subject1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         subject1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 subject1ActionPerformed(evt);
             }
         });
 
+        subject5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         subject5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 subject5ActionPerformed(evt);
             }
         });
 
+        subject4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         subject4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 subject4ActionPerformed(evt);
@@ -590,60 +595,70 @@ public class ActiveSessions extends javax.swing.JFrame {
             }
         });
 
+        sl1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         sl1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sl1ActionPerformed(evt);
             }
         });
 
+        sl2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         sl2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sl2ActionPerformed(evt);
             }
         });
 
+        sl3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         sl3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sl3ActionPerformed(evt);
             }
         });
 
+        sl4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         sl4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sl4ActionPerformed(evt);
             }
         });
 
+        sl5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         sl5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sl5ActionPerformed(evt);
             }
         });
 
+        slo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         slo1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 slo1ActionPerformed(evt);
             }
         });
 
+        slo2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         slo2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 slo2ActionPerformed(evt);
             }
         });
 
+        slo3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         slo3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 slo3ActionPerformed(evt);
             }
         });
 
+        slo4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         slo4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 slo4ActionPerformed(evt);
             }
         });
 
+        slo5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         slo5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 slo5ActionPerformed(evt);
@@ -753,7 +768,7 @@ public class ActiveSessions extends javax.swing.JFrame {
                             .addComponent(deletestudent, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel43)
                             .addComponent(jLabel44))
@@ -831,30 +846,35 @@ public class ActiveSessions extends javax.swing.JFrame {
         jLabel35.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel35.setText("Tuesday");
 
+        subject9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         subject9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 subject9ActionPerformed(evt);
             }
         });
 
+        subject8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         subject8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 subject8ActionPerformed(evt);
             }
         });
 
+        subject7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         subject7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 subject7ActionPerformed(evt);
             }
         });
 
+        subject11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         subject11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 subject11ActionPerformed(evt);
             }
         });
 
+        subject10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         subject10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 subject10ActionPerformed(evt);
@@ -922,60 +942,70 @@ public class ActiveSessions extends javax.swing.JFrame {
         jLabel40.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel40.setText("Lecturer");
 
+        ls1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         ls1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ls1ActionPerformed(evt);
             }
         });
 
+        ls2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         ls2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ls2ActionPerformed(evt);
             }
         });
 
+        ls3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         ls3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ls3ActionPerformed(evt);
             }
         });
 
+        ls4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         ls4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ls4ActionPerformed(evt);
             }
         });
 
+        ls5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         ls5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ls5ActionPerformed(evt);
             }
         });
 
+        lll1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         lll1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lll1ActionPerformed(evt);
             }
         });
 
+        lll2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         lll2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lll2ActionPerformed(evt);
             }
         });
 
+        lll3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         lll3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lll3ActionPerformed(evt);
             }
         });
 
+        lll4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         lll4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lll4ActionPerformed(evt);
             }
         });
 
+        lll5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----" }));
         lll5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lll5ActionPerformed(evt);
@@ -1117,7 +1147,7 @@ public class ActiveSessions extends javax.swing.JFrame {
                                     .addComponent(jLabel37)
                                     .addComponent(ls5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lll5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addContainerGap(123, Short.MAX_VALUE))
         );
 
         Lecturer.addTab("Locations", jPanel1);

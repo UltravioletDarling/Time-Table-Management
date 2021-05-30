@@ -760,7 +760,32 @@ public class Timetablegeneration extends javax.swing.JFrame {
     }//GEN-LAST:event_GenerateLocationActionPerformed
 
     private void printlocationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printlocationActionPerformed
-        // TODO add your handling code here:
+       String path = "";
+        JFileChooser j = new JFileChooser();
+        j.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        
+        int x = j.showSaveDialog(this);
+        
+        if(x==JFileChooser.APPROVE_OPTION){
+            path = j.getSelectedFile().getPath();
+        }
+        
+        Document doc = new Document();
+        
+        try{
+            PdfWriter.getInstance(doc, new FileOutputStream(path+"LocationTimetable.pdf"));
+            
+            doc.open();
+            
+            PdfPTable tbl = new PdfPTable(8);
+            
+            
+            
+        }catch (FileNotFoundException ex) {
+            Logger.getLogger(Timetablegeneration.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (DocumentException ex) {
+            Logger.getLogger(Timetablegeneration.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
 
     }//GEN-LAST:event_printlocationActionPerformed
@@ -893,7 +918,32 @@ public class Timetablegeneration extends javax.swing.JFrame {
     }//GEN-LAST:event_GenerateStudentActionPerformed
 
     private void printstudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printstudentActionPerformed
-        // TODO add your handling code here:
+         String path = "";
+        JFileChooser j = new JFileChooser();
+        j.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        
+        int x = j.showSaveDialog(this);
+        
+        if(x==JFileChooser.APPROVE_OPTION){
+            path = j.getSelectedFile().getPath();
+        }
+        
+        Document doc = new Document();
+        
+        try{
+            PdfWriter.getInstance(doc, new FileOutputStream(path+"StudentTimetable.pdf"));
+            
+            doc.open();
+            
+            PdfPTable tbl = new PdfPTable(8);
+            
+            
+            
+        }catch (FileNotFoundException ex) {
+            Logger.getLogger(Timetablegeneration.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (DocumentException ex) {
+            Logger.getLogger(Timetablegeneration.class.getName()).log(Level.SEVERE, null, ex);
+        }
        
 
     }//GEN-LAST:event_printstudentActionPerformed

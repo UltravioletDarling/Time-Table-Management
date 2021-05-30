@@ -817,7 +817,7 @@
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="70" max="32767" attributes="0"/>
+                              <EmptySpace pref="80" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel43" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -950,7 +950,9 @@
             <Component class="javax.swing.JComboBox" name="subject3">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="----"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
@@ -963,7 +965,9 @@
             <Component class="javax.swing.JComboBox" name="subject2">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="----"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
@@ -976,7 +980,9 @@
             <Component class="javax.swing.JComboBox" name="subject1">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="----"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
@@ -989,7 +995,9 @@
             <Component class="javax.swing.JComboBox" name="subject5">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="----"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
@@ -1002,7 +1010,9 @@
             <Component class="javax.swing.JComboBox" name="subject4">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="----"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
@@ -1155,7 +1165,9 @@
             <Component class="javax.swing.JComboBox" name="sl1">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="----"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
@@ -1168,7 +1180,9 @@
             <Component class="javax.swing.JComboBox" name="sl2">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="----"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
@@ -1181,7 +1195,9 @@
             <Component class="javax.swing.JComboBox" name="sl3">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="----"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
@@ -1194,7 +1210,9 @@
             <Component class="javax.swing.JComboBox" name="sl4">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="----"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
@@ -1207,7 +1225,9 @@
             <Component class="javax.swing.JComboBox" name="sl5">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="----"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
@@ -1220,7 +1240,9 @@
             <Component class="javax.swing.JComboBox" name="slo1">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="----"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
@@ -1233,7 +1255,9 @@
             <Component class="javax.swing.JComboBox" name="slo2">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="----"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
@@ -1246,7 +1270,9 @@
             <Component class="javax.swing.JComboBox" name="slo3">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="----"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
@@ -1259,7 +1285,9 @@
             <Component class="javax.swing.JComboBox" name="slo4">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="----"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
@@ -1272,7 +1300,9 @@
             <Component class="javax.swing.JComboBox" name="slo5">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="----"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
@@ -1484,7 +1514,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="113" max="32767" attributes="0"/>
+                      <EmptySpace pref="123" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1559,7 +1589,9 @@
             <Component class="javax.swing.JComboBox" name="subject9">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="----"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
@@ -1572,7 +1604,9 @@
             <Component class="javax.swing.JComboBox" name="subject8">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="----"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
@@ -1585,7 +1619,9 @@
             <Component class="javax.swing.JComboBox" name="subject7">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="----"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
@@ -1598,7 +1634,9 @@
             <Component class="javax.swing.JComboBox" name="subject11">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="----"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
@@ -1611,7 +1649,9 @@
             <Component class="javax.swing.JComboBox" name="subject10">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="----"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
@@ -1780,7 +1820,9 @@
             <Component class="javax.swing.JComboBox" name="ls1">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="----"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
@@ -1793,7 +1835,9 @@
             <Component class="javax.swing.JComboBox" name="ls2">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="----"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
@@ -1806,7 +1850,9 @@
             <Component class="javax.swing.JComboBox" name="ls3">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="----"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
@@ -1819,7 +1865,9 @@
             <Component class="javax.swing.JComboBox" name="ls4">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="----"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
@@ -1832,7 +1880,9 @@
             <Component class="javax.swing.JComboBox" name="ls5">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="----"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
@@ -1845,7 +1895,9 @@
             <Component class="javax.swing.JComboBox" name="lll1">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="----"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
@@ -1858,7 +1910,9 @@
             <Component class="javax.swing.JComboBox" name="lll2">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="----"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
@@ -1871,7 +1925,9 @@
             <Component class="javax.swing.JComboBox" name="lll3">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="----"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
@@ -1884,7 +1940,9 @@
             <Component class="javax.swing.JComboBox" name="lll4">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="----"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
@@ -1897,7 +1955,9 @@
             <Component class="javax.swing.JComboBox" name="lll5">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="----"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
